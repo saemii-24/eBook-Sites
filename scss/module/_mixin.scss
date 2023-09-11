@@ -1,0 +1,83 @@
+@use './variable' as var;
+
+@mixin center {
+    display: flex;
+	align-items:center;
+    justify-content: center;
+}
+@mixin start {
+    display: flex;
+	align-items:center;
+    justify-content: flex-start;
+}
+
+@mixin between{
+    display: flex;
+	align-items:center;
+    justify-content: space-between;
+}
+
+@mixin info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+@mixin end {
+    display: flex;
+	align-items:flex-end;
+    justify-content: center;
+}
+
+@mixin title__big{
+    font-family: "Noto Sans KR";
+    font-weight: 600;
+    font-size: 30px;
+    color: #000;
+    line-height: 45px;
+}
+@mixin title__small{
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+@mixin plus{
+    color: #000;
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+@mixin icon{
+    font-size: inherit;
+    font-weight: inherit;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+@mixin btn__next {
+    right: -65px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-image: url('../images/right_icon.png');
+    background-color: var.$white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    top:50%;
+    transform: translateY(-50%);
+    @content;
+}
+
+@mixin btn__prev {
+    @include btn__next;    
+    background-image: url('../images/left_icon.png');
+    right: auto;
+    left: -65px;
+}
+

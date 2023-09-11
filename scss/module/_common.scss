@@ -1,0 +1,127 @@
+@use './mixin' as mix;
+@use './variable' as var;
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    // overflow-x: hidden;
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+    color: var.$black;
+    word-break: keep-all;
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.inner-swiper{
+    margin-top:50px;
+    position: relative;
+}
+.full-inner{
+    width: 100%;
+}
+
+h6{
+    @include mix.title__small;
+}
+h1{
+    @include mix.title__big;
+}
+
+.inner {
+
+    .plus {
+        align-self: flex-end;
+        @include mix.center;
+        margin-bottom: 10px;
+        @include mix.plus;
+    }
+    span{
+        font-size: inherit;
+        font-weight: inherit;
+        vertical-align: middle;
+        margin-bottom: 2px;
+    }
+}
+
+
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+
+    .thumbnail {
+        display: block;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px 16px 16px 0;
+            border: 1px solid #EAEAEA;
+        }
+    }
+
+    .info {
+        margin-top: 20px;
+        .num{
+            display: inline-block;
+            text-align: center;
+            padding: 0 5px;
+            min-width: 24px;
+            height: 24px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var.$white;
+            line-height: 24px;
+            border-radius: 6px 0 6px 0;
+            background-color: #767676;
+            border: 1px solid var.$white;
+            margin-bottom: 10px;
+            &.first{
+                background-color: var.$green;
+            }
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            max-height: 40px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .author {
+            margin-top: 5px;
+            color: var.$dark-gray;
+            font-size: 15px;
+        }
+    }
+
+}
+
+.swiper-button-next{
+    @include mix.btn__next;
+    &::after{
+        content:'';
+    }   
+}
+.swiper-button-prev{
+    @include mix.btn__prev;
+    &::after{
+        content:'';
+    }
+}
+
+.bg-text{
+    text-indent: 100%;    
+    white-space: nowrap;    
+    overflow: hidden;
+}
