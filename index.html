@@ -25,17 +25,17 @@
 
     <script defer src="./js/header.js"></script>
     <script defer src="./js/nav.js"></script>
-    <script defer src="./js/slide.js"></script>
-    <script defer src="./js/best.js"></script>
+    <!-- <script defer src="./js/slide.js"></script>
+    <script defer src="./js/best.js"></script> -->
     <script defer src="./js/picks.js"></script>
-    <script defer src="./js/click.js"></script>
+    <!-- <script defer src="./js/click.js"></script>
     <script defer src="./js/select.js"></script>
     <script defer src="./js/today.js"></script>
     <script defer src="./js/recommend.js"></script>
     <script defer src="./js/video.js"></script>
     <script defer src="./js/audio.js"></script>
     <script defer src="./js/new.js"></script>
-    <script defer src="./js/original.js"></script>
+    <script defer src="./js/original.js"></script> -->
     <script defer src="./js/history.js"></script>
 </head>
 
@@ -241,7 +241,7 @@
             </div>
             <div class="slide__now">
                 <div class="swiper-scrollbar"></div>
-                <span class="swiper-pagination"></span>
+                <span class="swiper-pagination slide-pagination"></span>
                 <div class="autoplay-progress">
                     <div></div>
                     <svg id="circle-pause" viewBox="0 0 30 30">
@@ -927,7 +927,8 @@
                         <span>전체삭제</span>
                     </button>
                 </div>
-                <div class="history-book-box">
+                <div class="history-book-box scroll-custom">
+                    <div class="history__put ">
                     <!-- <div class="history-book">
                         <a class="thumbnail" href="">
                             <img src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP0400/ko/20210813/P001501766.jpg/dims/resize/1280" alt="">
@@ -944,6 +945,7 @@
                             </div>
                         </div>
                     </div> -->
+                    </div>
                     <div class="history-empty">
                         <div class="material-symbols-outlined exclamation">exclamation</div>
                         <div class="notice-empty">최근 본 상품 및 콘텐츠가 없습니다</div>

@@ -34,7 +34,7 @@ let slide_mySwiper = new Swiper(".slide_mySwiper", {
     hide: false,
   },
   pagination: {
-    el: '.swiper-pagination',
+    el: '.slide-pagination',
     type: 'fraction',
   },
     on: {

@@ -111,7 +111,7 @@ const putEbookShortcut = document.querySelector('.ebook-shortcut');
 
 for(let i =0; i<ebookShortcut.length; i++){
   const shortcutImg = document.createElement('img');
-  shortcutImg.setAttribute('src',`../images/ebook_icon_${i+1}.png`);
+  shortcutImg.setAttribute('src',`./images/ebook_icon_${i+1}.png`);
   shortcutImg.setAttribute('alt', ebookShortcut[i]);
 
   const shortcutAnchor = document.createElement('a');

@@ -121,7 +121,7 @@ for(i=0; i<flyMenuList.length; i++){
   a.setAttribute('class', 'swiper-slide', 'flyMenu__img');
   
   const img = document.createElement('img');
-  img.setAttribute('src', `../images/flyMenu_slide${i+1}.jpg`);
+  img.setAttribute('src', `./images/flyMenu_slide${i+1}.jpg`);
   img.setAttribute('alt', `${flyMenuList[i]}`);
   
   a.append(img);

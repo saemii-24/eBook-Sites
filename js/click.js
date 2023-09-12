@@ -22,7 +22,7 @@ function clickSearch(searchWord) {
     $.ajax({
         method: "GET",
         url: "https://dapi.kakao.com/v3/search/book?target=title",
-        data: { query: searchWord, size: 2 },
+        data: { query: searchWord, size: 1 },
         headers: { Authorization: "KakaoAK 381ddfe6fc1daf3a1b6115b0d0c98c8c" },
         async: false
     })

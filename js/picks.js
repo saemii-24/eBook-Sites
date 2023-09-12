@@ -8,8 +8,9 @@ function pickSearch(searchWord) {
     $.ajax({
         method: "GET",
         url: "https://dapi.kakao.com/v3/search/book?target=title",
-        data: { query: searchWord, size: 30 },
-        headers: { Authorization: "KakaoAK 381ddfe6fc1daf3a1b6115b0d0c98c8c" }
+        data: { query: searchWord, size: 20 },
+        headers: { Authorization: "KakaoAK 381ddfe6fc1daf3a1b6115b0d0c98c8c" },
+        async: false
     })
         .done(function (originData) {
 
@@ -20,7 +21,7 @@ function pickSearch(searchWord) {
             });
             // console.log(filterData);
 
-            for(let i=0; i<20; i++){
+            for(let i=0; i<filterData.length; i++){
                 //1,2번 상위요소
                 const slide = document.createElement("div");
                 slide.setAttribute("class", "swiper-slide");

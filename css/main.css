@@ -842,6 +842,9 @@ header .header-nav .service-nav-box .service-nav-inner .nav__put .service-catego
   margin-bottom: 18px;
   line-height: 20px;
 }
+.ebook-nav-box .ebook-nav-inner .ebook-tab span:hover {
+  color: #3a7dd3;
+}
 .ebook-nav-box .ebook-nav-inner .ebook-tab span.active {
   color: #3a7dd3;
   position: relative;
@@ -2082,8 +2085,8 @@ footer .full-inner .inner .footer__info4 .footer__info4--right .isms .isms__info
   top: 30px;
   right: 30px;
   width: 25%;
-  min-width: 400px;
-  min-height: 900px;
+  min-width: 480px;
+  min-height: 600px;
   height: calc(100vh - 60px);
   background-color: #ffffff;
   border-radius: 20px;
@@ -2150,14 +2153,19 @@ footer .full-inner .inner .footer__info4 .footer__info4--right .isms .isms__info
   width: 100%;
   height: calc(100% - 200px);
   margin-top: 30px;
+  overflow-y: scroll;
 }
 .history-modal .history-book-box .history-book {
-  width: 100%;
+  width: calc(100% - 10px);
   height: 140px;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #eaeaea;
   display: flex;
+  margin-bottom: 10px;
+}
+.history-modal .history-book-box .history-book .history__put {
+  width: 100%;
 }
 .history-modal .history-book-box .history-book .thumbnail {
   display: inline-block;
@@ -2165,6 +2173,7 @@ footer .full-inner .inner .footer__info4 .footer__info4--right .isms .isms__info
   height: 100%;
   border: 1px solid #eaeaea;
   border-radius: 5px;
+  overflow: hidden;
   flex-shrink: 0;
 }
 .history-modal .history-book-box .history-book .thumbnail img {
@@ -2198,7 +2207,7 @@ footer .full-inner .inner .footer__info4 .footer__info4--right .isms .isms__info
   height: 20px;
   border: none;
   cursor: pointer;
-  margin-left: 8px;
+  margin-left: 20px;
 }
 .history-modal .history-book-box .history-book .book-info .title {
   display: block;
@@ -2209,6 +2218,7 @@ footer .full-inner .inner .footer__info4 .footer__info4--right .isms .isms__info
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: 4px;
 }
 .history-modal .history-book-box .history-book .book-info .price-align {
   font-size: 14px;
