@@ -125,3 +125,14 @@ h1{
     white-space: nowrap;    
     overflow: hidden;
 }
+
+.scroll-custom::-webkit-scrollbar {
+    width: 2px;
+  }
+.scroll-custom::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+.scroll-custom::-webkit-scrollbar-thumb {
+    background: #000000; 
+}

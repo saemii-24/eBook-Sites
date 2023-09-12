@@ -15,6 +15,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,-25" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="./images/favicon.ico">
@@ -24,17 +25,18 @@
 
     <script defer src="./js/header.js"></script>
     <script defer src="./js/nav.js"></script>
-    <!-- <script defer src="./js/slide.js"></script> -->
-    <!-- <script defer src="./js/best.js"></script> -->
-    <!-- <script defer src="./js/picks.js"></script>
+    <script defer src="./js/slide.js"></script>
+    <script defer src="./js/best.js"></script>
+    <script defer src="./js/picks.js"></script>
     <script defer src="./js/click.js"></script>
     <script defer src="./js/select.js"></script>
     <script defer src="./js/today.js"></script>
     <script defer src="./js/recommend.js"></script>
     <script defer src="./js/video.js"></script>
-    <script defer src="./js/audio.js"></script> -->
-    <!-- <script defer src="./js/new.js"></script>
-    <script defer src="./js/original.js"></script> -->
+    <script defer src="./js/audio.js"></script>
+    <script defer src="./js/new.js"></script>
+    <script defer src="./js/original.js"></script>
+    <script defer src="./js/history.js"></script>
 </head>
 
 <body>
@@ -177,13 +179,21 @@
                 </ul>
                 <!--서비스 전체보기-->
                 <div class="service-nav-box">
-                    <div class="swiper mySwiper nav_mySwiper">
-                        <div class="swiper-wrapper">
-                          <ul class="swiper-slide nav__put">
-                            <!--nav.js-->
-                          </ul>
+                    <div class="service-nav-inner scroll-custom">
+                        <ul class=" nav__put"></ul>
+                    </div>
+                </div>
+                <div class="ebook-nav-box">
+                    <div class="ebook-nav-inner">
+                        <div class="ebook-tab">
+                            <span class="active">eBook</span></br>
+                            <span>오디오(북)</span></br>
+                            <span>동영상</span></br>
                         </div>
-                        <div class="swiper-scrollbar nav-scrollbar"></div>
+                        <div class="ebook-nav-padding scroll-custom">
+                            <ul class="ebook-nav__put"></ul>
+                        </div>
+                        <div class="ebook-shortcut"></div>
                     </div>
                 </div>
             </div>
@@ -897,7 +907,50 @@
                 <div>TOP</div>
             </a>
         </div>
-
+        <!--histor modal-->
+        <div class="history-modal">
+            <div class="history-box">
+                <p class="title">최근본</p>
+                <div class="material-symbols-outlined history-close">close</div>
+                <button class="history-category active">전체</button>
+                <button class="history-category">상품</button>
+                <button class="history-category">기획전</button>
+                <button class="history-category">이벤트</button>
+                <button class="history-category">브랜드</button>
+                <div class="history-align">
+                    <div class="history-count">
+                        <span class="count">0</span>
+                        <span>건</span>
+                    </div>
+                    <button class="history-trash">
+                        <svg class="trash-icon" xmlns="http://www.w3.org/2000/svg" stroke="#767676" height="24" viewBox="0 -960 960 960" width="24"><path d="M313.5-177q-23.969 0-40.734-16.766Q256-210.531 256-234.5v-484h-39.5v-25.333H361V-771h238.5v27H744v25.5h-39.5v484.231q0 24.207-16.531 40.738T647-177H313.5ZM679-718.5H281.5v484q0 14 9 23t23 9H647q12 0 22-10t10-22v-484ZM404.5-282H430v-357.5h-25.5V-282Zm126 0H556v-357.5h-25.5V-282Zm-249-436.5v516-516Z"/></svg>
+                        <span>전체삭제</span>
+                    </button>
+                </div>
+                <div class="history-book-box">
+                    <!-- <div class="history-book">
+                        <a class="thumbnail" href="">
+                            <img src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP0400/ko/20210813/P001501766.jpg/dims/resize/1280" alt="">
+                        </a>
+                        <div class="book-info">
+                            <div class="book-btn">
+                                <button class="favorite"></button>
+                                <button class="close"></button>
+                            </div>
+                            <a class="title" href="">작은 땅의 야수들작은 땅의 야수들작은 땅의 야수들작은 땅의 야수들작은 땅의 야수들작은 땅의 야수들작은 땅의 야수들</a>
+                            <div class="price-align">
+                                <span class="price">12,600</span>
+                                <span>원</span>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="history-empty">
+                        <div class="material-symbols-outlined exclamation">exclamation</div>
+                        <div class="notice-empty">최근 본 상품 및 콘텐츠가 없습니다</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
