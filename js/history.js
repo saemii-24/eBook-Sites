@@ -1,15 +1,19 @@
 //localStorage 이용하기
 const bookThumb = document.querySelectorAll(".swiper-slide");
 const bookTitle = document.querySelectorAll(".swiper-slide .title");
+const historyBtn = document.querySelector('.bottom__button .history');
 
-// let memorybook = JSON.parse(localStorage.getItem("book"));
 let memorybook = JSON.parse(localStorage.getItem("book"));
+if (memorybook === null) {
+  memorybook = [];
+}
 
 //localStorage에 저장된 memory값이 있다면 실행한다.
-if (memorybook.length > 0) {
+if (memorybook !== null && memorybook.length > 0) {
   memorybook.forEach((memory) => historyBox(memory));
 }
 
+//memorybook에 title값을 저장한다.
 bookThumb.forEach((book) => {
   book.addEventListener("click", (event) => {
     let bookTitle = event.currentTarget.querySelector(".title").innerText;
@@ -28,16 +32,27 @@ bookThumb.forEach((book) => {
     //localStorage에 저장된 값 불러오기
     memorybook = JSON.parse(localStorage.getItem("book"));
     console.log(memorybook);
-  });
+    historyCount();
+
+    //historyBtn의 배경 첫번째 선택이미지로 교체하기
+    const historyBookFirst = event.currentTarget.querySelector('.thumbnail img');
+
+      if (memorybook.length > 0 && memorybook !== null) {
+        historyBtn.style.backgroundImage = `url(${historyBookFirst.src})`;
+        historyBtn.style.border = "1px solid #000000";
+      } else {
+        historyBtn.style.backgroundImage = "url('./images/history.png')";
+        historyBtn.style.border = "none";
+      }
+    }
+  )
 });
 console.log(memorybook); //localStorage저장된 값확인
 
 //저장된 값을 이용해 ajax를 사용한다.
 const historyIcon = document.querySelector(".bottom__button .history");
 const historyModal = document.querySelector(".history-modal");
-const historyModalClose = document.querySelector(
-  ".history-modal .history-close"
-);
+const historyModalClose = document.querySelector(".history-modal .history-close");
 
 //modal 열기
 historyIcon.addEventListener("click", () => {
@@ -48,17 +63,25 @@ historyIcon.addEventListener("click", () => {
   const putHistory = document.querySelector(".history__put");
   putHistory.textContent = '';
   //modal을 열 때 ajax를 실행한다.
-  if(memorybook.length>0){memorybook.forEach(memory =>historyBox(memory))};
+  if (memorybook !== null && memorybook.length > 0) {
+    memorybook.forEach(memory => historyBox(memory))
+  };
   //favorite버튼을 누를 수 있어야 한다.
   favoriteBtnToggle();
   removeBtn();
+  allRemoveBtn();
+  //memorybook이 비었는지 확인한다.
+  ifEmpty();
+  historyCount();
 });
 
 //memoryBook이 비어있으면 비었다는 표시를 해준다.
+//기본적으로 실행되고 있어야 한다.
+ifEmpty();
 function ifEmpty() {
   const historyEmptySign = document.querySelector(".history-empty");
   const historyPut = document.querySelector(".history__put");
-  if (!memorybook || historyPut.textContent==='' ) {
+  if (historyPut.textContent === '') {
     //memoryBook이 null이면
     historyEmptySign.style.display = "flex";
   } else {
@@ -81,23 +104,78 @@ function favoriteBtnToggle() {
   });
 }
 
-//x버튼으로 비우기 (hcloseHistoryBtn)
-
-function removeBtn(){
+//x버튼으로 하나씩 삭제하기
+function removeBtn() {
   let closeHistoryBtn = document.querySelectorAll(".book-btn .close");
-   closeHistoryBtn.forEach((closeBtn, index)=>{
-    closeBtn.addEventListener("click",(event)=>{
+  closeHistoryBtn.forEach((closeBtn, index) => {
+    closeBtn.addEventListener("click", (event) => {
       console.log(index);
       let parentBox = (event.target).parentNode.parentNode.parentNode;
-      $(parentBox).remove();
-      //memorybook 배열도 같은 index번호는 삭제해준다.
-      //삭제시 index번호가 달라져 문제가 생김
-      //todo 문제 해결할 것//
-      memorybook.splice(index,1);
+      parentBox.remove();
+
+      let tilteOfparentBox = parentBox.querySelector('.title').innerText;
+      console.log(tilteOfparentBox);
+
+      memorybook = memorybook.filter((memorybook) => memorybook !== tilteOfparentBox);
+      //localStorage도 업데이트(하나씩 삭제) 하기
+      localStorage.setItem("book", JSON.stringify(memorybook));
       console.log(memorybook);
       ifEmpty();
+      historyCount();
+
+      //historyBtn Background 변경하기
+      changeBtnBg();
     });
-   });
+  });
+}
+
+//전체삭제버튼
+function allRemoveBtn() {
+  const closeAllBtn = document.querySelector('.history-trash');
+  const putHistory = document.querySelector('.history__put');
+  closeAllBtn.addEventListener('click', () => {
+    memorybook = [];
+    putHistory.textContent = '';
+    //localStorage도 업데이트(비우기) 하기
+    localStorage.setItem("book", JSON.stringify(memorybook));
+    ifEmpty();
+    historyCount();
+    //historyBtn 배경화면 되돌리기
+    historyBtn.style.backgroundImage = "url('./images/history.png')";
+    historyBtn.style.border = "none";
+  });
+}
+
+//history count를 표시한다.
+historyCount();
+function historyCount() {
+  //모달 창 안의 count
+  const countInModal = document.querySelector('.history-count .count');
+  //history버튼 안의 count
+  const countInBtn = document.querySelector('.history-btn-count');
+
+  if (memorybook.length > 0 && memorybook !== null) {
+    countInBtn.style.display = 'block';
+    countInModal.innerText = memorybook.length;
+    countInBtn.innerText = memorybook.length;
+  } else {
+    countInBtn.style.display = 'none';
+    countInModal.innerText = 0;
+    countInBtn.innerText = 0;
+  }
+}
+
+//history Btn 배경화면 바꾸기
+changeBtnBg();
+function changeBtnBg(){
+  if(memorybook.length===0){
+    historyBtn.style.backgroundImage = "url('./images/history.png')";
+    historyBtn.style.border = "none";
+  }else{
+    const btnBg = document.querySelector('.history-book:last-child img').src;
+    historyBtn.style.backgroundImage = `url(${btnBg})`;
+    historyBtn.style.border = "1px solid #000000";
+  }
 }
 
 //ajax로 태그를 만들어 html에 넣는다.

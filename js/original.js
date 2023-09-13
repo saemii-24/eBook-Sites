@@ -13,7 +13,7 @@ const originalList = [
   '연옥의 수리공',
   '아무네 가게',
   '낭패',
-  '테라리움',
+  '증발 도깨비불',
 ];
 
 const putOriginal = document.querySelector('.original__put');

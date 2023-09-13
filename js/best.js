@@ -18,7 +18,7 @@ const bestCategory = [
 ],
 
 //로맨스
-['성화',
+['시한부 공작 부인은 버려 주세요',
 '후문의 비',
 '금당귀연',
 '장상사',
@@ -188,7 +188,7 @@ const bestCategory = [
         });
   }
   
-const bestInner = document.querySelectorAll('.picks__inner-swiper');
+const bestInner = document.querySelectorAll('.best__inner-swiper');
 const bestWrapper = document.querySelectorAll('.best .swiper-wrapper');
 console.log(bestWrapper);
 
@@ -234,3 +234,5 @@ nums.forEach((num)=>{
       prevEl: ".best-prev",
     },
   });
+
+  

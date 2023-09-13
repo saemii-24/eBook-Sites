@@ -121,7 +121,7 @@ h1{
 }
 
 .bg-text{
-    text-indent: 100%;    
+    text-indent: 200%;    
     white-space: nowrap;    
     overflow: hidden;
 }
@@ -134,5 +134,16 @@ h1{
 }
    
 .scroll-custom::-webkit-scrollbar-thumb {
+    background: #000000; 
+}
+
+.scroll-custom-event::-webkit-scrollbar {
+    width: 4px;
+  }
+.scroll-custom-event::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.5); 
+}
+   
+.scroll-custom-event::-webkit-scrollbar-thumb {
     background: #000000; 
 }

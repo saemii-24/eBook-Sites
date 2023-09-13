@@ -25,18 +25,19 @@
 
     <script defer src="./js/header.js"></script>
     <script defer src="./js/nav.js"></script>
-    <!-- <script defer src="./js/slide.js"></script>
-    <script defer src="./js/best.js"></script> -->
+    <script defer src="./js/slide.js"></script>
+    <script defer src="./js/best.js"></script> 
     <script defer src="./js/picks.js"></script>
-    <!-- <script defer src="./js/click.js"></script>
+    <script defer src="./js/click.js"></script>
     <script defer src="./js/select.js"></script>
     <script defer src="./js/today.js"></script>
     <script defer src="./js/recommend.js"></script>
     <script defer src="./js/video.js"></script>
     <script defer src="./js/audio.js"></script>
-    <script defer src="./js/new.js"></script>
-    <script defer src="./js/original.js"></script> -->
+    <script defer src="./js/new.js"></script>  
+    <script defer src="./js/original.js"></script>
     <script defer src="./js/history.js"></script>
+    <script defer src="./js/event.js"></script>
 </head>
 
 <body>
@@ -94,14 +95,38 @@
                             <span class="material-symbols-outlined">arrow_outward</span>
                         </a>
                     </div>
-                    <a href="#" class="header-top__more">브랜드 더보기</a>
-                    <div class="material-symbols-outlined more-symbol">change_history</div>
+                    <div class="header-top__more">
+                        <a href="#">브랜드 더보기</a>
+                        <div class="material-symbols-outlined more-symbol">change_history</div>
+                        <div class="more-box">
+                            <div class="more-box__inner scroll-custom">
+                                <ul class="more__put">
+                                    <!--header.js-->
+                                    <!-- <li>
+                                        <a href=""><img src="" alt=""></a>
+                                        <a href=""><span></span></a>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <ul class="header-top__login">
                         <li><a href="javascript:void(0)">회원가입</a></li>
                         <li><a href="javascript:void(0)">로그인</a></li>
-                        <li><a href="javascript:void(0)">회원혜택
+                        <li class="benefit">
+                            <a href="javascript:void(0)">회원혜택
                                 <div class="material-symbols-outlined more-symbol">change_history</div>
-                            </a></li>
+                            </a>
+                            <ul>
+                                <li><a href="javascript:void(0)">교보북클럽</a></li>
+                                <li><a href="javascript:void(0)">등급별 회원혜택</a></li>
+                                <li><a href="javascript:void(0)">신규회원 혜택</a></li>
+                                <li><a href="javascript:void(0)">제휴포인트/상품권</a></li>
+                                <li><a href="javascript:void(0)">참좋은교보문고</a></li>
+                                <li><a href="javascript:void(0)">Prestige Lounge</a></li>
+                            </ul>
+                        </li>
                         <li><a href="javascript:void(0)">고객센터</a></li>
                     </ul>
                 </div>
@@ -191,7 +216,9 @@
                             <span>동영상</span></br>
                         </div>
                         <div class="ebook-nav-padding scroll-custom">
-                            <ul class="ebook-nav__put"></ul>
+                            <ul class="ebook-nav__put ebook-nav-category active"></ul>
+                            <ul class="audio-nav__put ebook-nav-category"></ul>
+                            <ul class="video-nav__put ebook-nav-category"></ul>
                         </div>
                         <div class="ebook-shortcut"></div>
                     </div>
@@ -338,7 +365,7 @@
                     <div class="swiper-button-prev best-prev"></div>
                 </div> -->
                 <!-- 일반 -->
-                <div class="inner inner-swiper picks__inner-swiper active">
+                <div class="inner inner-swiper best__inner-swiper active">
                     <div class="swiper mySwiper best_mySwiper best__put">
                         <div class="swiper-wrapper"></div>
                     </div>
@@ -346,7 +373,7 @@
                     <div class="swiper-button-prev best-prev"></div>
                 </div>
                 <!-- 로맨스 -->
-                <div class="inner inner-swiper picks__inner-swiper">
+                <div class="inner inner-swiper best__inner-swiper">
                     <div class="swiper mySwiper best_mySwiper best__put">
                         <div class="swiper-wrapper"></div>
                     </div>
@@ -354,7 +381,7 @@
                     <div class="swiper-button-prev best-prev"></div>
                 </div>
                 <!-- BL -->
-                <div class="inner inner-swiper picks__inner-swiper">
+                <div class="inner inner-swiper best__inner-swiper">
                     <div class="swiper mySwiper best_mySwiper best__put">
                         <div class="swiper-wrapper"></div>
                     </div>
@@ -362,7 +389,7 @@
                     <div class="swiper-button-prev best-prev"></div>
                 </div>
                 <!-- 판타지 -->
-                <div class="inner inner-swiper picks__inner-swiper">
+                <div class="inner inner-swiper best__inner-swiper">
                     <div class="swiper mySwiper best_mySwiper best__put">
                         <div class="swiper-wrapper"></div>
                     </div>
@@ -370,7 +397,7 @@
                     <div class="swiper-button-prev best-prev"></div>
                 </div>
                 <!-- 무협 -->
-                <div class="inner inner-swiper picks__inner-swiper">
+                <div class="inner inner-swiper best__inner-swiper">
                     <div class="swiper mySwiper best_mySwiper best__put">
                         <div class="swiper-wrapper"></div>
                     </div>
@@ -378,7 +405,7 @@
                     <div class="swiper-button-prev best-prev"></div>
                 </div>
                 <!-- 만화 -->
-                <div class="inner inner-swiper picks__inner-swiper">
+                <div class="inner inner-swiper best__inner-swiper">
                     <div class="swiper mySwiper best_mySwiper best__put">
                         <div class="swiper-wrapper"></div>
                     </div>
@@ -386,7 +413,7 @@
                     <div class="swiper-button-prev best-prev"></div>
                 </div>
                 <!-- 오디오북 -->
-                <div class="inner inner-swiper picks__inner-swiper">
+                <div class="inner inner-swiper best__inner-swiper">
                     <div class="swiper mySwiper best_mySwiper best__put">
                         <div class="swiper-wrapper audio-wrapper"></div>
                     </div>
@@ -902,6 +929,7 @@
         <!--history & to-top-->
         <div class="bottom__button">
             <div class="history bg-text">최근 본 콘텐츠</div>
+            <div class="history-btn-count">1</div>
             <a href="#" class="to-top">
                 <div class="material-symbols-outlined to-top__icon">expand_less</div>
                 <div>TOP</div>
@@ -951,6 +979,22 @@
                         <div class="notice-empty">최근 본 상품 및 콘텐츠가 없습니다</div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!--eventModal-->
+        <div class="event-modal">
+            <div class="event-modal__inner inner ">
+                <div class="material-symbols-outlined event-close">close</div>
+                <ul class="put__event scroll-custom-event">
+                    <!-- event.js 
+                    <li>혜택 타이틀
+                        <ul class="img-box">
+                            <li><a><img></a>혜택 이미지</li>
+                            <li><img>혜택 이미지</li>
+                            <li><img>혜택 이미지</li>
+                        </ul>
+                    </li> -->
+                </ul>
             </div>
         </div>
 </body>

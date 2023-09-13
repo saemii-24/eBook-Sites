@@ -32,9 +32,9 @@ menuIcon.addEventListener('click', () => {
 //서비스 전체보기
 const putNav = document.querySelector('.nav__put');
 makeCategory(Allservice, 'service-category', putNav);
-
-function makeCategory(category, categoryClass, putTag) {
-  for (categoryObj of category) { //배열에서 객체(카테고리) 하나씩 꺼내기
+//html 구조 생성 함수
+function makeCategory(categoryList, categoryClass, putTag) {
+  for (categoryObj of categoryList) { //배열에서 객체(카테고리) 하나씩 꺼내기
     const category = document.createElement('li');
     category.setAttribute('class', categoryClass);
     const categoryAnchor = document.createElement('a');
@@ -103,8 +103,28 @@ const ebookCategory = [
   { "스페셜코너": ["선물하기", "교보e캐시", "eBook집중탐구", "헤택 라운지", "이벤트 캘린더", "신간 캘린더", "교보 오리지널", "신간", "RTS"] }
 ];
 
+const audioCategory= [
+  {"일반" : ["인문", "종교", "국어/외국어", "정치/사회", "역사/문화", "과학/공학", "건강/의학", "가정/생활/요리", "여행/취미", "예술/대중문화", "유아", "아동", "청소년", "로맨스"]},
+  {"경제/경영" : ["경제일반", "재테크/금융", "경영일반", "마케팅/세일즈", "창업", "기타"]},
+  {"시/에세이" : ["시", "에세이"]},
+  {"소설" : ["소설"]},
+  {"자기계발" : ["인간관계", "성공/처세", "자기능력계발"]},
+  {"스페셜코너" : ["선물하기", "교보e캐시", "eBook 집중탐구", "혜택 라운지", "이벤트 캘린더", "신간 캘린더", "교보 오리지널", "신간", "RTS"]},
+  ]
+  
+  const videoCategory = [
+  {"학습/자기계발" : ["직무교육", "어학", "자격증", "초중고", "기타"]},
+  {"재테크" : ["기타", "부동산", "주식"]},
+  {"스페셜코너" : ["선물하기", "교보e캐시", "eBook 집중탐구", "혜택 라운지", "이벤트 캘린더", "신간 캘린더", "교보 오리지널", "신간", "RTS"]},
+  ]
+
 const putEbookNav = document.querySelector('.ebook-nav__put');
+const putAudioNav = document.querySelector('.audio-nav__put');
+const putVideoNav = document.querySelector('.video-nav__put');
 makeCategory(ebookCategory, 'ebook-category', putEbookNav);
+makeCategory(audioCategory, 'audio-category', putAudioNav);
+makeCategory(videoCategory, 'video-category', putVideoNav);
+
 
 const ebookShortcut = ["전자도서관", "sam무제한", "교보e캐시", "대여eBook", "학술논문", "북드림", "교보eBook앱 첫 로그인시 1000캐시 증정"];
 const putEbookShortcut = document.querySelector('.ebook-shortcut');
@@ -131,10 +151,16 @@ const ebookLastTitle = document.querySelector(`.ebook-shortcut .shortcut__title-
 ebookLastTitle.remove();
 
 //ebook-tab//
-const ebookTab = document.querySelectorAll('.ebook-tab span')
-ebookTab.forEach(tab=>{
+//navTab 선택에 따라 보여지는 nav가 다르다.
+const ebookTab = document.querySelectorAll('.ebook-tab span');
+const ebookNav = document.querySelectorAll('.ebook-nav-category');
+console.log(ebookNav);
+
+ebookTab.forEach((tab,index)=>{
   tab.addEventListener('click',()=>{
     ebookTab.forEach(tab => tab.classList.remove('active'));
     tab.classList.add('active');
+    ebookNav.forEach(nav => nav.classList.remove('active'));
+    ebookNav[index].classList.add('active');
   })
-})
+})  

@@ -23,7 +23,7 @@ const placeholderData = [
 "샘터 동화상 수상 작품집",
 "'완전 괴물이 되었네' 박영 스릴러",
 "무라카미 하루키 6년 만의 신작 장편!",
-"오래 최고의 반전 스릴러",
+"올해 최고의 반전 스릴러",
 "지금 하루하루가 마땅치 않는 당신에게",
 "왜 엄하게 가르치지 않는가"
 ]
@@ -160,3 +160,40 @@ window.addEventListener('scroll',()=>{
     bottomBtn.classList.remove('active');
   }
 });
+
+//morebrand 토글
+// const moreIcon = document.querySelector('.benefit .more-symbol');
+const benefit = document.querySelector('.benefit');
+
+benefit.addEventListener('click',()=>{
+  benefit.classList.toggle('active');
+})
+
+//more-box html태그 만들기
+const moreBrandList = ["교보문고", "eBook", "sam", "핫트랙스", "매장안내", "톡소다", "스토리", "북모닝", "리딩트리", "퍼플", "창작의날씨", "꾸밍"];
+const putmore = document.querySelector('.more__put');
+
+for(let i=0; i<moreBrandList.length; i++){
+  const morelist = document.createElement('li');
+  const imgAnchor = document.createElement('a');
+  imgAnchor.setAttribute('href', 'javascript:void(0');
+  const img = document.createElement('img')
+  img.setAttribute('src', `./images/brand_${i+1}.png`);
+  img.setAttribute('alt', moreBrandList[i]);
+  const spanAnchor = document.createElement('a');
+  spanAnchor.setAttribute('href', 'javascript:void(0');
+  const span = document.createElement('span');  
+  span.textContent = moreBrandList[i];
+
+  imgAnchor.append(img);
+  spanAnchor.append(span);
+  morelist.append(imgAnchor, spanAnchor);
+  putmore.append(morelist);
+}
+
+//more-box 토글
+const moreBoxTrigger = document.querySelector('.header-top__more>a');
+const moreBox = document.querySelector('.header-top__more')
+moreBoxTrigger.addEventListener('click',()=>{
+  moreBox.classList.toggle('active');
+})
