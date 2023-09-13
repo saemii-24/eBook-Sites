@@ -1,4 +1,4 @@
-const picksCategory = 'ebs 방송교재';
+const picksCategory = '만화';
 const putPicks = document.querySelector('.picks__put');
 
 //로드시 카테고리를 불러온다.

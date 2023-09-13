@@ -190,10 +190,10 @@ const bestCategory = [
   
 const bestInner = document.querySelectorAll('.best__inner-swiper');
 const bestWrapper = document.querySelectorAll('.best .swiper-wrapper');
-console.log(bestWrapper);
+// console.log(bestWrapper);
 
 const tabCategory = document.querySelectorAll('.tab p');
-console.log(tabCategory); 
+// console.log(tabCategory); 
 
 
 /*불러온 bestWrapper에 각 인덱스에 맞는 정보가 불러와진다.*/

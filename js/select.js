@@ -28,7 +28,7 @@ const putSelect = document.querySelector('.select__put');
 
 selectCategory.forEach((selectEl, index) => {
     selectSearch(selectEl, index);
-    console.log(index);
+    // console.log(index);
 });
 
 function selectSearch(searchWord, i) {
@@ -46,7 +46,7 @@ function selectSearch(searchWord, i) {
                 //썸네일이 없는 경우 제외한다.
                 return data.thumbnail != '';
             });
-            console.log(filterData[0].title);
+            // console.log(filterData[0].title);
 
             //상위요소 slide 생성
             const slide = document.createElement("div");
@@ -98,7 +98,7 @@ function selectSearch(searchWord, i) {
             slideEmpasis.append(slideTitle);
             slide.append(slideEmpasis, slideInfo);
             putSelect.append(slide);
-            console.log(putSelect);
+            // console.log(putSelect);
         });
 }
 

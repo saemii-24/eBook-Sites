@@ -14,6 +14,10 @@ const originalList = [
   '아무네 가게',
   '낭패',
   '증발 도깨비불',
+  "들개들의 밤", 
+  "저승 가는 길에는 목욕탕이 있다", 
+  "가해자만 없는 회사", 
+  "교육혁명 2030"
 ];
 
 const putOriginal = document.querySelector('.original__put');

@@ -28,7 +28,7 @@ function newSearch(searchWord) {
       //썸네일이 없는 경우 제외한다.
       return data.thumbnail != "";
     });
-    console.log(filterData);
+    // console.log(filterData);
 
     //첫번째 요소만 불러온다.
     let i = 0;

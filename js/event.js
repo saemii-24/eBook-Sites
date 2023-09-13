@@ -26,7 +26,7 @@ for(eventCategory of eventList){
             eventImg.setAttribute('src', `./images/slider${imgCount}.jpg`);
             eventImg.setAttribute('alt', eventCategory[eventOne][i]);
             imgCount++;
-            
+
             imgAnchor.append(eventImg);
             eventLi.append(imgAnchor);
             imgUl.append(eventLi);
@@ -44,8 +44,11 @@ const eventModalClose = document.querySelector('.event-close');
 
 eventModalOpen.addEventListener('click',()=>{
     eventModal.style.display = 'block';
+    document.body.style.overflow = "hidden";
 });
 eventModalClose.addEventListener('click',()=>{
     eventModal.style.display = 'none';
+    document.body.style.overflow = "unset";
+    
 });
 

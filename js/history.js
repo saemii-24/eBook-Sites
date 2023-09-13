@@ -47,7 +47,8 @@ bookThumb.forEach((book) => {
     }
   )
 });
-console.log(memorybook); //localStorage저장된 값확인
+//localStorage저장된 값확인
+// console.log(memorybook); 
 
 //저장된 값을 이용해 ajax를 사용한다.
 const historyIcon = document.querySelector(".bottom__button .history");
@@ -73,6 +74,8 @@ historyIcon.addEventListener("click", () => {
   //memorybook이 비었는지 확인한다.
   ifEmpty();
   historyCount();
+  //scroll막기
+  document.body.style.overflow = "hidden";
 });
 
 //memoryBook이 비어있으면 비었다는 표시를 해준다.
@@ -92,6 +95,8 @@ function ifEmpty() {
 //modal 닫기
 historyModalClose.addEventListener("click", () => {
   historyModal.classList.remove("active");
+  //스크롤 생성
+  document.body.style.overflow = "unset";
 });
 
 //history 좋아요 버튼 함수 (history 모달 열린 후 실행)
@@ -192,7 +197,6 @@ function historyBox(searchWord) {
 
     const putHistory = document.querySelector(".history__put");
 
-    console.log(data);
 
     //thumbnail만들기
     const thumbnail = document.createElement("img");

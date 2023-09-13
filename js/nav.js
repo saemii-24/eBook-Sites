@@ -154,7 +154,7 @@ ebookLastTitle.remove();
 //navTab 선택에 따라 보여지는 nav가 다르다.
 const ebookTab = document.querySelectorAll('.ebook-tab span');
 const ebookNav = document.querySelectorAll('.ebook-nav-category');
-console.log(ebookNav);
+// console.log(ebookNav);
 
 ebookTab.forEach((tab,index)=>{
   tab.addEventListener('click',()=>{

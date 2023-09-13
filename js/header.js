@@ -61,7 +61,7 @@ inputClose.addEventListener('click',()=>{
 //scroll이 일정 높이를 지나면 고정된다.
 const header = document.querySelector('#header-middle__full-inner');
 let headerHeight = document.querySelector('header').offsetHeight;
-console.log(headerHeight);
+// console.log(headerHeight);
 
 let scroll = window.scrollY;
 window.addEventListener('scroll', ()=>{
