@@ -1,0 +1,619 @@
+@use './module/reset' as reset;
+@use './module/variable' as var;
+@use './module/mixin' as mix;
+
+
+.bold-text {
+    font-weight: 700;
+}
+
+.inner span {
+    margin-bottom: 0px;
+}
+
+.main-info {
+    a,
+    div,
+    span,
+    button {
+        line-height: 20px;
+    }
+    .main-info__inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .this-category {
+            width: 100%;
+            display: flex;
+            color: var.$dark-gray;
+            font-size: 13px;
+            line-height: 20px;
+            margin-top: 20px;
+            font-weight: 500;
+            margin-bottom: 50px;
+            .this-category__sub {
+                @include mix.start;
+                position: relative;
+                cursor: pointer;
+
+                &>span {
+                    margin-right: 4px;
+                }
+
+                button {
+                    width: 15px;
+                    height: 15px;
+                    background-color: #ffffff;
+                    border-radius: 50%;
+                    border: 1px solid var.$border-gray;
+                    text-align: center;
+                    margin-right: 20px;
+                    transition: border 300ms;
+                    cursor: pointer;
+
+                    span {
+                        color: var.$dark-gray;
+                        font-size: 12px;
+                        padding-bottom: 3px;
+                        margin-bottom: 4px;
+                        line-height: 15px;
+                    }
+                }
+
+                &:not(:last-child)::after {
+                    content: "/";
+                    position: absolute;
+                    right: 8px;
+                    bottom: 2px;
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: var.$border-gray;
+                }
+
+                &:hover {
+                    button {
+                        border: 1px solid var.$black;
+
+                        span {
+                            color: var.$black;
+                            font-size: 12px;
+                            margin-top: -11px;
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+        .book-top-info{
+            width: 100%;
+            @include mix.center;
+            flex-direction: column;
+            h3 {
+                font-size: 28px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .book-type {
+                width: 380px;
+                height: 50px;
+                position: relative;
+                margin-bottom: 30px;
+
+                .book-type__none {
+                    background: #f2f2f2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    border-radius: 10px;
+
+                    &>div {
+                        width: 50%;
+                        height: 100%;
+                        color: var.$dark-gray;
+                        font-size: 14px;
+                        text-align: center;
+                        @include mix.center;
+                        flex-direction: column;
+
+                        div:nth-child(2) {
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .book-type__select {
+                    position: absolute;
+                    width: 50%;
+                    height: 100%;
+                    right: 0;
+                    background-color: var.$white;
+                    border: none;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+                    font-size: 13px;
+                    color: var.$dark-blue;
+                    font-weight: 700;
+
+                    div:nth-child(2) {
+                        font-weight: 400;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+        }
+        .this-info {
+            .this-authors {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                a {
+                    font-weight: 500;
+                    font-size: 15px;
+                }
+
+                div {
+                    width: 1.5px;
+                    height: 13px;
+                    background-color: var.$black;
+                }
+            }
+
+            .this-publisher {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 15px;
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 2px;
+                    padding: 0 4px;
+                    padding-top: 1px;
+                    cursor: pointer;
+
+                    span {
+                        font-size: 12px;
+                        line-height: 20px;
+                        font-weight: 700;
+                    }
+
+                    .material-symbols-outlined {
+                        margin-bottom: 1px;
+                    }
+                }
+
+                .publisher {
+                    background-color: var.$white;
+                    border: 1px solid var.$border-gray;
+                    border-radius: 4px;
+                }
+
+                .publisher-shop {
+                    background-color: var.$white;
+                    border: 1px solid var.$dark-blue;
+                    border-radius: 4px;
+
+                    span {
+                        color: var.$dark-blue;
+                    }
+                }
+            }
+
+            .published-date {
+                line-height: 20px;
+                color: var.$middle-gray;
+                font-size: 14px;
+                margin-bottom: 10px;
+                &:last-of-type{
+                    margin-bottom: 25px;
+                }
+            }
+
+            .this-rank {
+                display: flex;
+                gap: 10px;
+                height: 20px;
+                margin-bottom: 30px;
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                img {
+                    display: inline-block;
+                    height: 20px;
+                }
+
+                .bold-text {
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+
+                .rank {
+                    font-size: 13px;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+
+                    span {
+                        font-size: 13px;
+                    }
+
+                    &:not(:last-child)::after {
+                        content: "ꞏ";
+                        font-size: 20px;
+                        position: absolute;
+                        right: -8px;
+                    }
+                }
+            }
+
+            .this-review {
+                width: 330px;
+                border-radius: 10px;
+                border: 1px solid #EAEAEA;
+                display: flex;
+                padding: 20px 0;
+                margin-bottom: 25px;
+                .review {
+                    width: 50%;
+                    @include mix.center;
+                    flex-direction: column;
+                    position: relative;
+
+                    .bold-text {
+                        font-size: 20px;
+                        color: var.$green;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        color: var.$dark-gray;
+                    }
+
+                    img {
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        width: 1px;
+                        height: 30px;
+                        background-color: #EAEAEA;
+                    }
+                }
+
+                .comment {
+                    width: 50%;
+                    @include mix.center;
+                    flex-direction: column;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        margin-bottom: 5px;
+                    }
+
+                    .bold-text {
+                        font-size: 18px;
+                        color: var.$dark-blue;
+                        margin-bottom: 4px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        color: var.$dark-gray;
+                    }
+                }
+            }
+
+            .this-ebook-info {
+                border-top: 1px solid var.$border-gray-light;
+                border-bottom: 1px solid var.$border-gray-light;
+                width: 330px;
+                padding: 16px 0;
+
+                p {
+                    font-size: 14px;
+                }
+
+                li {
+                    font-size: 13px;
+                    color: var.$dark-gray;
+                    position: relative;
+                    text-indent: 8px;
+                    margin-top: 6px;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 2px;
+                        height: 2px;
+                        border-radius: 50%;
+                        background-color: var.$border-gray;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    .tts-info{
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50%;
+                        background-color: var.$white;
+                        border: 1px solid var.$border-gray;
+                    }
+                }
+            }
+
+        }
+
+        .this-thumbnail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+            .this-book {
+                position: relative;
+                width: 380px;
+                display: block;
+                margin-bottom: 20px;
+                box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.12);
+                img {
+                    display: block;
+                    width: 380px;
+                    object-fit: cover;
+                    position: relative;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: inline-block;
+                    width: 60px;
+                    height: 60px;
+                    background: url('../images/eBook_mark.png') center/cover;
+                    top: -10px;
+                    right: -10px;
+                }
+            }
+
+            .preview {
+                position: relative;
+                z-index: 2;
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 12px;
+                letter-spacing: -0.5px;
+                font-weight: 700;
+                border: 1px solid var.$border-gray;
+                background-color: var.$white;
+                cursor: pointer;
+                align-self: flex-end;
+
+                .material-symbols-outlined {
+                    font-weight: 400;
+                    color: var.$dark-gray;
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    background-color: var.$light-gray;
+                }
+            }
+        }
+
+        .this-price {
+            width: 330px;
+
+            .this-price__event {
+                margin-bottom:25px;
+                div {
+                    border: 1px solid var.$dark-blue;
+                    color: var.$dark-blue;
+                    display: inline-block;
+                    font-size: 12px;
+                    padding: 1px 5px;
+                    border-radius: 4px;
+                }
+            }
+
+            .this-price__info {
+                display: grid;
+                grid-template-columns: 50px 1fr 75px;
+                border-top: 1px solid var.$border-gray-light;
+                border-bottom: 1px solid var.$border-gray-light;
+                margin-bottom: 30px;
+                div:nth-child(1){
+                    background: #f2f2f2;
+                    @include mix.center;
+                    font-size: 13px;
+                }
+                div:nth-child(2){
+                    padding: 20px;
+                    .coupon-price{
+                        padding:0px;
+                        margin-top:5px;
+                        margin-bottom: 20px;
+                    }
+                    .origin-price{
+                        text-decoration: line-through;
+                        font-size: 14px;
+                        color: var.$dark-gray;
+                    }
+                    .bold-text{
+                        font-weight: 700;
+                        font-size: 13px;
+                    }
+                    span:nth-child(n+2){
+                        font-size: 24px;
+                    }
+                    .sale{
+                        font-size: 13px;
+                        display: flex;
+                        gap:20px;
+                        p:nth-child(1){
+                            position: relative;
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                right:0;
+                                width: 1px;
+                                height: 10px;
+                                background-color: var.$border-gray;
+                                right: -10px;
+                                top: 5px;
+                            }
+                        }
+                    }
+                }
+                .coupon{
+                    height: 30px;
+                    border:none;
+                    background-color: #5055b1;;
+                    color: var.$white;
+                    font-weight: 700;
+                    font-size: 12px;
+                    border-radius: 4px;
+                    letter-spacing: -0.5px;
+                    margin-top:40px;
+                    cursor: pointer;
+                    span{
+                        margin-bottom: 2px;
+                    }
+                    .material-symbols-outlined{
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .ebook-notice {
+            background-color: rgba(80, 85, 177, 0.06);
+            padding: 18px;
+            padding-left: 24px;
+            border-radius: 10px;
+
+            div{
+                color: var.$dark-blue;
+                font-size: 13px;
+                line-height: 18px;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 50%;
+                    background-color: rgba(80, 85, 177, 0.6);
+                    left: -10px;
+                    top: 8px;
+                }
+
+                .bold-text {
+                    font-weight: 700;
+                    line-height: 20px;
+                    font-size: 13px;
+                }
+            }
+        }
+        .event-box{
+           width: 100%;
+            .event-title{
+                @include mix.between;
+                font-size: 15px;
+                height: 60px
+            }
+            ul{
+                background-color: var.$light-gray;
+                border-radius: 10px;
+                font-size: 12px;
+                padding:20px;
+                width: 330px;
+                li{
+                    a{
+                        color: var.$dark-gray;
+                        line-height: 25px;
+                        display: block;
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        &:hover{
+                            color: var.$dark-blue;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .payment-box{
+            .payment-title{
+                @include mix.between;
+                height: 60px;
+                font-size: 15px;
+            }
+            ul{
+                background-color: var.$light-gray;
+                border-radius: 10px;
+                font-size: 12px;
+                padding:20px;
+                li{
+                    color: var.$dark-gray;
+                    @include mix.between;
+                    div{
+                     line-height: 25px;
+                    }
+                }
+            }
+
+        }
+        .more-info{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+        .more-title{
+            border-bottom: 1px solid var.$border-gray-light;
+            &.active{
+                border-bottom: 1px solid transparent;
+            }
+        }
+        .more-icon{
+            width: 24px;
+            height: 24px;
+            background-color: var.$white;
+            border-radius: 50%;
+            border: 1px solid var.$border-gray;
+            text-align: center;
+            cursor: pointer;
+            span{
+                font-size: 18px;
+                color: var.$dark-gray;
+                font-weight: 400;
+            }
+            &.active{
+                background-color: var.$black;
+                border: 1px solid var.$black;
+                span{
+                    font-size: 18px;
+                    color: var.$white;
+                    font-weight: 400;
+                    transform: rotate(180deg);
+                    margin-top: -4px;
+                    margin-left: 1px;
+                }
+            }
+        }
+    }
+}
+

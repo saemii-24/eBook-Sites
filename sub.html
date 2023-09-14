@@ -9,12 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap"rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,-25" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,-25" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/sub.css">
+
     <link rel="icon" href="./images/favicon.ico">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -23,9 +28,11 @@
     <script defer src="./js/common_header_footer.js"></script>
     <script defer src="./js/common_nav.js"></script>
     <script defer src="./js/common_history.js"></script>
+    <script defer src="./js/sub.js"></script>
 </head>
+
 <body>
-<header>
+    <header>
         <div class="top-banner">
             <span class="material-symbols-outlined close-symbol">close</span>
         </div>
@@ -92,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <ul class="header-top__login">
                         <li><a href="javascript:void(0)">회원가입</a></li>
                         <li><a href="javascript:void(0)">로그인</a></li>
@@ -243,10 +250,177 @@
     <!--main-info-->
     <div class="main-info">
         <div class="inner main-info__inner">
-            <div class="this-category"></div>
-            <div class="this-info"></div>
-            <div class="this-thumbnail"></div>
-            <div class="this-price"></div>
+            <div class="this-category">
+                <div class="this-category__sub">
+                    <span class="material-symbols-outlined">other_houses</span>
+                    <span>eBook</span>
+                    <button>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                </div>
+                <div class="this-category__sub">
+                    <span>역사/문화</span>
+                    <button>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                </div>
+                <div class="this-category__sub">
+                    <span>역사일반</span>
+                    <button>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-top-info">
+                <h3>총 균 쇠</h3>
+                <div class="book-type">
+                    <button class="book-type__select">
+                        <div>eBook</div>
+                        <div>26,820원</div>
+                    </button>
+                    <div class="book-type__none">
+                        <div>
+                            <div>종이책</div>
+                            <div>26,820원</div>
+                        </div>
+                        <div>
+                            <div>eBook</div>
+                            <div>26,820원</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="this-info">
+                <div class="this-authors">
+                    <a href="javascript:void(0)">재레드 다이아몬드 지음</a>
+                    <div></div>
+                    <a href="javascript:void(0)">강주헌 옮김</a>
+                </div>
+                <div class="this-publisher">
+                    <button class="publisher">
+                        <span>김영사</span>
+                        <span class="material-symbols-outlined">navigate_next</span>
+                    </button>
+                    <button class="publisher-shop">
+                        <span class="material-symbols-outlined">storefront</span>
+                        <span>출판사SHOP 바로가기 </span>
+                        <span class="material-symbols-outlined">navigate_next</span>
+                    </button>
+                </div>
+                <p class="published-date">2023년 05월 10일 출간</p>
+                <p class="published-date">종이책: 2023년 05월 10일 출간</p>
+
+                <a href="javascript:void(0)" class="this-rank">
+                    <img src="./images/rank.png" alt="랭크">
+                    <span class="bold-text">주간베스트</span>
+                    <span class="rank">일반 <span class="bold-text">19</span>위</span>
+                    <span class="rank" >역사/문화 <span class="bold-text">1</span>위</span>
+                </a>
+                <a href="javascript:void(0)" class="this-review">
+                    <div class="review">
+                        <p class="bold-text">9.8</p>
+                        <div class="score">
+                            <img src="./images/review.png" alt="리뷰평점">
+                            <img src="./images/review.png" alt="리뷰평점">
+                            <img src="./images/review.png" alt="리뷰평점">
+                            <img src="./images/review.png" alt="리뷰평점">
+                        </div>
+                        <p>(156개의 리뷰)</p>
+                    </div>
+                    <div class="comment">
+                        <img src="./images/quotes.png" alt="quotes">
+                        <p class="bold-text">최고예요</p>
+                        <p>(29%의 구매자)</p>
+                    </div>
+                </a>
+                <div class="this-ebook-info">
+                    <p>eBook 상품 정보</p>
+                    <ul>
+                        <li>파일 정보 epub (41.12MB)</li>
+                        <li>ISBN 9788934931539</li>
+                        <li>
+                            듣기(TTS) 가능
+                            <button class="tts-info">
+                                <span class="material-symbols-outlined">exclamation</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="this-thumbnail">
+                <a href="javascript:void(0)" class="this-book">
+                    <img src="./images/book-thumbnail.jpg" alt="총균쇠 표지">
+                </a>
+                <button class="preview">
+                    <span class="material-symbols-outlined">search</span>
+                    <span>미리보기</span>
+                </button>
+            </div>
+            <div class="this-price">
+                <div class="this-price__event">
+                    <div>이벤트</div>
+                    <div>소득공제</div>
+                </div>
+                <div class="this-price__info">
+                    <div>소장</div>
+                    <div>
+                        <p class="origin-price">정가 : 22,500원</p>
+                        <div class="coupon-price">  
+                            <span class="bold-text">쿠폰적용가</span>
+                            <span class="bold-text">20,250</span><span>원</span>
+                        </div>
+                        <div class="sale">
+                            <p>10% 할인</p>
+                            <p>5%P 적립</p>
+                        </div>
+                    </div>
+                    <button class="coupon">
+                        <span class="material-symbols-outlined">download</span>
+                        <span>할인쿠폰</span>
+                    </button>
+                </div>
+                <div class="ebook-notice">
+                    <div>
+                        이 상품은 <span class="bold-text">배송되지 않는 디지털 상품</span>이며,
+                        교보eBook앱이나 웹뷰어에서 바로 이용가능합니다.
+                    </div>
+                </div>
+                <div class="event-box">
+                    <div class="event-title more-title">
+                        <p class="bold-text">이 상품의 이벤트</p>
+                        <button class="more-icon">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                    <ul class="more-info">
+                        <li><a href="javascript:void(0)">[단독/e캐시] <신비 섬 제주 유산> 단독 선출간 및 기대평 이벤트</a></li>
+                        <li><a href="javascript:void(0)">[단독/e캐시] <와다 하루키의 한국전쟁 전사> 단독 선출간 및 기대평 이벤트</a></li>
+                    </ul>
+                </div>
+                <div class="payment-box">
+                    <div class="payment-title more-title">
+                        <p class="bold-text">카드&결제 혜택</p>
+                        <button class="more-icon">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                    <ul class="more-info">
+                        <li>
+                            <div>5만원 이상 구매 시 추가</div>
+                            <div>2,000P</div>
+                        </li>
+                        <li>
+                            <div>3만원 이상 구매 시, 등급별 2~4% 추가   </div>
+                            <div>최대 416P</div>
+                        </li>
+                        <li>
+                            <div>리뷰 작성 시, e교환권 추가</div>
+                            <div>최대 300원</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
     <!--detail-nav-->
@@ -406,37 +580,41 @@
         </div>
     </footer>
 
-        <!--history & to-top-->
-        <div class="bottom__button">
-            <div class="history bg-text">최근 본 콘텐츠</div>
-            <div class="history-btn-count">1</div>
-            <a href="#" class="to-top">
-                <div class="material-symbols-outlined to-top__icon">expand_less</div>
-                <div>TOP</div>
-            </a>
-        </div>
-        <!--histor modal-->
-        <div class="history-modal">
-            <div class="history-box">
-                <p class="title">최근본</p>
-                <div class="material-symbols-outlined history-close">close</div>
-                <button class="history-category active">전체</button>
-                <button class="history-category">상품</button>
-                <button class="history-category">기획전</button>
-                <button class="history-category">이벤트</button>
-                <button class="history-category">브랜드</button>
-                <div class="history-align">
-                    <div class="history-count">
-                        <span class="count">0</span>
-                        <span>건</span>
-                    </div>
-                    <button class="history-trash">
-                        <svg class="trash-icon" xmlns="http://www.w3.org/2000/svg" stroke="#767676" height="24" viewBox="0 -960 960 960" width="24"><path d="M313.5-177q-23.969 0-40.734-16.766Q256-210.531 256-234.5v-484h-39.5v-25.333H361V-771h238.5v27H744v25.5h-39.5v484.231q0 24.207-16.531 40.738T647-177H313.5ZM679-718.5H281.5v484q0 14 9 23t23 9H647q12 0 22-10t10-22v-484ZM404.5-282H430v-357.5h-25.5V-282Zm126 0H556v-357.5h-25.5V-282Zm-249-436.5v516-516Z"/></svg>
-                        <span>전체삭제</span>
-                    </button>
+    <!--history & to-top-->
+    <div class="bottom__button">
+        <div class="history bg-text">최근 본 콘텐츠</div>
+        <div class="history-btn-count">1</div>
+        <a href="#" class="to-top">
+            <div class="material-symbols-outlined to-top__icon">expand_less</div>
+            <div>TOP</div>
+        </a>
+    </div>
+    <!--histor modal-->
+    <div class="history-modal">
+        <div class="history-box">
+            <p class="title">최근본</p>
+            <div class="material-symbols-outlined history-close">close</div>
+            <button class="history-category active">전체</button>
+            <button class="history-category">상품</button>
+            <button class="history-category">기획전</button>
+            <button class="history-category">이벤트</button>
+            <button class="history-category">브랜드</button>
+            <div class="history-align">
+                <div class="history-count">
+                    <span class="count">0</span>
+                    <span>건</span>
                 </div>
-                <div class="history-book-box scroll-custom">
-                    <div class="history__put ">
+                <button class="history-trash">
+                    <svg class="trash-icon" xmlns="http://www.w3.org/2000/svg" stroke="#767676" height="24"
+                        viewBox="0 -960 960 960" width="24">
+                        <path
+                            d="M313.5-177q-23.969 0-40.734-16.766Q256-210.531 256-234.5v-484h-39.5v-25.333H361V-771h238.5v27H744v25.5h-39.5v484.231q0 24.207-16.531 40.738T647-177H313.5ZM679-718.5H281.5v484q0 14 9 23t23 9H647q12 0 22-10t10-22v-484ZM404.5-282H430v-357.5h-25.5V-282Zm126 0H556v-357.5h-25.5V-282Zm-249-436.5v516-516Z" />
+                    </svg>
+                    <span>전체삭제</span>
+                </button>
+            </div>
+            <div class="history-book-box scroll-custom">
+                <div class="history__put ">
                     <!-- <div class="history-book">
                         <a class="thumbnail" href="">
                             <img src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP0400/ko/20210813/P001501766.jpg/dims/resize/1280" alt="">
@@ -453,29 +631,15 @@
                             </div>
                         </div>
                     </div> -->
-                    </div>
-                    <div class="history-empty">
-                        <div class="material-symbols-outlined exclamation">exclamation</div>
-                        <div class="notice-empty">최근 본 상품 및 콘텐츠가 없습니다</div>
-                    </div>
+                </div>
+                <div class="history-empty">
+                    <div class="material-symbols-outlined exclamation">exclamation</div>
+                    <div class="notice-empty">최근 본 상품 및 콘텐츠가 없습니다</div>
                 </div>
             </div>
         </div>
-        <!--eventModal-->
-        <div class="event-modal">
-            <div class="event-modal__inner inner ">
-                <div class="material-symbols-outlined event-close">close</div>
-                <ul class="put__event scroll-custom-event">
-                    <!-- event.js 
-                    <li>혜택 타이틀
-                        <ul class="img-box">
-                            <li><a><img></a>혜택 이미지</li>
-                            <li><img>혜택 이미지</li>
-                            <li><img>혜택 이미지</li>
-                        </ul>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
+    </div>
+
 </body>
+
 </html>
