@@ -94,17 +94,6 @@ familySiteBtn.addEventListener('click',()=>{
   familySite.classList.toggle('active');
 });
 
-//select notice mark
-const noticeMark = document.querySelector('.title-notice');
-const noticeMarkInfo = document.querySelector('.title-notice__box');
-const noticeClose = document.querySelector('.title-notice__box .close-symbol');
-noticeMark.addEventListener('click',()=>{
-  noticeMarkInfo.classList.toggle('active');
-});
-noticeClose.addEventListener('click',()=>{
-  noticeMarkInfo.classList.remove('active');
-});
-
 //flyMenu
 const flyMenuList = [
   '내게 빌어봐 zip',

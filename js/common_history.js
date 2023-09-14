@@ -16,26 +16,26 @@ if (memorybook !== null && memorybook.length > 0) {
 //memorybook에 title값을 저장한다.
 bookThumb.forEach((book) => {
   book.addEventListener("click", (event) => {
-    let bookTitle = event.currentTarget.querySelector(".title").innerText;
+    if (event.currentTarget.querySelector(".title") !== null) {
+      let bookTitle = event.currentTarget.querySelector(".title").innerText;
 
-    //최근 누른 5개가 중복값 없이 저장된다.
-    if (!memorybook.includes(bookTitle)) {
-      if (memorybook.length >= 5) {
-        memorybook.shift();
-        memorybook.push(bookTitle);
-      } else {
-        memorybook.push(bookTitle);
+      //최근 누른 5개가 중복값 없이 저장된다.
+      if (!memorybook.includes(bookTitle)) {
+        if (memorybook.length >= 5) {
+          memorybook.shift();
+          memorybook.push(bookTitle);
+        } else {
+          memorybook.push(bookTitle);
+        }
       }
-    }
-    //배열 localStorage에 저장
-    localStorage.setItem("book", JSON.stringify(memorybook));
-    //localStorage에 저장된 값 불러오기
-    memorybook = JSON.parse(localStorage.getItem("book"));
-    console.log(memorybook);
-    historyCount();
+      //배열 localStorage에 저장
+      localStorage.setItem("book", JSON.stringify(memorybook));
+      //localStorage에 저장된 값 불러오기
+      memorybook = JSON.parse(localStorage.getItem("book"));
+      historyCount();
 
-    //historyBtn의 배경 첫번째 선택이미지로 교체하기
-    const historyBookFirst = event.currentTarget.querySelector('.thumbnail img');
+      //historyBtn의 배경 첫번째 선택이미지로 교체하기
+      const historyBookFirst = event.currentTarget.querySelector('.thumbnail img');
 
       if (memorybook.length > 0 && memorybook !== null) {
         historyBtn.style.backgroundImage = `url(${historyBookFirst.src})`;
@@ -45,6 +45,7 @@ bookThumb.forEach((book) => {
         historyBtn.style.border = "none";
       }
     }
+  }
   )
 });
 //localStorage저장된 값확인

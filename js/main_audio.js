@@ -1,4 +1,4 @@
-const audioList = [
+  const audioList = [
     '매우 예민한 사람들을 위한 상담소',
     '책과 우연들',
     '수상한 놀이공원 천옥원',
