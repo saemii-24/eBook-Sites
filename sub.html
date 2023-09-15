@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
@@ -29,6 +29,10 @@
     <script defer src="./js/common_nav.js"></script>
     <script defer src="./js/common_history.js"></script>
     <script defer src="./js/sub.js"></script>
+    <script defer src="./js/sub_buy_with.js"></script>
+    <script defer src="./js/sub_best.js"></script>
+    <script defer src="./js/sub_new.js"></script>
+    <script defer src="./js/sub_author_slide.js"></script>
 </head>
 
 <body>
@@ -272,7 +276,19 @@
                 </div>
             </div>
             <div class="book-top-info">
-                <h3>총 균 쇠</h3>
+                <div class="book-top">
+                    <h3>총 균 쇠</h3>
+                    <div class="share">
+                        <div class="material-symbols-outlined share-icon">share</div>
+                        <a href="javascript:void(0)" class="bg-text share__sns">카카오톡</a>
+                        <a href="javascript:void(0)" class="bg-text share__sns">라인</a>
+                        <a href="javascript:void(0)" class="bg-text share__sns">네이버밴드</a>
+                        <a href="javascript:void(0)" class="bg-text share__sns">페이스북</a>
+                        <a href="javascript:void(0)" class="bg-text share__sns">트위터</a>
+                        <a href="javascript:void(0)" class="bg-text share__sns">링크</a>
+                        <a class="material-symbols-outlined share__sns share__sns__close">close</a>
+                    </div>
+                </div>
                 <div class="book-type">
                     <button class="book-type__select">
                         <div>eBook</div>
@@ -340,9 +356,22 @@
                         <li>ISBN 9788934931539</li>
                         <li>
                             듣기(TTS) 가능
-                            <button class="tts-info">
-                                <span class="material-symbols-outlined">exclamation</span>
-                            </button>
+                            <div class="tts-info">
+                                <button>
+                                    <span class="material-symbols-outlined">exclamation</span>
+                                </button>
+                                <div class="tts-info-more">
+                                    <span class="material-symbols-outlined close-icon">close</span>
+                                    <p class="title">TTS 란?</p>
+                                    <p class="sub-title">텍스트를 음성으로 읽어주는 기술입니다.</p>
+                                    <ul>
+                                        <li>전자책의 편집 상태에 따라 본문의 흐름과 다르게 텍스트를​ 읽을 수 있습니다.</li>
+                                        <li>전자책 화면에 표기된 주석 등을 모두 읽어 줍니다.</li>
+                                        <li>이미지 형태로 제작된 전자책 (예 : ZIP 파일)은 TTS 기능을 지원하지 않습니다.</li>
+                                        <li>'교보 ebook' 앱을 최신 버전으로 설치해야 이용 가능합니다. (Android v3.0.26, iOS v3.0.09,PC v1.2 버전 이상)</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -350,10 +379,14 @@
             <div class="this-thumbnail">
                 <a href="javascript:void(0)" class="this-book">
                     <img src="./images/book-thumbnail.jpg" alt="총균쇠 표지">
+                    <button class="preview__big">
+                        <span class="material-symbols-outlined">search</span>
+                        <span>크게보기</span>
+                    </button>
                 </a>
                 <button class="preview">
                     <span class="material-symbols-outlined">search</span>
-                    <span>미리보기</span>
+                    <span class="button-text">미리보기</span>
                 </button>
             </div>
             <div class="this-price">
@@ -425,7 +458,166 @@
     </div>
     <!--detail-nav-->
     <div class="detail-nav">
-        <div class="full__inner"></div>
+        <div class="full__inner">
+            <div class="inner" id="detail-nav__inner">
+                <div>상품정보</div>
+                <div>리뷰 (157)</div>
+                <div>이용안내</div>
+            </div>
+        </div>
+    </div>
+    <!--content-->
+    <div class="content">
+        <div class="inner">
+            <div class="content__right">
+                <div class="buy-with content-box">
+                    <h3 class="content-title">함께 구매한 상품</h3>
+                    <ul class="put__buy-with">
+                        <!-- <sub_buy_with.js>
+                        <li class="buy-with__book">
+                            <a class="thumbnail" href="#">
+                                <img src="" alt="">
+                            </a>
+                            <div class="info">
+                                <a href="javascript:void(0)" class="title"></a>
+                                <div class="author"></div>
+                                <div class="price">
+                                    <span class="sale"></span>
+                                    <span class="bold-text"></span>
+                                    <span class="won"></span>
+                                </div>
+                            </div>
+                        </li>
+                    -->
+                    </ul>
+                </div>
+                <div class="book-detail content-box">
+                    <div class="content-title">
+                        <h3>작품소개</h3>
+                        <ul class="detail-tab">
+                            <li class="active">책소개</li>
+                            <li>목차</li>
+                            <li>책 속으로</li>
+                            <li>출판사 서평</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--author-info-->
+                <div class="author-info">
+                    <div class="content-title">
+                        <h3>작가정보</h3>
+                    </div>
+                    <div class="author-info-box">
+                        <div class="info-top">
+                            <span>저자(글)</span>
+                            <a class="bold-text" href="javascript:void(0)">재레드 다이아몬드</a>
+                            <button class="alarm-btn">
+                                <span class="material-symbols-outlined">notifications_off</span>
+                                <span>OFF</span>
+                            </button>
+                            <button class="detail-btn">
+                                <span class="material-symbols-outlined">info</span>
+                                <span>상세정보</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button>과학자/공학자>생물학자</button>
+                            <button>의사/의료인>생리학/생화학자</button>
+                        </div>
+                        <div>
+                            <img src="./images/author_pic.jpg" alt="재레드 다이아몬드 프로필 사진">
+                            <div>
+                                1937년 미국 보스턴에서 출생했다. 록스버리 라틴스쿨과 하버드대학교를 졸업한 뒤 영국 케임브리지대학교에서
+                                생리학 박사 학위를 받았다. 하버드대학교 생물물리학 연구실을 거쳐 UCLA 생리학 교수로 재직했다.
+                                1964년 뉴기니에서 조류를 관찰하며 진화생물학 연구를 시작했다. 이후 지리학, 생물지리학, 생태계와 인간의
+                                상호작용을 연구하는 환경사(史), 문화인류학 등으로 연구 영역을 확장해나갔다. 현재 UCLA 지리학과 교수로 있으며
+                                여전히 학생들에게 지리학을 가르치고 있다.
+                                2005년 영국 〈프로스펙트〉와 미국 〈포린폴리시〉가 공동 발표한 ‘세계를 이끄는 최고의 지식인’ 중
+                                아홉 번째 인물로 선정되었다. 전미과학상, 타일러 환경공로상, 영국 과학출판상, 일본 코스모스상,
+                                록펠러대학교의 루이스 토머스상을 수상했다. 라틴어, 그리스어, 독일어, 이탈리아어, 인도네시아어
+                                등 수 개 국어를 구사하며, 〈네이처〉 〈내추럴 히스토리〉 〈디스커버〉 등 과학 전문지에 200편이
+                                넘는 글을 기고했다. 대표 저서로 1998년 퓰리처상을 받은 《총, 균, 쇠》를 비롯해, 
+                                《제3의 침팬지》 《문명의 붕괴》 《어제까지의 세계》 《나와 세계》 《대변동》 등이 있다.
+                            </div>
+                        </div>
+                        <div class="author-book-slide">
+                            <div class="slide-inner">
+                                <ul class="put__slide">
+                                    <!-- sub_author_slide.js
+                                    <li class="sub-author-book">
+                                        <a href="javascript:void(0)" class="thumnbnail">
+                                            <img src="" alt="">
+                                        </a>
+                                        <a href="javascript:void(0)" class="title"></a>
+                                    </li> 
+                                    -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content__left">
+                <div class="best-book content-box">
+                    <div class="content-title">
+                        <h3>이 분야의 베스트</h3>
+                        <div class="content-more">
+                            <a href="javascript:void(0)">더보기</a>
+                            <span class="material-symbols-outlined">arrow_forward_ios</span>
+                        </div>
+                    </div>
+                    <ul class="put__best">
+                        <!-- <sub_best.js>
+                        <li class="best__book">
+                            <a class="thumbnail" href="#">
+                                <img src="" alt="">
+                            </a>
+                            <div class="info">
+                                <div class="num"></div>
+                                <a href="">
+                                    <div class="title"></div>
+                                </a>
+                                <div class="author"></div>
+                                <div class="price">
+                                    <span class="bold-text"></span>
+                                    <span class="won"></span>
+                                </div>
+                            </div>
+                        </li>
+                    -->
+                    </ul>
+                </div>
+                <div class="new-book content-box">
+                    <div class="content-title">
+                        <h3>이 분야의 신간</h3>
+                        <div class="content-more">
+                            <a href="javascript:void(0)">더보기</a>
+                            <span class="material-symbols-outlined">arrow_forward_ios</span>
+                        </div>
+                    </div>
+                    <ul class="put__new">
+                <!-- <sub_new.js>
+                        <li class="new__book">
+                            <a class="thumbnail" href="#">
+                                <img src="" alt="">
+                            </a>
+                            <div class="info">
+                                <a href="">
+                                    <div class="title"></div>
+                                </a>
+                                <div class="author"></div>
+                                <div class="price">
+                                    <span class="sale"></span>
+                                    <span class="bold-text"></span>
+                                    <span class="won"></span>
+                                </div>
+                            </div>
+                        </li>
+                    -->
+                </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <!--footer-->
     <footer>
@@ -639,7 +831,13 @@
             </div>
         </div>
     </div>
-
+    <!--preview-modal-->
+    <div class="preview-modal">
+        <div class="material-symbols-outlined close-icon">close</div>
+        <div class="thumbnail">
+            <img src="./images/book-thumbnail.jpg" alt="총균쇠 표지">
+        </div>
+    </div>
 </body>
 
 </html>

@@ -22,6 +22,61 @@ ul, li {
   margin-bottom: 0px;
 }
 
+span, button {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.thumbnail {
+  display: block;
+  width: 116px;
+  border-radius: 12px 12px 12px 0;
+  overflow: hidden;
+  border: 1px solid #EAEAEA;
+  flex-shrink: 0;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.info .title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.info .title:hover {
+  text-decoration: underline;
+}
+.info .author {
+  font-size: 13px;
+  color: #595959;
+  margin-top: 5px;
+}
+.info .price {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.info .price .sale {
+  color: #4dac27;
+  margin-right: 5px;
+}
+.info .price .won {
+  font-weight: 400;
+}
+
 .main-info a,
 .main-info div,
 .main-info span,
@@ -97,10 +152,72 @@ ul, li {
   justify-content: center;
   flex-direction: column;
 }
-.main-info .main-info__inner .book-top-info h3 {
+.main-info .main-info__inner .book-top-info .book-top {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.main-info .main-info__inner .book-top-info .book-top h3 {
   font-size: 28px;
   text-align: center;
-  margin-bottom: 30px;
+  line-height: 44px;
+}
+.main-info .main-info__inner .book-top-info .book-top .share {
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share-icon {
+  display: block;
+  margin-right: 2px;
+  font-size: 20px;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns {
+  display: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns:nth-of-type(1) {
+  background: url("../images/sns_1.png") center/cover no-repeat;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns:nth-of-type(2) {
+  background: url("../images/sns_2.png") center/cover no-repeat;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns:nth-of-type(3) {
+  background: url("../images/sns_3.png") center/cover no-repeat;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns:nth-of-type(4) {
+  background: url("../images/sns_4.png") center/cover no-repeat;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns:nth-of-type(5) {
+  background: url("../images/sns_5.png") center/cover no-repeat;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns:nth-of-type(6) {
+  background: url("../images/sns_6.png") center/cover no-repeat;
+}
+.main-info .main-info__inner .book-top-info .book-top .share .share__sns:nth-of-type(7) {
+  line-height: 28px;
+}
+.main-info .main-info__inner .book-top-info .book-top .share.active {
+  width: auto;
+  padding: 0 10px;
+  gap: 10px;
+}
+.main-info .main-info__inner .book-top-info .book-top .share.active .share-icon {
+  display: none;
+}
+.main-info .main-info__inner .book-top-info .book-top .share.active .share__sns {
+  display: block;
 }
 .main-info .main-info__inner .book-top-info .book-type {
   width: 380px;
@@ -115,6 +232,7 @@ ul, li {
   justify-content: center;
   height: 100%;
   border-radius: 10px;
+  padding-top: 2px;
 }
 .main-info .main-info__inner .book-top-info .book-type .book-type__none > div {
   width: 50%;
@@ -126,6 +244,7 @@ ul, li {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
 }
 .main-info .main-info__inner .book-top-info .book-type .book-type__none > div div:nth-child(2) {
   font-size: 13px;
@@ -142,6 +261,7 @@ ul, li {
   font-size: 13px;
   color: #5a5ea2;
   font-weight: 700;
+  cursor: pointer;
 }
 .main-info .main-info__inner .book-top-info .book-type .book-type__select div:nth-child(2) {
   font-weight: 400;
@@ -172,17 +292,19 @@ ul, li {
   display: flex;
   align-items: center;
   gap: 2px;
-  padding: 0 4px;
+  padding: 0 4px 2px;
   padding-top: 1px;
   cursor: pointer;
 }
 .main-info .main-info__inner .this-info .this-publisher button span {
   font-size: 12px;
   line-height: 20px;
-  font-weight: 700;
+  font-weight: 500;
 }
 .main-info .main-info__inner .this-info .this-publisher button .material-symbols-outlined {
-  margin-bottom: 1px;
+  margin-top: 1px;
+  font-weight: 500;
+  color: #595959;
 }
 .main-info .main-info__inner .this-info .this-publisher .publisher {
   background-color: #ffffff;
@@ -196,6 +318,7 @@ ul, li {
 }
 .main-info .main-info__inner .this-info .this-publisher .publisher-shop span {
   color: #5a5ea2;
+  font-weight: 500;
 }
 .main-info .main-info__inner .this-info .published-date {
   line-height: 20px;
@@ -311,6 +434,9 @@ ul, li {
   position: relative;
   text-indent: 8px;
   margin-top: 6px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 .main-info .main-info__inner .this-info .this-ebook-info li::before {
   position: absolute;
@@ -323,12 +449,84 @@ ul, li {
   top: 50%;
   transform: translateY(-50%);
 }
-.main-info .main-info__inner .this-info .this-ebook-info li .tts-info {
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info button {
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: #ffffff;
   border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms;
+  cursor: pointer;
+  position: relative;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info button span {
+  font-weight: 500;
+  color: #767676;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info .tts-info-more {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #ffffff;
+  top: 24px;
+  padding: 20px;
+  min-width: 330px;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 200ms;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info .tts-info-more .close-icon {
+  position: absolute;
+  font-weight: 500;
+  font-size: 28px;
+  color: #000000;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info .tts-info-more .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info .tts-info-more .sub-title {
+  font-size: 13px;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info .tts-info-more ul {
+  background-color: #F7F7F7;
+  border-radius: 10px;
+  padding: 20px;
+  padding-left: 30px;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info .tts-info-more ul li {
+  text-indent: 0px;
+  position: relative;
+  font-size: 13px;
+  line-height: 19px;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info .tts-info-more ul li::before {
+  background-color: #ccc;
+  left: -10px;
+  top: 8px;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info.active button {
+  background-color: #767676;
+  border: 1px solid #767676;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info.active button span {
+  color: #ffffff;
+}
+.main-info .main-info__inner .this-info .this-ebook-info li .tts-info.active .tts-info-more {
+  visibility: visible;
+  opacity: 1;
 }
 .main-info .main-info__inner .this-thumbnail {
   display: flex;
@@ -341,6 +539,7 @@ ul, li {
   display: block;
   margin-bottom: 20px;
   box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.12);
+  cursor: auto;
 }
 .main-info .main-info__inner .this-thumbnail .this-book img {
   display: block;
@@ -359,10 +558,36 @@ ul, li {
   top: -10px;
   right: -10px;
 }
+.main-info .main-info__inner .this-thumbnail .this-book .preview__big {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 40px;
+  padding: 6px 12px 8px;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+}
+.main-info .main-info__inner .this-thumbnail .this-book .preview__big span {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 13px;
+}
+.main-info .main-info__inner .this-thumbnail .this-book .preview__big span.material-symbols-outlined {
+  font-weight: 500;
+  font-size: 18px;
+}
+.main-info .main-info__inner .this-thumbnail .this-book:hover .preview__big {
+  visibility: visible;
+  opacity: 1;
+}
 .main-info .main-info__inner .this-thumbnail .preview {
   position: relative;
   z-index: 2;
-  padding: 4px 10px;
+  padding: 2px 14px 5px 10px;
   border-radius: 20px;
   font-size: 12px;
   letter-spacing: -0.5px;
@@ -376,6 +601,9 @@ ul, li {
   font-weight: 400;
   color: #595959;
   font-size: 18px;
+}
+.main-info .main-info__inner .this-thumbnail .preview .button-text {
+  font-weight: 500;
 }
 .main-info .main-info__inner .this-thumbnail .preview:hover {
   background-color: #F7F7F7;
@@ -501,6 +729,10 @@ ul, li {
   font-size: 15px;
   height: 60px;
 }
+.main-info .main-info__inner .event-box .event-title p {
+  font-size: 14px;
+  margin-top: 4px;
+}
 .main-info .main-info__inner .event-box ul {
   background-color: #F7F7F7;
   border-radius: 10px;
@@ -527,6 +759,10 @@ ul, li {
   justify-content: space-between;
   height: 60px;
   font-size: 15px;
+}
+.main-info .main-info__inner .payment-box .payment-title p {
+  font-size: 14px;
+  margin-top: 4px;
 }
 .main-info .main-info__inner .payment-box ul {
   background-color: #F7F7F7;
@@ -580,4 +816,210 @@ ul, li {
   transform: rotate(180deg);
   margin-top: -4px;
   margin-left: 1px;
+}
+
+.detail-nav {
+  margin-top: 46px;
+}
+.detail-nav .full__inner {
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+}
+.detail-nav .full__inner .inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 60px;
+  height: 100%;
+}
+.detail-nav .full__inner .inner div {
+  color: #767676;
+  font-size: 16px;
+}
+
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.preview-modal .thumbnail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.preview-modal .close-icon {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.content .inner {
+  display: flex;
+  gap: 56px;
+}
+.content .inner .content-title {
+  font-size: 20px;
+  line-height: 20px;
+}
+.content .inner .content-box {
+  margin-top: 70px;
+}
+
+.content__right {
+  flex-grow: 1;
+}
+.content__right .content-title {
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+.content__right .put__buy-with {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  background-color: #F7F7F7;
+  padding: 40px 30px 70px;
+  border-radius: 20px;
+}
+.content__right .put__buy-with .thumbnail {
+  display: block;
+  width: 116px;
+  border-radius: 12px 12px 12px 0;
+  overflow: hidden;
+  border: 1px solid #EAEAEA;
+}
+.content__right .put__buy-with .thumbnail img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.content__right .put__buy-with .info .title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.content__right .put__buy-with .info .title:hover {
+  text-decoration: underline;
+}
+.content__right .put__buy-with .info .author {
+  font-size: 13px;
+  color: #595959;
+  margin-top: 5px;
+}
+.content__right .put__buy-with .info .price {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.content__right .put__buy-with .info .price .sale {
+  color: #4dac27;
+  margin-right: 5px;
+}
+.content__right .put__buy-with .info .price .won {
+  font-weight: 400;
+}
+
+.content__left {
+  width: 330px;
+}
+.content__left .content-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.content__left .content-title h3 {
+  font-size: 20px;
+}
+.content__left .content-title .content-more {
+  font-size: 13px;
+  color: #595959;
+  display: flex;
+  align-items: center;
+}
+.content__left .content-title .content-more a:hover {
+  text-decoration: underline;
+}
+.content__left .content-title .content-more span {
+  font-size: 10px;
+  margin-left: 2px;
+}
+.content__left .put__best,
+.content__left .put__new {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content__left .put__best .best__book,
+.content__left .put__best .new__book,
+.content__left .put__new .best__book,
+.content__left .put__new .new__book {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.content__left .put__best .best__book .num,
+.content__left .put__best .new__book .num,
+.content__left .put__new .best__book .num,
+.content__left .put__new .new__book .num {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  background: #767676;
+  border-radius: 6px 0 6px 0;
+  padding: 3px 2px 2px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+}
+.content__left .put__best .best__book .num__first,
+.content__left .put__best .new__book .num__first,
+.content__left .put__new .best__book .num__first,
+.content__left .put__new .new__book .num__first {
+  background-color: #4dac27;
+}
+.content__left .put__best .best__book .thumbnail,
+.content__left .put__best .new__book .thumbnail,
+.content__left .put__new .best__book .thumbnail,
+.content__left .put__new .new__book .thumbnail {
+  width: 98px;
+}
+
+.book-detail .content-title {
+  display: flex;
+  gap: 30px;
+}
+.book-detail .content-title .detail-tab {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 30px;
+}
+.book-detail .content-title .detail-tab li {
+  line-height: 20px;
+  position: relative;
+  color: #767676;
+  cursor: pointer;
+}
+.book-detail .content-title .detail-tab li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  top: -1px;
+  right: -16px;
+  color: #EAEAEA;
+}
+.book-detail .content-title .detail-tab li.active {
+  color: #5a5ea2;
+  font-weight: 700;
 }

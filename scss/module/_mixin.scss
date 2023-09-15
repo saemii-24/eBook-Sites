@@ -30,6 +30,12 @@
     justify-content: center;
 }
 
+@mixin transform__center{
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
 @mixin title__big{
     font-family: "Noto Sans KR";
     font-weight: 600;
