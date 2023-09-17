@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>교보 eBook 웰컴 - 교보문고</title>
+    <title>총 균 쇠 | 재레드 다이아몬드 | 김영사- 교보ebook</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +29,11 @@
     <script defer src="./js/common_nav.js"></script>
     <script defer src="./js/common_history.js"></script>
     <script defer src="./js/sub.js"></script>
-    <script defer src="./js/sub_buy_with.js"></script>
+    <script defer src="./js/sub_data.js"></script>
+    <!-- <script defer src="./js/sub_buy_with.js"></script>
     <script defer src="./js/sub_best.js"></script>
     <script defer src="./js/sub_new.js"></script>
-    <script defer src="./js/sub_author_slide.js"></script>
+    <script defer src="./js/sub_author_slide.js"></script> -->
 </head>
 
 <body>
@@ -501,9 +502,58 @@
                             <li>출판사 서평</li>
                         </ul>
                     </div>
+                    <div class="book-detail-box active">
+                        <div class="detail-list">
+                            <h6>이 상품이 속한 분야</h6>
+                            <a class="detail-info-sub" href="javascript:void(0)">eBook > 역사/문화 > 역사일반</a>   
+                        </div>
+                        <hr class="divide-detail">
+                        <div class="detail-list">
+                            <h6>수상내역/미디어추천</h6>
+                            <a class="detail-info-sub" href="javascript:void(0)">미디어 추천도서 > 주요일간지소개도서 > 한겨레신문 > 2023년 8월 2주 선정</a>   
+                        </div>
+                        <hr class="divide-detail">
+                        <div class="detail-list book-content-box fold_content">
+                            <p class="book-content-sub put__introduce">
+                                <!--data.js / 책소개-->
+                            </p>
+                            <img src="./images/book-content.jpg" alt="총균쇠 책소개">
+                        </div>
+                        <div class="fold-btn">
+                            <span class="fold-text">펼치기</span>
+                            <span class="material-symbols-outlined fold-icon">expand_more</span>
+                        </div>
+                    </div>
+                    <div class="book-detail-box">
+                        <p class="put__category fold_content">
+                            <!--data.js / 목차-->
+                        </p>
+                        <div class="fold-btn">
+                            <span class="fold-text">펼치기</span>
+                            <span class="material-symbols-outlined fold-icon">expand_more</span>
+                        </div>
+                    </div>
+                    <div class="book-detail-box">
+                        <p class="put__preview fold_content">
+                            <!--data.js / 책속으로-->
+                        </p>
+                        <div class="fold-btn">
+                            <span class="fold-text">펼치기</span>
+                            <span class="material-symbols-outlined fold-icon">expand_more</span>
+                        </div>
+                    </div>
+                    <div class="book-detail-box">
+                        <p class="put__publish fold_content">
+                            <!--data.js / 출판사 서평-->
+                        </p>
+                        <div class="fold-btn">
+                            <span class="fold-text">펼치기</span>
+                            <span class="material-symbols-outlined fold-icon">expand_more</span>
+                        </div>
+                    </div>
                 </div>
                 <!--author-info-->
-                <div class="author-info">
+                <div class="author-info content-box">
                     <div class="content-title">
                         <h3>작가정보</h3>
                     </div>
@@ -512,46 +562,61 @@
                             <span>저자(글)</span>
                             <a class="bold-text" href="javascript:void(0)">재레드 다이아몬드</a>
                             <button class="alarm-btn">
-                                <span class="material-symbols-outlined">notifications_off</span>
+                                <span class="bg-text">알람켜기</span>
                                 <span>OFF</span>
                             </button>
                             <button class="detail-btn">
-                                <span class="material-symbols-outlined">info</span>
+                                <span class="bg-text">상세정보</span>
                                 <span>상세정보</span>
                             </button>
                         </div>
-                        <div>
+                        <div class="author-category">
                             <button>과학자/공학자>생물학자</button>
                             <button>의사/의료인>생리학/생화학자</button>
                         </div>
-                        <div>
-                            <img src="./images/author_pic.jpg" alt="재레드 다이아몬드 프로필 사진">
-                            <div>
-                                1937년 미국 보스턴에서 출생했다. 록스버리 라틴스쿨과 하버드대학교를 졸업한 뒤 영국 케임브리지대학교에서
-                                생리학 박사 학위를 받았다. 하버드대학교 생물물리학 연구실을 거쳐 UCLA 생리학 교수로 재직했다.
-                                1964년 뉴기니에서 조류를 관찰하며 진화생물학 연구를 시작했다. 이후 지리학, 생물지리학, 생태계와 인간의
-                                상호작용을 연구하는 환경사(史), 문화인류학 등으로 연구 영역을 확장해나갔다. 현재 UCLA 지리학과 교수로 있으며
-                                여전히 학생들에게 지리학을 가르치고 있다.
-                                2005년 영국 〈프로스펙트〉와 미국 〈포린폴리시〉가 공동 발표한 ‘세계를 이끄는 최고의 지식인’ 중
-                                아홉 번째 인물로 선정되었다. 전미과학상, 타일러 환경공로상, 영국 과학출판상, 일본 코스모스상,
-                                록펠러대학교의 루이스 토머스상을 수상했다. 라틴어, 그리스어, 독일어, 이탈리아어, 인도네시아어
-                                등 수 개 국어를 구사하며, 〈네이처〉 〈내추럴 히스토리〉 〈디스커버〉 등 과학 전문지에 200편이
-                                넘는 글을 기고했다. 대표 저서로 1998년 퓰리처상을 받은 《총, 균, 쇠》를 비롯해, 
-                                《제3의 침팬지》 《문명의 붕괴》 《어제까지의 세계》 《나와 세계》 《대변동》 등이 있다.
+                        <div class="author-detail">
+                            <div class="author-picture bg-text">재레드 다이아몬드 사진</div>
+                            <div class="author-detail-more">
+                                <div class="put__author fold_content">
+                                    <!--sub_data.js / 작가정보-->
+                                </div>
+                                <div class="fold-btn">
+                                    <span class="fold-text">펼치기</span>
+                                    <span class="material-symbols-outlined fold-icon">expand_more</span>
+                                </div>
                             </div>
                         </div>
                         <div class="author-book-slide">
-                            <div class="slide-inner">
-                                <ul class="put__slide">
-                                    <!-- sub_author_slide.js
-                                    <li class="sub-author-book">
+                            <div class="swiper mySwiper author_mySwiper slide-inner">
+                                <ul class="swiper-wrapper put__slide">
+                                    <!-- <li class="swiper-slide">
                                         <a href="javascript:void(0)" class="thumnbnail">
                                             <img src="" alt="">
                                         </a>
                                         <a href="javascript:void(0)" class="title"></a>
-                                    </li> 
-                                    -->
+                                    </li> -->
                                 </ul>
+                                <div class="swiper-scrollbar"></div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="translator-info-box">
+                        <div class="info-top">
+                            <span>번역</span>
+                            <a class="bold-text" href="javascript:void(0)">강주헌</a>
+                            <button class="detail-btn">
+                                <span class="bg-text">상세정보</span>
+                                <span>상세정보</span>
+                            </button>
+                        </div>
+                        <div class="author-category">
+                            <button>번역가/통역사>프랑스어</button>
+                        </div>
+                        <div class="author-detail">
+                            <div class="author-detail-more">
+                                <div class="put__translator">
+                                    <!--sub_data.js / 번역정보-->
+                                </div>
                             </div>
                         </div>
                     </div>

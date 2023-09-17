@@ -44,3 +44,35 @@ previewBtn.addEventListener('click',()=>{
 previewClose.addEventListener('click',()=>{ 
     previewModal.style.display='none';
 });
+
+//author-more
+const foldBtns = document.querySelectorAll('.fold-btn');
+foldBtns.forEach((foldBtn)=>{
+    foldBtn.addEventListener('click',(event)=>{
+        const thisBtn = event.currentTarget;
+        const foldContent = thisBtn.previousElementSibling;       
+        const foldText = thisBtn.querySelector('.fold-text');
+        const foldIcon = thisBtn.querySelector('.fold-icon');
+        console.log(foldContent);
+        foldContent.classList.toggle('expand');
+        if(foldContent.classList.contains('expand')){
+            foldText.innerText = '접기';
+            foldIcon.innerText = 'expand_less';
+        }else{
+            foldText.innerText = '펼치기';
+            foldIcon.innerText = 'expand_more';
+        }
+    });
+})
+//작품소개 tab
+const tabs = document.querySelectorAll('.detail-tab li');
+const tabContents = document.querySelectorAll('.book-detail-box');
+
+tabs.forEach((tab, index)=>{
+    tab.addEventListener('click',(event)=>{
+        tabs.forEach((tab)=> tab.classList.remove('active'));
+        tabContents.forEach((content)=> content.classList.remove('active'));
+        event.target.classList.add('active');
+        tabContents[index].classList.add('active');
+    });
+});

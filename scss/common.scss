@@ -165,6 +165,38 @@ h1{
 .scroll-custom-event::-webkit-scrollbar-thumb {
     background: #000000; 
 }
+//fold_btn
+.fold-btn{
+    cursor: pointer;
+    margin-top:15px;
+    // background-color: red;
+    @include mix.center;
+    gap:6px;
+        .fold-text{
+            font-size: 14px;
+            color: var.$middle-gray;
+            margin-bottom: 2px;
+        }
+        .fold-icon{
+            background-color: var.$white;
+            color: var.$middle-gray;
+            font-weight: 500;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            border: 1px solid var.$border-gray;
+        }
+        &:hover{
+            .fold-text{
+             text-decoration: underline;
+            }
+        }
+   }
+
+
 
 //Header//
 
@@ -1248,7 +1280,7 @@ text {
 
 //fixed로 만들어주기//
 #header-middle__full-inner {
-    border-bottom: 1px solid var.$hr;
+    border-bottom: 1px solid var.$border-gray;
 
     &.active {
         position: fixed;
@@ -1322,7 +1354,7 @@ footer {
     margin-top: 150px;
 
     .full-inner {
-        border-top: 1px solid var.$hr;
+        border-top: 1px solid var.$border-gray;
 
         .inner {
             .footer__info1 {
