@@ -207,6 +207,7 @@ h3{
                         .share__sns{
                             display: block;
                         }
+
                     }
                 }
             }
@@ -1717,6 +1718,7 @@ h3{
                     display: flex;
                     width: 100%;
                     position: relative;
+                    height: 40px;
                     .thumbup-icon{
                         font-weight: 300;
                         color:var.$white;
@@ -1780,7 +1782,7 @@ h3{
                             }
                             .share__sns__close{
                                 color: var.$black;
-                                font-weight: 300;
+                                font-weight: 400;
                             }
                         }
                     }

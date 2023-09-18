@@ -1649,6 +1649,7 @@ h3 {
   display: flex;
   width: 100%;
   position: relative;
+  height: 40px;
 }
 .archiving-note .archiving-group .archiving-box .main-box .box-top .thumbup-icon {
   font-weight: 300;
@@ -1713,7 +1714,7 @@ h3 {
 }
 .archiving-note .archiving-group .archiving-box .main-box .box-top .share.active .share__sns__close {
   color: #000000;
-  font-weight: 300;
+  font-weight: 400;
 }
 .archiving-note .archiving-group .archiving-box .main-box .box-middle {
   height: 120px;
