@@ -1176,7 +1176,7 @@ text {
 }
 
 #header-middle__full-inner {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #EAEAEA;
 }
 #header-middle__full-inner.active {
   position: fixed;
@@ -1235,7 +1235,7 @@ footer {
   margin-top: 150px;
 }
 footer .full-inner {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #EAEAEA;
 }
 footer .full-inner .inner .footer__info1 {
   display: flex;

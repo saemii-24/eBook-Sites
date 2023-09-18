@@ -76,3 +76,14 @@ tabs.forEach((tab, index)=>{
         tabContents[index].classList.add('active');
     });
 });
+
+//archiving-notice
+const archivingContent = document.querySelector('.archiving-detail');
+const archivingOpen = document.querySelector('.archiving .notice-icon')
+const archivingClose = document.querySelector('.archiving .close-icon ')
+archivingOpen.addEventListener('click',()=>{
+    archivingContent.classList.add('active');
+});
+archivingClose.addEventListener('click',()=>{
+    archivingContent.classList.remove('active');
+});

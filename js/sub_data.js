@@ -47,26 +47,45 @@ putPublish.innerText = publish;
 
 
 
-// callCSV('./data/ebook_guide.csv',guideObj); //ebook guide 정보를 불러온다.
-// console.log(guideObj);
-// const {
-//   단말기안내: device,
-//   배상안내: compensation,
-//   용량제한안내: capacity,
-//   이용안내: howToUse,
-// } = guideObj;
-// console.log(device);
+callCSV('./data/ebook_guide.csv',guideObj); //ebook guide 정보를 불러온다.
+console.log(guideObj);
+const {
+  구매안내: purchase,
+  단말기안내: device,
+  배상안내: compensation,
+  용량제한안내: capacity,
+  이용안내: use,
+} = guideObj;
+
+const guideArr = [purchase, device, capacity, use, compensation];
+const putGuide = document.querySelectorAll('.put__guide');
 
 
-// const putDevice = document.querySelector('.put_device');
-// makeLiTag(putDevice, device);
+guideArr.forEach((guide,index)=>{
+  makeLiTag(putGuide[index], guide);
+});
 
-// function makeLiTag(htmlTag, data){
-//   const splitData = data.split('\n');
-//   console.log(splitData);
-//   for(value of splitData){
-//     const liTag = document.createElement( 'li' );
-//     liTag.innerText = value;
-//     htmlTag.append(liTag);
-//   }
-// }
+function makeLiTag(htmlTag, data){
+  const splitData = data.split('\r\n');
+  console.log(splitData);
+  for(value of splitData){
+    const liTag = document.createElement( 'li' );
+    liTag.innerText = value;
+    htmlTag.append(liTag);
+  }
+}
+
+//makeBtn
+/*<button>
+  <span>바로가기</span>
+  <span class="material-symbols-outlined">navigate_next</span>
+</button>*/
+
+const spanText = $("<span>", {"class": "btn-text", "text": "바로가기"});
+const spanIcon = $("<span>", {"class": "btn-icon, material-symbols-outlined", "text": "navigate_next"});
+const shortcutBtn = $("<button>", {"class": "shortcut"});
+const putBtn = document.querySelector('.use-detail li:nth-of-type(7)');
+
+spanText.appendTo(shortcutBtn);
+spanIcon.appendTo(shortcutBtn);
+shortcutBtn.appendTo(putBtn);

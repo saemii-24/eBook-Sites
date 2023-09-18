@@ -29,11 +29,12 @@
     <script defer src="./js/common_nav.js"></script>
     <script defer src="./js/common_history.js"></script>
     <script defer src="./js/sub.js"></script>
-    <script defer src="./js/sub_data.js"></script>
+    <!-- <script defer src="./js/sub_data.js"></script> -->
     <!-- <script defer src="./js/sub_buy_with.js"></script>
     <script defer src="./js/sub_best.js"></script>
     <script defer src="./js/sub_new.js"></script>
     <script defer src="./js/sub_author_slide.js"></script> -->
+    <script defer src="./js/sub_archiving.js"></script>
 </head>
 
 <body>
@@ -620,6 +621,204 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <!--banner-->
+                <a href="javascript:void(0)">
+                    <img class="bottom__banner content-box" src="./images/sub_bottom_banner.jpg" alt="교보문고 문장 아카이빙 플랫폼 출시">
+                </a>
+                <!--archiving-->
+                <div class="archiving content-box">
+                    <div class="content-title">
+                        <h3>문장수집 (<span class="count">6</span>)</h3>
+                        <div class="archiving-detail">
+                            <div class="notice-icon"></div>
+                            <div class="archiving-notice">
+                                <p class="notice-title">문장수집 안내</p>
+                                <span class="material-symbols-outlined close-icon">close</span>
+                                <p class="notice-content">문장수집은 고객님들이 직접 선정한 책의 좋은 문장을 보여 주는 교보문고의 새로운 서비스 입니다. 교보eBook 앱에서 도서 열람 후 문장 하이라이트 하시면 직접 타이핑 하실 필요 없이 보다 편하게 남길 수 있습니다. 마음을 두드린 문장들을 기록하고 좋은 글귀들은 ‘좋아요’ 하여 모아보세요. 도서 문장과 무관한 내용 등록 시 별도 통보없이 삭제될 수 있습니다.</p>
+                                <ul>
+                                    <h6>리워드 안내</h6>
+                                    <li>구매 후 90일 이내에 문장 수집 등록 시 e교환권 100원을 적립해 드립니다.</li>
+                                    <li>e교환권은 적립일로부터 180일 동안 사용 가능합니다.</li>
+                                    <li>리워드는 1,000원 이상 eBook에 한해 다운로드 완료 후 문장수집 등록 시 제공됩니다.</li>
+                                    <li>리워드는 한 상품에 최초 1회만 제공됩니다.</li>
+                                    <li>sam 이용권 구매 상품/주문취소/환불 시 리워드 대상에서 제외됩니다.</li>
+                                </ul>
+                            </div>
+                        </div>    
+                        <ul class="archiving-tab">
+                            <li class="active">전체</li>
+                            <li>eBook</li>
+                            <li>종이책</li>
+                        </ul>
+                        <button class="my-archiving">내 독서기록</button>
+                        <button class="write-archiving">
+                            <span class="material-symbols-outlined">border_color
+                                </span>
+                            <span>문장수집 작성</span>
+                        </button>
+                    </div>
+                    <p>* 구매 후 문장수집 작성 시, e교환권 100원 적립</p>
+                    <div class="archiving-note">
+                        <!--3개의 archiving-box group 시작-->
+                        <ul class="archiving-group">
+                            <!-- <li class="archiving-box">
+                                <div class="main-box">
+                                    <div class="box-top">
+                                        <span class="material-symbols-outlined thumbup-icon">thumb_up</span>
+                                        <span class="thumb-up__count"></span>
+                                        <div class="share">
+                                            <div class="material-symbols-outlined share-icon">share</div>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">카카오톡</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">라인</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">네이버밴드</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">페이스북</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">트위터</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">링크</a>
+                                            <a class="material-symbols-outlined share__sns share__sns__close">close</a>
+                                        </div>
+                                    </div>
+                                    <div class="box-middle archive">
+                                    </div>
+                                    <button class="download-btn box-bottom">
+                                        <span class="material-symbols-outlined">download</span>
+                                        <span>다운로드</span>
+                                    </button>
+                                </div>
+                                <div class="sub-box">
+                                    <span class="archiving-id"></span>
+                                    <span class="archiving-date"></span>
+                                </div>
+                            </li>
+                            <li class="archiving-box">
+                                <div class="main-box">
+                                    <div class="box-top">
+                                        <span class="material-symbols-outlined thumbup-icon">thumb_up</span>
+                                        <span class="thumb-up__count"></span>
+                                        <div class="share">
+                                            <div class="material-symbols-outlined share-icon">share</div>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">카카오톡</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">라인</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">네이버밴드</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">페이스북</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">트위터</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">링크</a>
+                                            <a class="material-symbols-outlined share__sns share__sns__close">close</a>
+                                        </div>
+                                    </div>
+                                    <div class="box-middle archive">
+                                    </div>
+                                    <button class="download-btn">
+                                        <span class="material-symbols-outlined">download</span>
+                                        <span>다운로드</span>
+                                    </button>
+                                </div>
+                                <div class="sub-box">
+                                    <span class="archiving-id"></span>
+                                    <span class="archiving-date"></span>
+                                </div>
+                            </li>
+                            <li class="archiving-box">
+                                <div class="main-box">
+                                    <div class="box-top">
+                                        <span class="material-symbols-outlined thumbup-icon">thumb_up</span>
+                                        <span class="thumb-up__count"></span>
+                                        <div class="share">
+                                            <div class="material-symbols-outlined share-icon">share</div>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">카카오톡</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">라인</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">네이버밴드</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">페이스북</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">트위터</a>
+                                            <a href="javascript:void(0)" class="bg-text share__sns">링크</a>
+                                            <a class="material-symbols-outlined share__sns share__sns__close">close</a>
+                                        </div>
+                                    </div>
+                                    <div class="box-middle archive">
+                                    </div>
+                                    <button class="download-btn">
+                                        <span class="material-symbols-outlined">download</span>
+                                        <span>다운로드</span>
+                                    </button>
+                                </div>
+                                <div class="sub-box">
+                                    <span class="archiving-id"></span>
+                                    <span class="archiving-date"></span>
+                                </div>
+                            </li> -->
+                        </ul>
+                        <!--3개의 archiving-box group 끝-->
+                    </div>
+                    <ul class="archiving-number put__number">
+                        <!-- <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li> -->
+                    </ul>
+                </div>
+                <!--ebook-guide-->
+                <div class="ebook-guide content-box fold_content">
+                    <div class="content-title">
+                        <h3>eBook 구매/이용 안내</h3>
+                    </div>
+                    <ul class="purchase put__guide">
+                        <!--sub_data.js / 이용안내-->
+                    </ul>
+                    <ul class="device put__guide">
+                        <!--sub_data.js / 단말기안내-->
+                        <h6>단말기 안내</h6>
+                    </ul>
+                    <ul class="capacity put__guide">
+                        <!--sub_data.js / 용랑제한안내-->
+                        <h6>콘텐츠 다운로드 열람 시 용량 제한 안내</h6>
+                    </ul>
+                    <ul class="use">
+                        <!--sub_data.js / 이용안내-->
+                        <h6>이용 안내</h6>
+                        <ul class="put__guide use-detail"></ul>
+                        <ul class="ePub">
+                            <li>
+                                <h6 class="ePub-first">ePUB이란?</h6>
+                                eBook 파일과 단말기 간의 호환성 문제를 해소하기 위해 지정된 국제 표준 파일입니다.<br>
+                                글자크기, 글꼴, 줄간격 조정이 가능하여 최적의 독서환경을 제공합니다.
+                            </li>
+                            <li>
+                                <h6>PDF란?</h6>
+                                종이책의 판형과 편집 디자인을 그대로 디지털화 한 eBook 파일입니다.<br>
+                                글자크기, 글꼴, 줄간격 조정 대신 페이지 축소/확대로 이용 가능합니다.<br>
+                                <p>* 참고 : PDF는 주석 기능(형광펜,메모 등)을 제공하지 않습니다.</p>
+                            </li>
+                            <li>
+                                <h6>ZIP이란?</h6>
+                                만화 컨텐츠에 최적화하여 다수의 이미지를 압축한 만화 전용 서비스 파일입니다.<br>
+                                이미지 축소/확대로 이용이 가능하며 책갈피 기능이 제공됩니다.<br>
+                            </li>
+                            <li>
+                                <h6>MP3란?</h6>
+                                텍스트가 없는 음원 파일 형식으로, 오디오북의 경우 MP3 파일로 구성됩니다.
+                            </li>
+                        </ul>
+                    </ul>
+                    <ul class="refund">
+                        <h6>반품/교환/환불 안내</h6>
+                        <li>eBook 상품은 구매 후 다운로드 또는 스트리밍 재생을 하지 않은 경우에 한해 구매일로부터 7일 이내 주문 취소가 가능합니다.<br>
+                            (오디오북 및 동영상은 회차 구성상품으로 해당 상품의 1개 이상의 회차 다운로드 또는 스트리밍 재생 이력이 있는 경우 취소 불가)</li>
+                        <li>
+                            디지털 교보문고의 전산오류를 제외한 고객님의 개인적인 사정으로 인한 환불 및 교환은 불가능합니다. 또한, 정액권과 이용권 사용기간 연장은 불가능합니다.
+                        </li>
+                        <li>
+                            고객센터 > 1:1상담 > <a href="javascript:void(0)">반품/교환/환불</a>을 통해 신청 가능하고, 마이룸 > <a href="javascript:void(0)">교환/반품</a> 내역에서 확인 가능합니다.
+                        </li>
+                        <li>eBook 상품은 구매 후 다운로드 받은 경우 주문 취소가 불가능합니다.</li>
+                        <li>오 등록된 상품인 경우 별도의 고지 없이 상품판매 중단/회수 등의 작업이 진행됩니다.</li>
+                    </ul>
+                    <ul class="compensation put__guide">
+                        <!--sub_data.js / 배상안내-->
+                        <h6>소비자 피해보상 환불지연에 따른 배상</h6>
+                    </ul>
+                </div>
+                <div class="fold-btn">
+                    <span class="fold-text">펼치기</span>
+                    <span class="material-symbols-outlined fold-icon">expand_more</span>
                 </div>
             </div>
             <div class="content__left">

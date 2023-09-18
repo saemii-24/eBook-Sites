@@ -1123,6 +1123,163 @@ h3 {
   height: auto;
 }
 
+.bottom__banner {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.archiving .content-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.archiving .content-title .count {
+  margin-top: -5px;
+  display: inline-block;
+}
+.archiving .content-title .archiving-detail {
+  position: relative;
+}
+.archiving .content-title .archiving-detail.active .notice-icon {
+  background: url("../images/mark__dark.png") center/cover no-repeat;
+}
+.archiving .content-title .archiving-detail.active .archiving-notice {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.archiving .content-title .archiving-detail .notice-icon {
+  background: url("../images/mark.png") center/cover no-repeat;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 6px;
+  margin-top: 6px;
+}
+.archiving .content-title .archiving-detail .archiving-notice {
+  position: absolute;
+  width: 330px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+}
+.archiving .content-title .archiving-detail .archiving-notice .notice-title {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 26px;
+}
+.archiving .content-title .archiving-detail .archiving-notice .close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: 400;
+  font-size: 26px;
+  margin-top: -1px;
+  cursor: pointer;
+}
+.archiving .content-title .archiving-detail .archiving-notice .notice-content {
+  font-size: 13px;
+  line-height: 19px;
+  margin-top: 10px;
+  word-break: break-all;
+}
+.archiving .content-title .archiving-detail .archiving-notice ul h6 {
+  margin-top: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.archiving .content-title .archiving-detail .archiving-notice ul li {
+  font-size: 13px;
+  margin-left: 10px;
+  color: #595959;
+  margin-bottom: 6px;
+  position: relative;
+}
+.archiving .content-title .archiving-detail .archiving-notice ul li:last-child {
+  margin-bottom: 0px;
+}
+.archiving .content-title .archiving-detail .archiving-notice ul li::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #595959;
+  opacity: 0.6;
+  top: 7px;
+  left: -10px;
+  border-radius: 50%;
+}
+.archiving .content-title .archiving-tab {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 30px;
+  margin-left: 25px;
+  margin-right: auto;
+}
+.archiving .content-title .archiving-tab li {
+  line-height: 20px;
+  position: relative;
+  color: #767676;
+  cursor: pointer;
+}
+.archiving .content-title .archiving-tab li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  top: -1px;
+  right: -16px;
+  color: #EAEAEA;
+}
+.archiving .content-title .archiving-tab li.active {
+  color: #5a5ea2;
+  font-weight: 700;
+}
+.archiving .content-title .my-archiving {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-right: 6px;
+  padding: 9px 15px 10px;
+  border-radius: 6px;
+  line-height: 20px;
+}
+.archiving .content-title .my-archiving:hover {
+  background-color: #F7F7F7;
+}
+.archiving .content-title .write-archiving {
+  background-color: #5055b1;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 9px 15px 10px;
+  border-radius: 6px;
+  line-height: 20px;
+}
+.archiving .content-title .write-archiving .material-symbols-outlined {
+  font-weight: 300;
+}
+.archiving .content-title .write-archiving:hover {
+  background-color: #2c307c;
+}
+.archiving .content-title.active .notice-icon {
+  background: url("../images/mark__dark.png") center/cover no-repeat;
+}
+.archiving > p {
+  font-size: 13px;
+  color: #595959;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
 .translator-info-box {
   background-image: none;
   background-color: #F7F7F7;
@@ -1339,4 +1496,287 @@ h3 {
 .author-info .author-info-box .author-book-slide .slide-inner .swiper-scrollbar .swiper-scrollbar-drag,
 .author-info .translator-info-box .author-book-slide .slide-inner .swiper-scrollbar .swiper-scrollbar-drag {
   background: #000000;
+}
+
+.ebook-guide {
+  height: 382px;
+  overflow: hidden;
+}
+.ebook-guide h6 {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.ebook-guide > ul {
+  padding: 30px 0 18px;
+  border-top: 1px solid #EAEAEA;
+}
+.ebook-guide > ul:nth-of-type(1) {
+  border-top: 1px solid #000000;
+  margin-top: 25px;
+}
+.ebook-guide > ul > li {
+  font-size: 14px;
+  color: #595959;
+  margin: 10px 0;
+  margin-left: 10px;
+  position: relative;
+  line-height: 22px;
+}
+.ebook-guide > ul > li::before {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #595959;
+  opacity: 0.6;
+  left: -10px;
+  top: 10px;
+}
+.ebook-guide > ul a {
+  font-weight: 500;
+  text-decoration: underline;
+  color: #000000;
+}
+.ebook-guide .purchase {
+  padding: 20px 0 18px;
+}
+.ebook-guide .put__guide > li {
+  font-size: 14px;
+  color: #595959;
+  margin: 10px 0;
+  margin-left: 10px;
+  position: relative;
+  line-height: 22px;
+}
+.ebook-guide .put__guide > li::before {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #595959;
+  opacity: 0.6;
+  left: -10px;
+  top: 10px;
+}
+.ebook-guide .use-detail li:nth-of-type(7) {
+  margin-top: -10px;
+}
+.ebook-guide .use-detail li:nth-of-type(7)::before {
+  width: 0;
+  height: 0;
+  position: static;
+}
+.ebook-guide .use-detail li:nth-of-type(7) .shortcut {
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #595959;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 2px 1px 7px;
+}
+.ebook-guide .use-detail li:nth-of-type(7) .shortcut span {
+  margin-bottom: 3px;
+  vertical-align: bottom;
+}
+.ebook-guide .ePub {
+  border-radius: 10px;
+  background-color: #F7F7F7;
+  padding: 20px;
+  margin: 30px 0 10px;
+}
+.ebook-guide .ePub h6 {
+  font-size: 14px;
+  margin: 6px 0;
+}
+.ebook-guide .ePub .ePub-first {
+  margin-top: 0px;
+}
+.ebook-guide .ePub li {
+  font-size: 15px;
+  color: #595959;
+  position: relative;
+  line-height: 23px;
+}
+.ebook-guide .ePub li p {
+  color: #767676;
+  margin-top: 5px;
+}
+.ebook-guide.expand {
+  height: auto;
+}
+
+.archiving-note .archiving-group {
+  display: flex;
+  gap: 20px;
+}
+.archiving-note .archiving-group .archiving-box {
+  width: 258px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.archiving-note .archiving-group .archiving-box:nth-of-type(1) .main-box {
+  background: url("../images/archiving_bg_1.jpg") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box:nth-of-type(2) .main-box {
+  background: url("../images/archiving_bg_2.jpg") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box:nth-of-type(3) .main-box {
+  background: url("../images/archiving_bg_3.jpg") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box .main-box {
+  width: 100%;
+  height: 258px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top {
+  font-size: 13px;
+  font-weight: 400;
+  color: #ffffff;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .thumbup-icon {
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 4px;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share {
+  margin-left: auto;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share-icon {
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 20px;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns {
+  display: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns:nth-of-type(1) {
+  background: url("../images/sns_1.png") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns:nth-of-type(2) {
+  background: url("../images/sns_2.png") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns:nth-of-type(3) {
+  background: url("../images/sns_3.png") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns:nth-of-type(4) {
+  background: url("../images/sns_4.png") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns:nth-of-type(5) {
+  background: url("../images/sns_5.png") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns:nth-of-type(6) {
+  background: url("../images/sns_6.png") center/cover no-repeat;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share .share__sns:nth-of-type(7) {
+  line-height: 28px;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share.active {
+  width: auto;
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  right: 0px;
+  top: -8px;
+  background-color: #ffffff;
+  padding: 5px 3px 5px 5px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share.active .share-icon {
+  display: none;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share.active .share__sns {
+  display: block;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-top .share.active .share__sns__close {
+  color: #000000;
+  font-weight: 300;
+}
+.archiving-note .archiving-group .archiving-box .main-box .box-middle {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+  text-align: center;
+}
+.archiving-note .archiving-group .archiving-box .main-box .download-btn {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 3px 10px 6px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.archiving-note .archiving-group .archiving-box .main-box .download-btn .material-symbols-outlined {
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 15px;
+}
+.archiving-note .archiving-group .archiving-box .sub-box {
+  font-size: 12px;
+  color: #595959;
+}
+.archiving-note .archiving-group .archiving-box .sub-box span:nth-child(1) {
+  margin-right: 20px;
+  position: relative;
+}
+.archiving-note .archiving-group .archiving-box .sub-box span:nth-child(1)::after {
+  content: "|";
+  right: -13px;
+  top: 1px;
+  position: absolute;
+  font-size: 10px;
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+.archiving-number {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 8px;
+}
+.archiving-number li {
+  font-size: 13px;
+  color: #767676;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.archiving-number li.active {
+  background-color: #767676;
+  color: #ffffff;
+  font-weight: 700;
 }

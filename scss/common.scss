@@ -1280,7 +1280,7 @@ text {
 
 //fixed로 만들어주기//
 #header-middle__full-inner {
-    border-bottom: 1px solid var.$border-gray;
+    border-bottom: 1px solid var.$border-gray-light;
 
     &.active {
         position: fixed;
@@ -1354,7 +1354,7 @@ footer {
     margin-top: 150px;
 
     .full-inner {
-        border-top: 1px solid var.$border-gray;
+        border-top: 1px solid var.$border-gray-light;
 
         .inner {
             .footer__info1 {
