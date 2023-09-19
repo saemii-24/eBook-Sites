@@ -85,8 +85,6 @@ h1 {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 16px 16px 16px 0;
-  border: 1px solid #EAEAEA;
 }
 .swiper-slide .info {
   margin-top: 20px;

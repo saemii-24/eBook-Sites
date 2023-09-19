@@ -12,8 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,-25" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,-25" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -29,12 +28,13 @@
     <script defer src="./js/common_nav.js"></script>
     <script defer src="./js/common_history.js"></script>
     <script defer src="./js/sub.js"></script>
-    <!-- <script defer src="./js/sub_data.js"></script> -->
-    <!-- <script defer src="./js/sub_buy_with.js"></script>
+    <script defer src="./js/sub_data.js"></script>
+    <script defer src="./js/sub_buy_with.js"></script>
     <script defer src="./js/sub_best.js"></script>
     <script defer src="./js/sub_new.js"></script>
-    <script defer src="./js/sub_author_slide.js"></script> -->
-    <script defer src="./js/sub_archiving.js"></script>
+    <script defer src="./js/sub_author_slide.js"></script>
+    <script defer src="./js/sub_archiving.js" type="module"></script>
+    <script defer src="./js/sub_review.js" type="module"></script>
 </head>
 
 <body>
@@ -622,6 +622,267 @@
                         </div>
                     </div>
                 </div>
+                <!--review-->
+                <div class="review content-box">
+                    <div class="content-title">
+                        <h3>Klover리뷰 (<span class="count">0</span>)</h3>
+                        <div class="review-detail notice-detail">
+                            <div class="notice-icon bg-text">Klover리뷰 안내</div>
+                            <div class="review-notice this-notice">
+                                <p class="notice-title">Klover리뷰 안내</p>
+                                <span class="material-symbols-outlined close-icon">close</span>
+                                <p class="notice-content">Klover(Kyobo-lover)는 교보를 애용해 주시는 고객님들이 남겨주신 평점과 감상을 바탕으로, 다양한 정보를 전달하는 교보문고의 리뷰 서비스입니다.</p>
+                                <ul class="notice-category">
+                                    <li>
+                                        <h6>1. 리워드 안내</h6>
+                                        <ul class="notice-first">
+                                            <li>구매 후 90일 이내에 평점 작성 시 e교환권 100원을 적립해 드립니다.</li>
+                                            <li>e교환권은 적립일로부터 180일 동안 사용 가능합니다.</li>
+                                            <li>리워드는 1,000원 이상 eBook, 오디오북, 동영상에 한해 다운로드 완료 후 리뷰 작성 시 익일 제공됩니다.</li>
+                                            <li>리워드는 한 상품에 최초 1회만 제공됩니다.</li>
+                                            <li>sam 이용권 구매 상품 / 선물받은 eBook은 리워드 대상에서 제외됩니다.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h6>2. 운영 원칙 안내</h6>
+                                        <p>Klover리뷰를 통한 리뷰를 작성해 주셔서 감사합니다. 자유로운 의사 표현의 공간인 만큼 타인에 대한 배려를 부탁합니다. 일부 타인의 권리를 침해하거나 불편을 끼치는 것을 방지하기 위해 아래에 해당하는 Klover 리뷰는 별도의 통보 없이 삭제될 수 있습니다.</p>
+                                        <ul class="notice-second">
+                                            <li>도서나 타인에 대해 근거 없이 비방을 하거나 타인의 명예를 훼손할 수 있는 리뷰</li>
+                                            <li>도서와 무관한 내용의 리뷰</li>
+                                            <li>인신공격이나 욕설, 비속어, 혐오 발언이 개재된 리뷰</li>
+                                            <li>의성어나 의태어 등 내용의 의미가 없는 리뷰</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>    
+                        <p>* 구매 후 리뷰 작성 시, e교환권 100원 적립</p>
+                        <button class="write-archiving write-btn">
+                            <span class="material-symbols-outlined">border_color
+                                </span>
+                            <span>리뷰 작성</span>
+                        </button>
+                    </div>
+                    <div class="statistics">
+                        <div class="left">
+                            <div class="clover-statistics-title">
+                                <h5>사용자 총점</h5>
+                                <div>
+                                    <div>
+                                        <img src="./images/review.png" alt="평점">
+                                        <img src="./images/review.png" alt="평점">
+                                        <img src="./images/review.png" alt="평점">
+                                        <img src="./images/review.png" alt="평점">
+                                    </div>
+                                    <div class="all-statistics">
+                                        <h2 class="now-clover">9.8</h2>
+                                        <p>/10</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="four-clover clover">
+                                <div>
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review.png" alt="평점">
+                                </div>
+                                <div id="four-clover-meter" class="clover-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-gage"></div>
+                                </div>
+                                <p class="clover-percent">10%</p>
+                            </div>
+                            <div class="three-clover clover">
+                                <div>
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review_none.png" alt="평점">
+                                </div>
+                                <div id="three-clover-meter" class="clover-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-gage"></div>
+                                </div>
+                                <p class="clover-percent">10%</p>
+                            </div>
+                            <div class="two-clover clover">
+                                <div>
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review_none.png" alt="평점">
+                                    <img src="./images/review_none.png" alt="평점">
+                                </div>
+                                <div id="two-clover-meter" class="clover-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-gage"></div>
+                                </div>
+                                <p class="clover-percent">10%</p>
+                            </div>
+                            <div class="one-clover clover">
+                                <div>
+                                    <img src="./images/review.png" alt="평점">
+                                    <img src="./images/review_none.png" alt="평점">
+                                    <img src="./images/review_none.png" alt="평점">
+                                    <img src="./images/review_none.png" alt="평점">
+                                </div>
+                                <div id="one-clover-meter" class="clover-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-gage"></div>
+                                </div>
+                                <p class="clover-percent">10%</p>
+                            </div>
+                        </div>    
+                        <div class="right">
+                            <div class="review-statistics-title">
+                                <div>
+                                    <span class="review-feel-percent">10%</span>
+                                    <span>의 구매자가</span>
+                                </div>
+                                <div>
+                                    <img src="./images/quotes.png" alt="따옴표">
+                                    <span class="review-feel-max"></span>
+                                    <span>라고 응답했어요</span>
+                                </div>
+                            </div>
+                            <div class="review-statistics">
+                                <div class="review__thanks review-bar">
+                                    <div class="review__thanks-percent review-percent"></div>
+                                    <div id="review__thanks-meter" class=" review-meter">
+                                        <div class="meter-bg"></div>
+                                        <div class="meter-gage"></div>
+                                    </div>
+                                    <div>고마워요</div>
+                                </div>
+                                <div class="review__great review-bar">
+                                    <div class="review__great-percent review-percent"></div>
+                                    <div id="review__great-meter" class=" review-meter">
+                                        <div class="meter-bg"></div>
+                                        <div class="meter-gage"></div>
+                                    </div>
+                                    <div>최고에요</div>
+                                </div>
+                                <div class="review__relate review-bar">
+                                    <div class="review__relate-percent review-percent"></div>
+                                    <div id="review__relate-meter" class=" review-meter">
+                                        <div class="meter-bg"></div>
+                                        <div class="meter-gage"></div>
+                                    </div>
+                                    <div>공감돼요</div>
+                                </div>
+                                <div class="review__fun review-bar">
+                                    <div class="review__fun-percent review-percent"></div>
+                                    <div id="review__fun-meter" class="review-meter">
+                                        <div class="meter-bg"></div>
+                                        <div class="meter-gage"></div>
+                                    </div>
+                                    <div>재밌어요</div>
+                                </div>
+                                <div class="review__healing review-bar">
+                                    <div class="review__healing-percent review-percent"></div>
+                                    <div id="review__healing-meter" class="review-meter">
+                                        <div class="meter-bg"></div>
+                                        <div class="meter-gage"></div>
+                                    </div>
+                                    <div>힐링돼요</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-top">
+                        <ul class="review_tab">
+                            <li class="active">전체 리뷰</li>
+                            <li>eBook 리뷰</li>
+                            <li>종이책 리뷰</li>
+                            <li>구매 리뷰</li>
+                        </ul>
+                        <div class="review_select">
+                            <button>
+                                <span>좋아요 순</span>
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </button>
+                            <ul>
+                                <li>좋아요 순</li>
+                                <li>최신순</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="review-middle put__review">
+                        <!-- <li>
+                            <div class="review-content-top">
+                                <button class="review-category">종이책</button>
+                                <button class="purchase">구매자</button>
+                                <p class="review-id">kb*****</p>
+                                <p class="review-date">2023-06-12</p>
+                                <a href="javascript:void(0)" class="reveiw-report">신고/차단</a>
+                                <div class="review-clover">
+                                    <div class="clover-img bg-text">리뷰 클로버</div>
+                                    <div class="clover-img bg-text">리뷰 클로버</div>
+                                    <div class="clover-img bg-text">리뷰 클로버</div>
+                                    <div class="clover-img bg-text">리뷰 클로버</div>
+                                </div>
+                                <span>/</span>
+                                <div class="review-feel">
+                                    <img src="./images/quotes.png" alt="따옴표">
+                                    <span>재밌어요</span>
+                                </div>
+                            </div>
+                            <div class="review-content-middle">
+                                도전해보세요. 좋은 책 입니다
+                            </div>
+                            <div class="review-content-bottom">
+                                <div class="thumb-up">
+                                    <span class="material-symbols-outlined">thumb_up</span>
+                                    <span class="thumb-up-count">3</span>
+                                </div>
+                                <div class="reply">
+                                    <span class="material-symbols-outlined">sms</span>
+                                    <span>답글</span>
+                                </div>
+                            </div>
+                        </li> -->
+
+                    <!-- <li>
+                            <div class="review-content-top">
+                                <button class="review-category">종이책</button>
+                                <p class="review-id">kb*****</p>
+                                <p class="review-date">2023-06-12</p>
+                                <a href="javascript:void(0)" class="reveiw-report">신고/차단</a>
+                                <div class="review-clover">
+                                    <img src="./images/review.png" alt="리뷰 클로버">
+                                    <img src="./images/review.png" alt="리뷰 클로버">
+                                    <img src="./images/review.png" alt="리뷰 클로버">
+                                    <img src="./images/review.png" alt="리뷰 클로버">
+                                </div>
+                                <span>/</span>
+                                <div class="review-feel">
+                                    <img src="./images/quotes.png" alt="따옴표">
+                                    <span>재밌어요</span>
+                                </div>
+                            </div>
+                            <div class="review-content-middle">
+                                도전해보세요. 좋은 책 입니다
+                            </div>
+                            <div class="review-content-bottom">
+                                <div class="thumb-up">
+                                    <span class="material-symbols-outlined">thumb_up</span>
+                                    <span class="thumb-up-count">3</span>
+                                </div>
+                                <div class="reply">
+                                    <span class="material-symbols-outlined">sms</span>
+                                    <span>답글</span>
+                                </div>
+                            </div>
+                        </li> -->
+                        
+                    </ul>
+                    <ul class="review-bottom review-number">
+                            <!-- <li active>1</li>
+                            <li>2</li>
+                            <li>3</li> -->
+                    </ul>
+                </div>
                 <!--banner-->
                 <a href="javascript:void(0)">
                     <img class="bottom__banner content-box" src="./images/sub_bottom_banner.jpg" alt="교보문고 문장 아카이빙 플랫폼 출시">
@@ -629,10 +890,10 @@
                 <!--archiving-->
                 <div class="archiving content-box">
                     <div class="content-title">
-                        <h3>문장수집 (<span class="count">6</span>)</h3>
-                        <div class="archiving-detail">
-                            <div class="notice-icon"></div>
-                            <div class="archiving-notice">
+                        <h3>문장수집 (<span class="count">0</span>)</h3>
+                        <div class="archiving-detail notice-detail">
+                            <div class="notice-icon bg-text">문장수집 안내</div>
+                            <div class="archiving-notice this-notice">
                                 <p class="notice-title">문장수집 안내</p>
                                 <span class="material-symbols-outlined close-icon">close</span>
                                 <p class="notice-content">문장수집은 고객님들이 직접 선정한 책의 좋은 문장을 보여 주는 교보문고의 새로운 서비스 입니다. 교보eBook 앱에서 도서 열람 후 문장 하이라이트 하시면 직접 타이핑 하실 필요 없이 보다 편하게 남길 수 있습니다. 마음을 두드린 문장들을 기록하고 좋은 글귀들은 ‘좋아요’ 하여 모아보세요. 도서 문장과 무관한 내용 등록 시 별도 통보없이 삭제될 수 있습니다.</p>
@@ -648,11 +909,11 @@
                         </div>    
                         <ul class="archiving-tab">
                             <li class="active">전체</li>
-                            <li>eBook</li>
+                            <li>Book</li>
                             <li>종이책</li>
                         </ul>
                         <button class="my-archiving">내 독서기록</button>
-                        <button class="write-archiving">
+                        <button class="write-archiving write-btn">
                             <span class="material-symbols-outlined">border_color
                                 </span>
                             <span>문장수집 작성</span>
@@ -690,62 +951,7 @@
                                     <span class="archiving-date"></span>
                                 </div>
                             </li>
-                            <li class="archiving-box">
-                                <div class="main-box">
-                                    <div class="box-top">
-                                        <span class="material-symbols-outlined thumbup-icon">thumb_up</span>
-                                        <span class="thumb-up__count"></span>
-                                        <div class="share">
-                                            <div class="material-symbols-outlined share-icon">share</div>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">카카오톡</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">라인</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">네이버밴드</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">페이스북</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">트위터</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">링크</a>
-                                            <a class="material-symbols-outlined share__sns share__sns__close">close</a>
-                                        </div>
-                                    </div>
-                                    <div class="box-middle archive">
-                                    </div>
-                                    <button class="download-btn">
-                                        <span class="material-symbols-outlined">download</span>
-                                        <span>다운로드</span>
-                                    </button>
-                                </div>
-                                <div class="sub-box">
-                                    <span class="archiving-id"></span>
-                                    <span class="archiving-date"></span>
-                                </div>
-                            </li>
-                            <li class="archiving-box">
-                                <div class="main-box">
-                                    <div class="box-top">
-                                        <span class="material-symbols-outlined thumbup-icon">thumb_up</span>
-                                        <span class="thumb-up__count"></span>
-                                        <div class="share">
-                                            <div class="material-symbols-outlined share-icon">share</div>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">카카오톡</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">라인</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">네이버밴드</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">페이스북</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">트위터</a>
-                                            <a href="javascript:void(0)" class="bg-text share__sns">링크</a>
-                                            <a class="material-symbols-outlined share__sns share__sns__close">close</a>
-                                        </div>
-                                    </div>
-                                    <div class="box-middle archive">
-                                    </div>
-                                    <button class="download-btn">
-                                        <span class="material-symbols-outlined">download</span>
-                                        <span>다운로드</span>
-                                    </button>
-                                </div>
-                                <div class="sub-box">
-                                    <span class="archiving-id"></span>
-                                    <span class="archiving-date"></span>
-                                </div>
-                            </li> -->
+                        -->
                         </ul>
                         <!--3개의 archiving-box group 끝-->
                     </div>

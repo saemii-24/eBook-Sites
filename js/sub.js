@@ -87,3 +87,14 @@ archivingOpen.addEventListener('click',()=>{
 archivingClose.addEventListener('click',()=>{
     archivingContent.classList.remove('active');
 });
+
+//review-notice
+const reviewContent = document.querySelector('.review-detail');
+const reviewOpen = document.querySelector('.review .notice-icon')
+const reviewClose = document.querySelector('.review .close-icon ')
+reviewOpen.addEventListener('click',()=>{
+    reviewContent.classList.add('active');
+});
+reviewClose.addEventListener('click',()=>{
+    reviewContent.classList.remove('active');
+});

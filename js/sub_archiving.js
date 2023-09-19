@@ -16,7 +16,7 @@ let paperArchiving = [
   {foramt: "종이책", id: "sdf", date: `${year-1}-05-06`,  thumbup: 5, archive: "이런 인종차별적 설명을 반대하는 이유는 자명하다. 역겨운 데다 잘못된 설명이기 때문이다. "},
 ]
 let allArchiving = eBookArchiving.concat(paperArchiving);
-console.log(allArchiving);
+// console.log(allArchiving);
 
 //데이터 정렬 (최근 순)//
 function dateSort(dataArr){
@@ -136,6 +136,7 @@ function makeArchive(archiveArr) { //사용할 데이터
       }
       putNumberList.forEach(number => { number.classList.remove('active') });
       number.classList.add('active');
+      activeShareIcon();
     })
   });
 }
@@ -170,6 +171,7 @@ archivingTab.forEach((tab, tabIndex) => {
       makeNumber(groupAll);
       makeArchive(groupAll);
       categoryCount(sortAllArchiving);
+      activeShareIcon();
     } else if (tabIndex === 1) {
       //eBook을 선택할 때
       for (let i = 0; i < groupEbook[0].length; i++) {
@@ -178,6 +180,7 @@ archivingTab.forEach((tab, tabIndex) => {
       makeNumber(groupEbook);
       makeArchive(groupEbook);
       categoryCount(sortEbookArchiving);
+      activeShareIcon();
     } else if (tabIndex === 2) {
       //종이책을 선택할 때
       for (let i = 0; i < groupPaper[0].length; i++) {
@@ -186,6 +189,7 @@ archivingTab.forEach((tab, tabIndex) => {
       makeNumber(groupPaper);
       makeArchive(groupPaper);
       categoryCount(sortPaperArchiving);
+      activeShareIcon();
     }
   })
 });
@@ -199,10 +203,23 @@ makeArchive(groupAll);
 categoryCount(sortAllArchiving);
 
 //shareIcon class active
-const shares = document.querySelectorAll('.archiving .share');
-shares.forEach((share, index)=>{
-  share.addEventListener('click',(event)=>{
-    console.log(event.currentTarget);
-    event.currentTarget.classList.add('active');
+function activeShareIcon() {
+  const shares = document.querySelectorAll('.archiving .share');
+  const sharecloses = document.querySelectorAll('.archiving .share__sns__close');
+  shares.forEach((share) => {
+    share.addEventListener('click', (event) => {
+      event.currentTarget.classList.add('active');
+    })
   })
-});
+  sharecloses.forEach((close) => {
+    close.addEventListener('click', (event) => {
+      event.stopPropagation();
+      event.currentTarget.parentNode.classList.remove('active');
+    })
+  })
+}
+activeShareIcon();
+
+
+//sub_review로 내보낼 값
+export { year, dateSort }

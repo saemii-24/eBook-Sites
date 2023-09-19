@@ -7,9 +7,7 @@ const authorBookList = [
     "초예측",
     "Collapse How Societies Choose to Fail or Survive",
     "The Rise And Fall Of The Third Chimpanzee",
-    // "Guns, Gemrs And Steel",
-    // "The World Until Yesterday What Can We Learn from Traditional Societies"
-];
+    ];
 
 const putSlide = document.querySelector('.put__slide');
 
@@ -33,7 +31,7 @@ function authorSearch(searchWord) {
                 //썸네일이 없는 경우 제외한다.
                 return data.thumbnail != '';
             });
-            console.log(filterData);
+            // console.log(filterData);
 
 
                 //buy-with__book
@@ -49,16 +47,16 @@ function authorSearch(searchWord) {
                 thumbnailAnchor.appendTo(li);
                 title.appendTo(li);
                 li.appendTo(putSlide);
-            
         });
-
-        let author_mySwiper = new Swiper(".author_mySwiper", {
-            direction: "horizontal",
-            slidesPerView: "auto",
-            freeMode: true,
-            scrollbar: {
-              el: ".swiper-scrollbar",
-            },
-            mousewheel: false,
-          });
 }
+
+let author_mySwiper = new Swiper(".author_mySwiper", {
+    direction: "horizontal",
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    freeMode: true,
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+    mousewheel: false,
+  });

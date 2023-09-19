@@ -11,13 +11,13 @@ function callCSV(csvName, makeObj) {
       console.log(csvData);
       const arrData = csvData.split(/\/key\/,|,\/value\/,/); //[/key/,] 혹은 [,/value/,] 로 구분
       arrData.shift(); //배열 첫번째로 들어가는 공백 제거
-      console.log(arrData);
+      // console.log(arrData);
 
       for (i = 0; i < arrData.length; i += 2) {
         //"" 안의 글자만 추출해 객체에 할당한다. (글을 싸고 있는 쌍따옴표 제거)
         makeObj[arrData[i]] = arrData[i + 1].slice(1,arrData[i + 1].length - 3);
       }
-      console.log(makeObj);
+      // console.log(makeObj);
     },
   });
 }
@@ -48,7 +48,7 @@ putPublish.innerText = publish;
 
 
 callCSV('./data/ebook_guide.csv',guideObj); //ebook guide 정보를 불러온다.
-console.log(guideObj);
+// console.log(guideObj);
 const {
   구매안내: purchase,
   단말기안내: device,
@@ -67,7 +67,7 @@ guideArr.forEach((guide,index)=>{
 
 function makeLiTag(htmlTag, data){
   const splitData = data.split('\r\n');
-  console.log(splitData);
+  // console.log(splitData);
   for(value of splitData){
     const liTag = document.createElement( 'li' );
     liTag.innerText = value;
