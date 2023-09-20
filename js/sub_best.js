@@ -29,7 +29,7 @@ const putBest = document.querySelector('.put__best');
             });
             // console.log(filterData);
             //buy-with__book
-            const li = $("<li>", {"class": "best__book"});
+            const li = $("<li>", {"class": "best__book js-history-target"});
 
             //thumbnail
             const thumbnailAnchor = $("<a>", {"class": "thumbnail", "href": "javascript:void(0)"});

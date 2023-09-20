@@ -8,7 +8,7 @@ function callCSV(csvName, makeObj) {
     dataType: "text",
     async: false,
     success: function (csvData) {
-      console.log(csvData);
+      // console.log(csvData);
       const arrData = csvData.split(/\/key\/,|,\/value\/,/); //[/key/,] 혹은 [,/value/,] 로 구분
       arrData.shift(); //배열 첫번째로 들어가는 공백 제거
       // console.log(arrData);

@@ -62,7 +62,7 @@ function selectSearch(searchWord, i) {
 
             //상위요소 slide 생성
             const slide = document.createElement("div");
-            slide.setAttribute("class", "swiper-slide");
+            slide.setAttribute("class", "swiper-slide js-history-target");
 
             //1번 묶음
 

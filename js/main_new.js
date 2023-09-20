@@ -35,7 +35,7 @@ function newSearch(searchWord) {
 
     //1,2번 상위요소
     const newBox = document.createElement("div");
-    newBox.setAttribute("class", "new__box");
+    newBox.setAttribute("class", "new__box js-history-target");
 
     //1번 묶음
     const thumbnail = document.createElement("a");

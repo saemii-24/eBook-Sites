@@ -28,7 +28,7 @@ const buyList = [
             });
 
             //buy-with__book
-            const li = $("<li>", {"class": "buy-with__book"});
+            const li = $("<li>", {"class": "buy-with__book js-history-target"});
 
             //thumbnail
             const thumbnailAnchor = $("<a>", {"class": "thumbnail", "href": "javascript:void(0)"});

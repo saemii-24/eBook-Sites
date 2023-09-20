@@ -107,18 +107,18 @@ function makeHtmlTag(arr, arrIndex, objIndex){ //사용할 데이터/그 데이�
 }
 
   //(8) number 생성해서 넣기
-function makeNumber(arr) { //사용할 데이터
-  let archivingNumber = arr.length;
-  const putNumber = document.querySelector('.put__number');
+const putNumber = document.querySelector('.put__number');
 
-  for (let i = 0; i < archivingNumber; i++) {
+function makeNumber(arr, putHtmlTag) { //사용할 데이터, 넣어야 하는 HTML자리
+  let thisNumber = arr.length;
+
+  for (let i = 0; i < thisNumber; i++) {
     const numberLi = $("<li>", { "text": `${i + 1}` });
-    numberLi.appendTo(putNumber);
+    numberLi.appendTo(putHtmlTag);
   }
-  const putNumberList = document.querySelectorAll('.put__number li');
+  const putNumberList = putHtmlTag.querySelectorAll('li');
   putNumberList[0].classList.add('active'); //첫번째는 처음부터 active 되어야 한다.
 }
-
 
 
 
@@ -168,7 +168,7 @@ archivingTab.forEach((tab, tabIndex) => {
       for (let i = 0; i < groupAll[0].length; i++) {
         makeHtmlTag(groupAll, 0, i);
       }
-      makeNumber(groupAll);
+      makeNumber(groupAll, putNumber);
       makeArchive(groupAll);
       categoryCount(sortAllArchiving);
       activeShareIcon();
@@ -177,7 +177,7 @@ archivingTab.forEach((tab, tabIndex) => {
       for (let i = 0; i < groupEbook[0].length; i++) {
         makeHtmlTag(groupEbook, 0, i);
       }
-      makeNumber(groupEbook);
+      makeNumber(groupEbook, putNumber);
       makeArchive(groupEbook);
       categoryCount(sortEbookArchiving);
       activeShareIcon();
@@ -186,7 +186,7 @@ archivingTab.forEach((tab, tabIndex) => {
       for (let i = 0; i < groupPaper[0].length; i++) {
         makeHtmlTag(groupPaper, 0, i);
       }
-      makeNumber(groupPaper);
+      makeNumber(groupPaper, putNumber);
       makeArchive(groupPaper);
       categoryCount(sortPaperArchiving);
       activeShareIcon();
@@ -198,7 +198,7 @@ archivingTab.forEach((tab, tabIndex) => {
 for (let i = 0; i < groupAll[0].length; i++) {
   makeHtmlTag(groupAll, 0, i);
 }
-makeNumber(groupAll);
+makeNumber(groupAll,  putNumber);
 makeArchive(groupAll);
 categoryCount(sortAllArchiving);
 
@@ -222,4 +222,4 @@ activeShareIcon();
 
 
 //sub_review로 내보낼 값
-export { year, dateSort }
+export { year, dateSort, makeNumber } 

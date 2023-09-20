@@ -1,4 +1,4 @@
-import { year, dateSort } from './sub_archiving.js';
+import { year, dateSort, makeNumber } from './sub_archiving.js';
 
 let eBookReview = [
   {format:"eBook", id: "abc", date: `${year}-09-03`, grade: 4, feeling: "재밌어요", purchase: true, like: 3, comment: "좋은 책입니다! 추천해요."},
@@ -13,21 +13,21 @@ let eBookReview = [
   {format:"eBook", id: "bcd", date: `${year}-04-17`, grade: 4, feeling: "재밌어요", purchase: false, like: 1, comment: "정말 공부가 되는 책입니다."},
 ]
 let paperReview = [
-  {foramt: "종이책", id: "asd", date: `${year}-01-02`, grade: 4, feeling: "최고에요", purchase: true, like: 7, comment: "전자책으로 나와서 너무 좋네요~ 바로 구매했어요!"},
-  {foramt: "종이책", id: "qwe", date: `${year}-02-03`, grade: 4, feeling: "재밌어요", purchase: false, like: 5, comment: "재밌게 읽었어요!"},
-  {foramt: "종이책", id: "zxc", date: `${year-1}-03-04`, grade: 3, feeling: "힐링돼요", purchase: false, like: 3, comment: "베스트셀러인 이유가 있는 책이에요. 흥미로웠습니다."},
-  {foramt: "종이책", id: "wer", date: `${year}-04-15`, grade: 2, feeling: "고마워요", purchase: true, like: 6, comment: "문명에 대해 생각해볼 수 있었어요!"},
-  {foramt: "종이책", id: "sdf", date: `${year-1}-05-06`, grade: 4, feeling: "최고에요", purchase: false, like: 5, comment: "대학생때 도서관에서 읽었는데 이제 기억이 가물가물 해져서 다시 읽으려구요."},
-  {foramt: "종이책", id: "xcv", date: `${year}-06-27`, grade: 4, feeling: "재밌어요", purchase: true, like: 9, comment: "완독에 도전해보려구요!"},
-  {foramt: "종이책", id: "rty",  date: `${year}-07-08`, grade: 4, feeling: "최고에요", purchase: true, like: 1, comment: "딸과 함께 읽으려구요~ 공부가 될 것 같아요."},
-  {foramt: "종이책", id: "ert", date: `${year-1}-08-29`, grade: 4, feeling: "힐링돼요", purchase: false, like: 3, comment: "인류 문명의 발전에 대해 생각해볼 수 있었어요."},
-  {foramt: "종이책", id: "dfg", date: `${year}-09-10`, grade: 4, feeling: "재밌어요", purchase: true, like: 6, comment: "현대의 고전이란 수식어가 잘 어울리는 책입니다."},
-  {foramt: "종이책", id: "cvb", date: `${year}-10-11`, grade: 4, feeling: "공감돼요", purchase: false, like: 0, comment: "저자 강의가 흥미로워서 책도 읽어보고 싶네요~"},
+  {format: "종이책", id: "asd", date: `${year}-01-02`, grade: 4, feeling: "최고에요", purchase: true, like: 7, comment: "전자책으로 나와서 너무 좋네요~ 바로 구매했어요!"},
+  {format: "종이책", id: "qwe", date: `${year}-02-03`, grade: 4, feeling: "재밌어요", purchase: false, like: 5, comment: "재밌게 읽었어요!"},
+  {format: "종이책", id: "zxc", date: `${year-1}-03-04`, grade: 3, feeling: "힐링돼요", purchase: false, like: 3, comment: "베스트셀러인 이유가 있는 책이에요. 흥미로웠습니다."},
+  {format: "종이책", id: "wer", date: `${year}-04-15`, grade: 2, feeling: "고마워요", purchase: true, like: 6, comment: "문명에 대해 생각해볼 수 있었어요!"},
+  {format: "종이책", id: "sdf", date: `${year-1}-05-06`, grade: 4, feeling: "최고에요", purchase: false, like: 5, comment: "대학생때 도서관에서 읽었는데 이제 기억이 가물가물 해져서 다시 읽으려구요."},
+  {format: "종이책", id: "xcv", date: `${year}-06-27`, grade: 4, feeling: "재밌어요", purchase: true, like: 9, comment: "완독에 도전해보려구요!"},
+  {format: "종이책", id: "rty",  date: `${year}-07-08`, grade: 4, feeling: "최고에요", purchase: true, like: 1, comment: "딸과 함께 읽으려구요~ 공부가 될 것 같아요."},
+  {format: "종이책", id: "ert", date: `${year-1}-08-29`, grade: 4, feeling: "힐링돼요", purchase: false, like: 3, comment: "인류 문명의 발전에 대해 생각해볼 수 있었어요."},
+  {format: "종이책", id: "dfg", date: `${year}-09-10`, grade: 4, feeling: "재밌어요", purchase: true, like: 6, comment: "현대의 고전이란 수식어가 잘 어울리는 책입니다."},
+  {format: "종이책", id: "cvb", date: `${year}-10-11`, grade: 4, feeling: "공감돼요", purchase: false, like: 0, comment: "저자 강의가 흥미로워서 책도 읽어보고 싶네요~"},
 ]
 let allReview = eBookReview.concat(paperReview);
 let purchaseReview = eBookReview.filter(review=> review.purchase === true)
                     .concat(paperReview.filter(review=> review.purchase === true));
-
+// console.log(purchaseReview);
 
 //사용자 총점
 let averageGrade = allReview.map(review=>{
@@ -95,7 +95,7 @@ const putReview = document.querySelector('.review .put__review');
 function makeReviewHtmlTag(arr, arrIndex, objIndex){ //사용할 데이터/그 데이터의 배열인덱스 / 배열안의 객체 번호/
     //(1)review-content-top만들기
     const reviewTop = $("<div>", {"class": "review-content-top"});
-        const categoryBtn = $("<button>", {"class": "review-category"});
+        const categoryBtn = $("<button>", {"class": `review-category ${arr[arrIndex][objIndex].format}`, "text": `${arr[arrIndex][objIndex].format}`});
         const reviewId = $("<p>", {"class": "review-id", "text": `${arr[arrIndex][objIndex].id}****`});
         const reviewDate = $("<p>", {"class": "review-date", "text": `${arr[arrIndex][objIndex].date}`});
         const reviewReport = $("<a>", {"class": "reveiw-report", "text": "신고/차단", "href": "javascript:void(0)"});  
@@ -116,9 +116,9 @@ function makeReviewHtmlTag(arr, arrIndex, objIndex){ //사용할 데이터/그 �
 
     if(arr[arrIndex][objIndex].purchase===true){
         const purchaseBtn = $("<button>", {"class": "purchase", "text": "구매자"});
-        reviewTop.append(categoryBtn,reviewId,purchaseBtn,reviewDate,reviewReport.reviewClover,spanSlash,reviewFeel);
+        reviewTop.append(categoryBtn,purchaseBtn,reviewId,reviewDate,reviewReport,reviewClover,spanSlash,reviewFeel);
     }else{
-        reviewTop.append(categoryBtn,reviewId,reviewDate,reviewReport.reviewClover,spanSlash,reviewFeel);
+        reviewTop.append(categoryBtn,reviewId,reviewDate,reviewReport,reviewClover,spanSlash,reviewFeel);
     }
 
     //(2)review-content-middle만들기
@@ -140,53 +140,195 @@ function makeReviewHtmlTag(arr, arrIndex, objIndex){ //사용할 데이터/그 �
     //(4)코드 정리
     const li = $("<li>");
     li.append(reviewTop, reviewMiddle, reviewBottom);
-    putReview.append(li);
+    // putReview.append(li);
+    li.appendTo(putReview);
 }
 
 //정보 그룹짓기
 let sortEbookReview = dateSort(eBookReview); //Ebook정렬
 let sortPaperReview = dateSort(paperReview); //종이책 정렬
 let sortAllReview = dateSort(allReview); //모든 포맷정렬
-let sortPurchaseReview = dateSort(purchaseReview); //모든 포맷정렬
+let sortPurchaseReview = dateSort(purchaseReview); //구매 포맷정렬
 
 //각 배열을 다섯 개씩 그루핑한다.
-let groupReviewEbook = [];
+//(1) 최신순 그루핑
+let groupReviewEbook = []; 
 let groupReviewPaper = [];
 let groupReviewPurchase = [];
 let groupReviewAll = [];
 makeReviewGroup(groupReviewEbook, sortEbookReview);
 makeReviewGroup(groupReviewPaper, sortPaperReview);
-makeReviewGroup(groupReviewPurchase, sortAllReview);
-makeReviewGroup(groupReviewAll, sortPurchaseReview);
+makeReviewGroup(groupReviewPurchase, sortPurchaseReview);
+makeReviewGroup(groupReviewAll, sortAllReview);
 
-console.log(groupReviewEbook);
+//(2) 좋아요순 그루핑
+//좋아요 순 정렬
+function likeSort(arr){
+  return arr.sort((a, b)=>{
+    let likeA = a.like
+    let likeB = b.like
+    if(likeA > likeB) return -1;
+    if(likeA < likeB) return 1;
+    return 0;
+    });
+}
+
+let groupLikeEbook = [];
+let groupLikePaper = [];
+let groupLikePurchase = [];
+let groupLikeAll = [];
+makeReviewGroup(groupLikeEbook, likeSort(eBookReview));
+makeReviewGroup(groupLikePaper, likeSort(paperReview));
+makeReviewGroup(groupLikePurchase, likeSort(purchaseReview));
+makeReviewGroup(groupLikeAll, likeSort(allReview));
 
 //그루핑함수
-//TODO 5개로 그루핑 해야됨! 수정필요
+//TODO
 function makeReviewGroup(emptyArr, makeGroupArr) {
     for (let i = 0; i < Math.ceil(makeGroupArr.length/5); i++) {
       if (makeGroupArr[5 * i + 1] === undefined) {
         emptyArr.push([makeGroupArr[5 * i]]);
+
       } else if (makeGroupArr[5 * i + 2] === undefined) {
         emptyArr.push([makeGroupArr[5 * i], makeGroupArr[5 * i + 1]]);
-      } else if (makeGroupArr[5 * i + 5] === undefined) {
-        emptyArr.push([makeGroupArr[5 * i], makeGroupArr[5 * i + 1], makeGroupArr[5 * i + 2], makeGroupArr[5 * i + 3]]);
+
+      } else if (makeGroupArr[5 * i + 3] === undefined) {
+        emptyArr.push([makeGroupArr[5 * i], makeGroupArr[5 * i + 1], 
+          makeGroupArr[5 * i + 2]]);
       }else if (makeGroupArr[5 * i + 4] === undefined) {
-        emptyArr.push([makeGroupArr[5 * i], makeGroupArr[5 * i + 1], makeGroupArr[5 * i + 2], makeGroupArr[5 * i + 3], makeGroupArr[5 * i + 4]]);
+        emptyArr.push([makeGroupArr[5 * i], makeGroupArr[5 * i + 1], 
+          makeGroupArr[5 * i + 2], makeGroupArr[5 * i + 3]]);
       }else{
-        emptyArr.push([makeGroupArr[5 * i], makeGroupArr[5 * i + 1], makeGroupArr[5 * i + 2], makeGroupArr[5 * i + 3], makeGroupArr[5 * i + 4], makeGroupArr[5 * i + 5]]);
+        emptyArr.push([makeGroupArr[5 * i], makeGroupArr[5 * i + 1], 
+          makeGroupArr[5 * i + 2], makeGroupArr[5 * i + 3], makeGroupArr[5 * i + 4]]);
       }
     }
 }
 
+  
+
+  // // 번호 클릭하면 인덱스번호와 같은 배열데이터로 아카이빙 생성
+  function makeReview(arr) { //사용할 데이터
+    const putNumberList = document.querySelectorAll('.review-number li');
+    putNumberList.forEach((number, index) => {
+      number.addEventListener('click', () => {
+        //앞서 만들어진 내용 비우기
+        const putReview = document.querySelector('.put__review');
+        putReview.textContent = '';
+        //누른 number만 active class 더해주기
+        for (let i = 0; i < arr[index].length; i++) {
+          makeReviewHtmlTag(arr, index, i);
+        }
+        putNumberList.forEach(number => { number.classList.remove('active') });
+        number.classList.add('active');
+      })
+    });
+  }
+
+
 //탭 선택에 따라 html 태그 만들기 달라짐
+const putReviewNumber = document.querySelector('.review-number');
 const reviewTab = document.querySelectorAll('.review_tab li');
+const sortStand = document.querySelectorAll('.review_select ul li');
+const sortStandText = document.querySelector('.review_select button span:first-child');
+console.log(sortStandText);
+
+//정렬기준 선택하기
+const sortStandBtn = document.querySelector('.review_select');
+sortStandBtn.addEventListener('click',(e)=>{
+  sortStandBtn.classList.toggle('active');
+});
+
+
+sortStand.forEach((stand, index)=>{
+  stand.addEventListener('click',(event)=>{
+    sortStandText.textContent = event.target.innerText;
+    const categoryTabIndex = Array.from(document.querySelectorAll('.review_tab li')).indexOf(document.querySelector('.review_tab .active'));
+
+    console.log(categoryTabIndex);
+
+      //review박스 비우기
+      const putReview = document.querySelector('.put__review');
+      putReview.textContent = '';
+      //number 비우기
+      const putNumber = document.querySelector('.review-bottom');
+      putNumber.textContent = '';
+
+    if(sortStandText.innerText==="좋아요 순"){
+      if(categoryTabIndex===0){
+        makeTag(groupLikeAll, putReviewNumber);
+      }else if(categoryTabIndex===1){
+        makeTag(groupLikeEbook, putReviewNumber);
+      }else if(categoryTabIndex===2){
+        makeTag(groupLikePaper, putReviewNumber);
+      }else if(categoryTabIndex===3){
+        makeTag(groupLikePurchase, putReviewNumber);
+      }
+    }else{
+      if(categoryTabIndex===0){
+        makeTag(groupReviewAll, putReviewNumber);
+      }else if(categoryTabIndex===1){
+        makeTag(groupReviewEbook, putReviewNumber);
+      }else if(categoryTabIndex===2){
+        makeTag(groupReviewPaper, putReviewNumber);
+      }else if(categoryTabIndex===3){
+        makeTag(groupReviewPurchase, putReviewNumber);
+      }
+    }
+  });
+})
+
+
+
 reviewTab.forEach((tab, index)=>{
     tab.addEventListener('click',()=>{
         reviewTab.forEach((tab)=>tab.classList.remove('active'));
         tab.classList.add('active');
-        if(index===1){
+        //review박스 비우기
+        const putReview = document.querySelector('.put__review');
+        putReview.textContent = '';
+        //number 비우기
+        const putNumber = document.querySelector('.review-bottom');
+        putNumber.textContent = '';
 
-        }
-    })
+        if(index===0){ //전체
+          if(sortStandText.innerText==="좋아요 순"){
+            makeTag(groupLikeAll, putReviewNumber);
+          }else{
+            makeTag(groupReviewAll, putReviewNumber);
+          }
+        }else if(index===1){ //eBook
+          if(sortStandText.innerText==="좋아요 순"){
+            makeTag(groupLikeEbook, putReviewNumber);
+          }else{
+            makeTag(groupReviewEbook, putReviewNumber);
+          }
+        }else if(index===2){ //종이책
+          if(sortStandText.innerText==="좋아요 순"){
+            makeTag(groupLikePaper, putReviewNumber);
+          }else{
+            makeTag(groupReviewPaper, putReviewNumber);
+          }
+        }else if(index===3){//구매
+          if(sortStandText.innerText==="좋아요 순"){
+            makeTag(groupLikePurchase, putReviewNumber);
+          }else{
+            makeTag(groupReviewPurchase, putReviewNumber);
+          }
+      }
+  })
 })
+//로드 되면 먼저 실행
+makeTag(groupLikeAll, putReviewNumber);
+
+function makeTag(arr, number){ //사용될 데이터, number
+  for (let i = 0; i < arr[0].length; i++) {
+    makeReviewHtmlTag(arr, 0, i);
+  }
+  makeNumber(arr,number);
+  makeReview(arr);
+}
+
+//reviewCount
+const reviewCount = document.querySelector('.review .count');
+reviewCount.innerText = allReview.length;

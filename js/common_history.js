@@ -1,6 +1,8 @@
 //localStorage 이용하기
-const bookThumb = document.querySelectorAll(".swiper-slide");
-const bookTitle = document.querySelectorAll(".swiper-slide .title");
+// const bookThumb = document.querySelectorAll(".swiper-slide");
+// const bookTitle = document.querySelectorAll(".swiper-slide .title");
+const bookThumb = document.querySelectorAll(".js-history-target");
+const bookTitle = document.querySelectorAll(".js-history-target .title");
 const historyBtn = document.querySelector('.bottom__button .history');
 
 let memorybook = JSON.parse(localStorage.getItem("book"));

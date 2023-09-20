@@ -48,7 +48,7 @@ function originalSearch(searchWord) {
               let i = 0;
               //1,2번 상위요소
               const slide = document.createElement("div");
-              slide.setAttribute("class", "swiper-slide");
+              slide.setAttribute("class", "swiper-slide js-history-target");
 
               //1번 묶음
               const thumbnail = document.createElement("a");

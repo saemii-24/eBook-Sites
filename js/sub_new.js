@@ -24,7 +24,7 @@ const putNew = document.querySelector('.put__new');
             });
             // console.log(filterData);
             //buy-with__book
-            const li = $("<li>", {"class": "new__book"});
+            const li = $("<li>", {"class": "new__book js-history-target"});
 
             //thumbnail
             const thumbnailAnchor = $("<a>", {"class": "thumbnail", "href": "javascript:void(0)"});

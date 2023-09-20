@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,-25" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,-25" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,1,-25" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/sub.css">
@@ -26,7 +27,6 @@
 
     <script defer src="./js/common_header_footer.js"></script>
     <script defer src="./js/common_nav.js"></script>
-    <script defer src="./js/common_history.js"></script>
     <script defer src="./js/sub.js"></script>
     <script defer src="./js/sub_data.js"></script>
     <script defer src="./js/sub_buy_with.js"></script>
@@ -35,6 +35,7 @@
     <script defer src="./js/sub_author_slide.js"></script>
     <script defer src="./js/sub_archiving.js" type="module"></script>
     <script defer src="./js/sub_review.js" type="module"></script>
+    <script defer src="./js/common_history.js"></script>
 </head>
 
 <body>
@@ -263,18 +264,25 @@
                     <button>
                         <span class="material-symbols-outlined">expand_more</span>
                     </button>
+                    <ul class="this-category-detail">
+                        <!-- <li class="active"><a href="javascript:void(0)">eBook</a></li>
+                        <li><a href="javascript:void(0)">오디오(북)</a></li>
+                        <li><a href="javascript:void(0)">동영상</a></li> -->
+                    </ul>
                 </div>
                 <div class="this-category__sub">
                     <span>역사/문화</span>
                     <button>
                         <span class="material-symbols-outlined">expand_more</span>
                     </button>
+                    <ul class="this-category-detail"></ul>
                 </div>
                 <div class="this-category__sub">
                     <span>역사일반</span>
                     <button>
                         <span class="material-symbols-outlined">expand_more</span>
                     </button>
+                    <ul class="this-category-detail"></ul>
                 </div>
             </div>
             <div class="book-top-info">
@@ -458,18 +466,18 @@
             </div>
         </div>
     </div>
-    <!--detail-nav-->
-    <div class="detail-nav">
-        <div class="full__inner">
-            <div class="inner" id="detail-nav__inner">
-                <div>상품정보</div>
-                <div>리뷰 (157)</div>
-                <div>이용안내</div>
-            </div>
-        </div>
-    </div>
     <!--content-->
     <div class="content">
+        <!--detail-nav-->
+        <div class="detail-nav">
+            <div class="full__inner">
+                <div class="inner" id="detail-nav__inner">
+                    <div>상품정보</div>
+                    <div>리뷰 (157)</div>
+                    <div>이용안내</div>
+                </div>
+            </div>
+        </div>
         <div class="inner">
             <div class="content__right">
                 <div class="buy-with content-box">
@@ -1306,6 +1314,29 @@
         <div class="material-symbols-outlined close-icon">close</div>
         <div class="thumbnail">
             <img src="./images/book-thumbnail.jpg" alt="총균쇠 표지">
+        </div>
+    </div>
+    <!--price-footer-->
+    <div class="footer__price">
+        <div class="inner">
+            <p>소장</p>
+            <div>
+                <h2>22,500</h2>
+                <span>원</span>
+            </div>
+            <button>
+                <span class="material-symbols-outlined">favorite</span>   
+            </button>
+            <button>
+                <span class="material-symbols-outlined">redeem</span>   
+                <span>선물하기</span>
+            </button>
+            <button>
+                <span>장바구니</span>
+            </button>
+            <button>
+                <span>구매하기</span>
+            </button>
         </div>
     </div>
 </body>

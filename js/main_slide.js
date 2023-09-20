@@ -4,7 +4,7 @@ const putSlide = document.querySelector('.slide__put');
 for(let i=0; i<19; i++){
   const aTag = document.createElement("a");
   aTag.setAttribute("href", "javascript:void(0)");
-  aTag.setAttribute("class", "swiper-slide");
+  aTag.setAttribute("class", "swiper-slide js-history-target");
   
   const imgTag = document.createElement("img");
   imgTag.setAttribute("src", `./images/slider${i+1}.jpg`);

@@ -35,7 +35,7 @@ function authorSearch(searchWord) {
 
 
                 //buy-with__book
-                const li = $("<li>", { "class": "swiper-slide" });
+                const li = $("<li>", { "class": "swiper-slide js-history-target" });
 
                 //thumbnail
                 const thumbnailAnchor = $("<a>", { "class": "thumbnail", "href": "javascript:void(0)" });
