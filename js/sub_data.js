@@ -75,12 +75,6 @@ function makeLiTag(htmlTag, data){
   }
 }
 
-//makeBtn
-/*<button>
-  <span>바로가기</span>
-  <span class="material-symbols-outlined">navigate_next</span>
-</button>*/
-
 const spanText = $("<span>", {"class": "btn-text", "text": "바로가기"});
 const spanIcon = $("<span>", {"class": "btn-icon, material-symbols-outlined", "text": "navigate_next"});
 const shortcutBtn = $("<button>", {"class": "shortcut"});

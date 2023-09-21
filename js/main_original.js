@@ -53,7 +53,7 @@ function originalSearch(searchWord) {
               //1번 묶음
               const thumbnail = document.createElement("a");
               thumbnail.setAttribute("class", "thumbnail");
-              thumbnail.setAttribute("href", "javascript:void(0)");
+              thumbnail.setAttribute("href", "./sub.html");
 
               const img = document.createElement("img");
               img.setAttribute("src", filterData[i].thumbnail);
@@ -68,7 +68,7 @@ function originalSearch(searchWord) {
               title.textContent = filterData[i].title;         
 
               const titleLink = document.createElement("a");
-              titleLink.setAttribute("href", "javascript:void(0)");
+              titleLink.setAttribute("href", "./sub.html");
 
               const author = document.createElement("div");
               author.setAttribute("class", "author");

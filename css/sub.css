@@ -861,13 +861,14 @@ h3 {
   gap: 60px;
   height: 100%;
 }
-.detail-nav .full__inner .inner div {
+.detail-nav .full__inner .inner a {
+  display: block;
   line-height: 70px;
   height: 100%;
   color: #767676;
   font-size: 16px;
 }
-.detail-nav .full__inner .inner div.active {
+.detail-nav .full__inner .inner a.active {
   border-bottom: 3px solid #000000;
   font-weight: 700;
   color: #000000;
@@ -916,6 +917,10 @@ h3 {
 .content__right {
   flex-basis: calc(100% - 330px - 56px);
   width: calc(100% - 330px - 56px);
+}
+.content__right .buy-with {
+  scroll-padding-top: 200px;
+  scroll-margin-top: 200px;
 }
 .content__right .content-title {
   margin-bottom: 20px;
@@ -1448,6 +1453,8 @@ h3 {
 .ebook-guide {
   height: 382px;
   overflow: hidden;
+  scroll-padding-top: 400px;
+  scroll-margin-top: 200px;
 }
 .ebook-guide h6 {
   font-weight: 700;
@@ -1842,6 +1849,10 @@ h3 {
   background-color: #2c307c;
 }
 
+.review {
+  scroll-padding-top: 200px;
+  scroll-margin-top: 200px;
+}
 .review .content-title {
   display: flex;
 }
@@ -2420,4 +2431,8 @@ h3 {
 .footer__price .inner button:nth-of-type(4):hover {
   background: #2c307c;
   border-color: #2c307c;
+}
+
+footer {
+  padding-bottom: 94px;
 }

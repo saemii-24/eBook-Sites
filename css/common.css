@@ -588,6 +588,7 @@ body {
 .header-middle .header-middle__logo {
   width: 174px;
   height: 79px;
+  display: block;
 }
 .header-middle .header-middle__logo img {
   width: 100%;

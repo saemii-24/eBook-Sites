@@ -31,7 +31,7 @@ const buyList = [
             const li = $("<li>", {"class": "buy-with__book js-history-target"});
 
             //thumbnail
-            const thumbnailAnchor = $("<a>", {"class": "thumbnail", "href": "javascript:void(0)"});
+            const thumbnailAnchor = $("<a>", {"class": "thumbnail", "href":"javascript:void(0)"});
             const thumbnail = $("<img>", {"src": `${filterData[0].thumbnail}`, "alt": `${filterData[0].title} 표지`});
             thumbnail.appendTo(thumbnailAnchor);
 
@@ -39,7 +39,7 @@ const buyList = [
             const info = $("<div>", {"class": "info"});
 
             //title
-            const titleAnchor = $("<a>", {"href": "javascript:void(0)"});
+            const titleAnchor = $("<a>", {"href":"javascript:void(0)"});
             const title = $("<div>", {"class": "title", "text" : `${filterData[0].title}`});
             title.appendTo(titleAnchor);
             //author

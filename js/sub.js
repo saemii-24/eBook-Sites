@@ -94,7 +94,7 @@ const reviewOpen = document.querySelector('.review .notice-icon')
 const reviewClose = document.querySelector('.review .close-icon ')
 reviewOpen.addEventListener('click',()=>{
     reviewContent.classList.add('active');
-});
+}); 
 reviewClose.addEventListener('click',()=>{
     reviewContent.classList.remove('active');
 });
@@ -126,7 +126,7 @@ thirdCategory[0].classList.add('active');
 
 //detail-nav 
 //상품정보
-const detailNav = document.querySelectorAll('#detail-nav__inner div');
+const detailNav = document.querySelectorAll('#detail-nav__inner a');
 
 const productInfo = document.querySelector('.buy-with.content-box');
 const reveiwInfo = document.querySelector('.review.content-box');
@@ -137,18 +137,24 @@ window.addEventListener('scroll',()=>{
     const productInfoTop = productInfo.getBoundingClientRect().top;
     const reviewInfoTop = reveiwInfo.getBoundingClientRect().top;
     const useInfoTop = useInfo.getBoundingClientRect().top;
-    
-    if(productInfoTop<130 && reviewInfoTop>=130 && useInfoTop>=130){
+
+    if(productInfoTop<250 && reviewInfoTop>=250 && useInfoTop>=250){
         detailNav[0].classList.add('active');
         detailNav[1].classList.remove('active');
         detailNav[2].classList.remove('active');
-    }else if(productInfoTop<130 && reviewInfoTop<130 && useInfoTop>=130){
+    }else if(productInfoTop<250 && reviewInfoTop<250 && useInfoTop>=250){
         detailNav[1].classList.add('active');
         detailNav[0].classList.remove('active');
         detailNav[2].classList.remove('active');
-    }else if(productInfoTop<130 && reviewInfoTop<130 && useInfoTop<130){
+    }else if(productInfoTop<250 && reviewInfoTop<250 && useInfoTop<250){
         detailNav[2].classList.add('active');
         detailNav[0].classList.remove('active');
         detailNav[1].classList.remove('active');
     }
+});
+
+//미리보기 누르면 열기 windowOpen
+const windowOpen = document.querySelector('.this-thumbnail .preview');
+windowOpen.addEventListener('click',()=>{
+    window.open("../preview.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes, left=500,width=1040,height=905");
 });

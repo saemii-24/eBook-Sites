@@ -29,7 +29,7 @@
     $.ajax({
         method: "GET",
         url: "https://dapi.kakao.com/v3/search/book?target=title",
-        data: { query: searchWord, size: 2 },
+        data: { query: searchWord, size: 1 },
         headers: { Authorization: "KakaoAK 381ddfe6fc1daf3a1b6115b0d0c98c8c" },
         async: false
     })
@@ -50,7 +50,7 @@
                 //1번 묶음
                 const thumbnail = document.createElement("a");
                 thumbnail.setAttribute("class", "thumbnail");
-                thumbnail.setAttribute("href", "javascript:void(0)");
+                thumbnail.setAttribute("href", "./sub.html");
   
                 const img = document.createElement("img");
                 img.setAttribute("src", filterData[i].thumbnail);
@@ -65,7 +65,7 @@
                 title.textContent = filterData[i].title;         
   
                 const titleLink = document.createElement("a");
-                titleLink.setAttribute("href", "javascript:void(0)");
+                titleLink.setAttribute("href", "./sub.html");
   
                 const author = document.createElement("div");
                 author.setAttribute("class", "author");

@@ -82,7 +82,7 @@ function selectSearch(searchWord, i) {
 
             const thumbnail = document.createElement("a");
             thumbnail.setAttribute("class", "thumbnail");
-            thumbnail.setAttribute("href", "javascript:void(0)");
+            thumbnail.setAttribute("href", "./sub.html");
 
             const img = document.createElement("img");
             img.setAttribute("src", `${filterData[0].thumbnail}`);
@@ -96,7 +96,7 @@ function selectSearch(searchWord, i) {
             title.textContent = filterData[0].title;
 
             const titleLink = document.createElement("a");
-            titleLink.setAttribute("href", "javascript:void(0)");
+            titleLink.setAttribute("href", "./sub.html");
 
             const author = document.createElement("div");
             author.setAttribute("class", "author");

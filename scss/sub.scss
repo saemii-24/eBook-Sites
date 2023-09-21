@@ -979,7 +979,8 @@ h3 {
             gap: 60px;
             height: 100%;
 
-            div {
+            a {
+                display: block;
                 line-height: 70px;
                 height: 100%;
                 color: var.$middle-gray;
@@ -1043,12 +1044,14 @@ h3 {
 .content__right {
     flex-basis: calc(100% - 330px - 56px);
     width: calc(100% - 330px - 56px);
-
+    .buy-with{
+        scroll-padding-top: 200px;
+        scroll-margin-top: 200px;
+    }
     .content-title {
         margin-bottom: 20px;
         line-height: 20px;
     }
-
     .put__buy-with {
         display: flex;
         gap: 20px;
@@ -1633,7 +1636,8 @@ h3 {
 .ebook-guide {
     height: 382px;
     overflow: hidden;
-
+    scroll-padding-top: 400px ;
+    scroll-margin-top: 200px;
     h6 {
         font-weight: 700;
         font-size: 15px;
@@ -2108,6 +2112,8 @@ h3 {
 }
 
 .review {
+    scroll-padding-top: 200px;
+    scroll-margin-top: 200px;
     .content-title {
         display: flex;
 
@@ -2784,4 +2790,8 @@ h3 {
             }
         }
     }
+}
+
+footer{
+    padding-bottom:94px;
 }

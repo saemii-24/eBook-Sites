@@ -40,4 +40,118 @@ const indexList = [
     "해제", 
     "참고문헌", 
     "판권"
-]
+];
+
+// 목차 넣기
+const putIndex = document.querySelector('.put__index');
+let classIndex = 0;
+
+for(value of indexList){
+    const li = $("<li>");
+    const a = $("<a>", {"text": `${value}`, "class": `a-tag`});
+    a.appendTo(li);
+    li.appendTo(putIndex);
+    classIndex++;
+}
+
+
+// 목차 내용 넣기
+function callCSVDetail(csvName, makeObj) {
+    $.ajax({
+      url: csvName,
+      dataType: "text",
+      async: false,
+      success: function (csvData) {
+        // console.log(csvData);
+        const arrData = csvData.split(/\/key\/,|,\/value\/,/); //[/key/,] 혹은 [,/value/,] 로 구분
+        arrData.shift(); //배열 첫번째로 들어가는 공백 제거
+        // console.log(arrData);
+  
+        for (i = 0; i < arrData.length; i += 2) {
+          //"" 안의 글자만 추출해 객체에 할당한다. (글을 싸고 있는 쌍따옴표 제거)
+          makeObj[arrData[i]] = arrData[i + 1].slice(1,arrData[i + 1].length - 2);
+        }
+      },
+    });
+  }
+
+
+const previewObj = new Object(); //detail정보가 들어감
+callCSVDetail('./data/preview.csv',previewObj);
+// console.log(previewObj);
+
+const {
+    작가: previewAuthor,
+    번역가: previewTranslator,
+    차례: previewDetail,
+    추천사: previewRecommendation,
+    헌사: previewTribute,
+  } = previewObj;
+
+  
+const putContent = [previewAuthor, previewTranslator, previewRecommendation, previewTribute, previewDetail];  
+const putDetailContent = document.querySelectorAll('.detail-content');
+for(i=0; i<putContent.length; i++){
+    putDetailContent[i].innerText = putContent[i];
+}
+//목차 중 특정 a 태그만 이동이 가능하게 한다. (0~4, 6번 인덱스의 목차);
+const aTag = document.querySelectorAll('.a-tag');
+const tagContent = document.querySelectorAll('.put__detail-left li');
+for(let i=0; i<=4; i++){
+    tagContent[i].setAttribute("id", `dot_${i}`)
+    aTag[i].setAttribute("href", `#dot_${i}`);
+    aTag[i].style.opacity = '1';
+}
+tagContent[5].setAttribute("id", `dot_${i}`)
+aTag[6].setAttribute("href", `#dot_${i}`);
+aTag[6].style.opacity = '1';
+
+//font-size 조정하기
+const inputBox = document.querySelector('#font-size'); //input태그
+const detailFontSize= document.querySelector('.put__detail-left');
+// console.log(inputBox.value);
+
+inputBox.addEventListener("input", function(e) {
+    detailFontSize.style.fontSize =  `${e.target.value}px`;
+    inputBg();
+});
+
+//input 버튼조작
+const fontBig = document.querySelector('.fontBig');
+const fontSmall = document.querySelector('.fontSmall');
+
+fontSmall.addEventListener('click',()=>{
+    inputBox.value--;
+    detailFontSize.style.fontSize =  `${inputBox.value}px`;
+    inputBg();
+});
+fontBig.addEventListener('click',()=>{
+    inputBox.value++;
+    detailFontSize.style.fontSize =  `${inputBox.value}px`;
+    inputBg();
+});
+
+//input 배경조작
+inputBg();
+const percent = (inputBox.value - inputBox.min) * (100 / (inputBox.max - inputBox.min));
+ inputBox.style.background = `linear-gradient(45deg, red${percent}%, blue ${100-percent}%)`;
+
+function inputBg(){
+    const percent = Math.ceil((inputBox.value - inputBox.min) * (100 / (inputBox.max - inputBox.min)));
+    // console.log(percent);
+    inputBox.style.background = `linear-gradient(45deg, #767676 ${percent}%, #EAEAEA ${percent}%)`;
+}
+
+//초기화 버튼
+const reset = document.querySelector('.reset');
+reset.addEventListener('click',()=>{
+    inputBox.value = 14;
+    detailFontSize.style.fontSize =  `${inputBox.value}px`;
+    inputBg();
+});
+
+//x버튼 누르면 닫기 (windowClose)
+const windowClose = document.querySelector('.detail-top>span');
+windowClose.addEventListener('click',()=>{
+    window.close();
+});
