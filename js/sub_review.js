@@ -55,8 +55,8 @@ const putGradePercent = document.querySelectorAll('.clover-percent');
 const gradeGage = document.querySelectorAll('.clover-meter .meter-gage');
 
 gradePercent.forEach((grade, index)=>{
-    putGradePercent[index].innerText = `${grade}%`;
-    gradeGage[index].style.width = `${grade}%`;
+    putGradePercent[index].innerText = `${grade.toFixed(0)}%`;
+    gradeGage[index].style.width = `${grade.toFixed(0)}%`;
 });
 //grade가 제일 큰 %에 active class를 준다.
 gradeGage[maxIndex].classList.add('active');
@@ -77,8 +77,8 @@ const putFeelPercent = document.querySelectorAll('.review-percent');
 const feelGage = document.querySelectorAll('.review-meter .meter-gage');
 
 feelPercent.forEach((feel, index)=>{
-    putFeelPercent[index].innerText = `${feel}%`;
-    feelGage[index].style.height = `${feel}%`;
+    putFeelPercent[index].innerText = `${feel.toFixed(0)}%`;
+    feelGage[index].style.height = `${feel.toFixed(0)}%`;
 });
 
 //제일 많이 응답한 reviewFill 채우기
@@ -86,7 +86,7 @@ const reviewFillPercent = document.querySelector('.review-feel-percent');
 const reviewFill = document.querySelector('.review-feel-max');
 const reviewBar = document.querySelectorAll('.review-bar');
 reviewBar[maxIndexFeel].classList.add('active');
-reviewFillPercent.innerText = `${feelPercent[maxIndexFeel]}%`;
+reviewFillPercent.innerText = `${feelPercent[maxIndexFeel].toFixed(0)}%`;
 reviewFill.innerText = `${feelingArr[maxIndexFeel]}`;
 
 

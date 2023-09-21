@@ -222,7 +222,7 @@ nums.forEach((num)=>{
     }
 });
 
-  //pick slide//
+  //best slide//
   let best_mySwiper = new Swiper(".best_mySwiper", {
     slidesPerView: 7,
     spaceBetween: 35,
