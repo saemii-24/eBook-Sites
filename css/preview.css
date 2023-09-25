@@ -87,7 +87,7 @@ ul, li {
   gap: 10px;
 }
 .detail .detail-right .top img {
-  flex: 0 60px 1;
+  flex-basis: 60px;
   width: 60px;
   display: block;
   border-radius: 10px 10px 10px 0px;

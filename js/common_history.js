@@ -3,7 +3,7 @@
 // const bookTitle = document.querySelectorAll(".swiper-slide .title");
 const bookThumb = document.querySelectorAll(".js-history-target");
 const bookTitle = document.querySelectorAll(".js-history-target .title");
-const historyBtn = document.querySelector('.bottom__button .history');
+const historyBtn = document.querySelector(".bottom__button .history");
 
 let memorybook = JSON.parse(localStorage.getItem("book"));
 if (memorybook === null) {
@@ -37,7 +37,8 @@ bookThumb.forEach((book) => {
       historyCount();
 
       //historyBtn의 배경 첫번째 선택이미지로 교체하기
-      const historyBookFirst = event.currentTarget.querySelector('.thumbnail img');
+      const historyBookFirst =
+        event.currentTarget.querySelector(".thumbnail img");
 
       if (memorybook.length > 0 && memorybook !== null) {
         historyBtn.style.backgroundImage = `url(${historyBookFirst.src})`;
@@ -47,16 +48,17 @@ bookThumb.forEach((book) => {
         historyBtn.style.border = "none";
       }
     }
-  }
-  )
+  });
 });
 //localStorage저장된 값확인
-// console.log(memorybook); 
+// console.log(memorybook);
 
 //저장된 값을 이용해 ajax를 사용한다.
 const historyIcon = document.querySelector(".bottom__button .history");
 const historyModal = document.querySelector(".history-modal");
-const historyModalClose = document.querySelector(".history-modal .history-close");
+const historyModalClose = document.querySelector(
+  ".history-modal .history-close"
+);
 
 //modal 열기
 historyIcon.addEventListener("click", () => {
@@ -65,11 +67,11 @@ historyIcon.addEventListener("click", () => {
   ifEmpty();
   //historyBox를 비운다.
   const putHistory = document.querySelector(".history__put");
-  putHistory.textContent = '';
+  putHistory.textContent = "";
   //modal을 열 때 ajax를 실행한다.
   if (memorybook !== null && memorybook.length > 0) {
-    memorybook.forEach(memory => historyBox(memory))
-  };
+    memorybook.forEach((memory) => historyBox(memory));
+  }
   //favorite버튼을 누를 수 있어야 한다.
   favoriteBtnToggle();
   removeBtn();
@@ -87,7 +89,7 @@ ifEmpty();
 function ifEmpty() {
   const historyEmptySign = document.querySelector(".history-empty");
   const historyPut = document.querySelector(".history__put");
-  if (historyPut.textContent === '') {
+  if (historyPut.textContent === "") {
     //memoryBook이 null이면
     historyEmptySign.style.display = "flex";
   } else {
@@ -117,17 +119,19 @@ function removeBtn() {
   let closeHistoryBtn = document.querySelectorAll(".book-btn .close");
   closeHistoryBtn.forEach((closeBtn, index) => {
     closeBtn.addEventListener("click", (event) => {
-      console.log(index);
-      let parentBox = (event.target).parentNode.parentNode.parentNode;
+      // console.log(index);
+      let parentBox = event.target.parentNode.parentNode.parentNode;
       parentBox.remove();
 
-      let tilteOfparentBox = parentBox.querySelector('.title').innerText;
-      console.log(tilteOfparentBox);
+      let tilteOfparentBox = parentBox.querySelector(".title").innerText;
+      // console.log(tilteOfparentBox);
 
-      memorybook = memorybook.filter((memorybook) => memorybook !== tilteOfparentBox);
+      memorybook = memorybook.filter(
+        (memorybook) => memorybook !== tilteOfparentBox
+      );
       //localStorage도 업데이트(하나씩 삭제) 하기
       localStorage.setItem("book", JSON.stringify(memorybook));
-      console.log(memorybook);
+      // console.log(memorybook);
       ifEmpty();
       historyCount();
 
@@ -139,11 +143,11 @@ function removeBtn() {
 
 //전체삭제버튼
 function allRemoveBtn() {
-  const closeAllBtn = document.querySelector('.history-trash');
-  const putHistory = document.querySelector('.history__put');
-  closeAllBtn.addEventListener('click', () => {
+  const closeAllBtn = document.querySelector(".history-trash");
+  const putHistory = document.querySelector(".history__put");
+  closeAllBtn.addEventListener("click", () => {
     memorybook = [];
-    putHistory.textContent = '';
+    putHistory.textContent = "";
     //localStorage도 업데이트(비우기) 하기
     localStorage.setItem("book", JSON.stringify(memorybook));
     ifEmpty();
@@ -158,16 +162,16 @@ function allRemoveBtn() {
 historyCount();
 function historyCount() {
   //모달 창 안의 count
-  const countInModal = document.querySelector('.history-count .count');
+  const countInModal = document.querySelector(".history-count .count");
   //history버튼 안의 count
-  const countInBtn = document.querySelector('.history-btn-count');
+  const countInBtn = document.querySelector(".history-btn-count");
 
   if (memorybook.length > 0 && memorybook !== null) {
-    countInBtn.style.display = 'block';
+    countInBtn.style.display = "block";
     countInModal.innerText = memorybook.length;
     countInBtn.innerText = memorybook.length;
   } else {
-    countInBtn.style.display = 'none';
+    countInBtn.style.display = "none";
     countInModal.innerText = 0;
     countInBtn.innerText = 0;
   }
@@ -175,12 +179,12 @@ function historyCount() {
 
 //history Btn 배경화면 바꾸기
 changeBtnBg();
-function changeBtnBg(){
-  if(memorybook.length===0){
+function changeBtnBg() {
+  if (memorybook.length === 0) {
     historyBtn.style.backgroundImage = "url('./images/history.png')";
     historyBtn.style.border = "none";
-  }else{
-    const btnBg = document.querySelector('.history-book:last-child img').src;
+  } else {
+    const btnBg = document.querySelector(".history-book:last-child img").src;
     historyBtn.style.backgroundImage = `url(${btnBg})`;
     historyBtn.style.border = "1px solid #000000";
   }
@@ -199,7 +203,6 @@ function historyBox(searchWord) {
     //모두 썸네일이 있는 것을 확인했으므로 filter를 제외한다.
 
     const putHistory = document.querySelector(".history__put");
-
 
     //thumbnail만들기
     const thumbnail = document.createElement("img");

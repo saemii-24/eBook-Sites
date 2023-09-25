@@ -12,6 +12,7 @@ html{
     scroll-behavior: smooth;
 }
 
+
 body {
     // overflow-x: hidden;
     font-family: "Roboto", "Noto Sans KR", sans-serif;
@@ -421,6 +422,7 @@ body {
                     margin-left: 6px;
                     transform-origin: 50% 60%;
                     margin-top:6px;
+                    font-variation-settings: 'FILL' 1;
                 }
                 .more-box{
                     position: absolute;
@@ -438,7 +440,7 @@ body {
                     .more-symbol{
                         transform: rotate(-180deg) scale(0.6);
                         transition: transform 0.3s;
-                        
+                        font-variation-settings: 'FILL' 1;
                     }
                     .more-box__inner{
                         width: 100%;
@@ -509,6 +511,7 @@ body {
                 margin-top: 10px;
                 color: #595959;
                 padding-right: 10px;
+                font-variation-settings: 'FILL' 1;
 
                 &.active {
                     transform: rotate(0deg) scale(0.6);
@@ -687,7 +690,7 @@ header {
                     transform: rotate(-180deg) scale(0.6);
                     transform-origin: 50% 55%;
                     transition: transform 0.3s;
-
+                    font-variation-settings: 'FILL' 1;
                     &.active {
                         transform: rotate(-0deg) scale(0.6);
                     }

@@ -103,6 +103,7 @@ h3 {
                 padding-bottom: 50px;
                 &>span {
                     margin-right: 4px;
+                    font-variation-settings: 'FILL' 1;
                 }
 
                 .this-category-detail{
@@ -113,7 +114,7 @@ h3 {
                     background-color: #ffffff;
                     width: 180px;
                     top: 30px;
-                    left: 15px;
+                    left: -10px;
                     visibility: hidden;
                     opacity: 0;
                     z-index: 100;   
@@ -123,6 +124,10 @@ h3 {
                             font-weight: 500;
                             color: var.$black;
                         }
+                    }
+                    
+                    &.detail-first{
+                        left: 15px;
                     }
                 }
                 button {
@@ -305,7 +310,10 @@ h3 {
                     font-weight: 700;
                     cursor: pointer;
 
-                    div:nth-child(2) {
+                    span{
+                        display: block;
+                    }
+                    span:nth-child(2) {
                         font-weight: 400;
                         font-size: 12px;
                     }
@@ -1248,7 +1256,7 @@ h3 {
             margin: 30px 0;
         }
 
-        h6 {
+        .detail-list-title {
             font-weight: 700;
             font-size: 15px;
             margin-bottom: 15px;
@@ -1638,13 +1646,13 @@ h3 {
     overflow: hidden;
     scroll-padding-top: 400px ;
     scroll-margin-top: 200px;
-    h6 {
+    .guide-title {
         font-weight: 700;
         font-size: 15px;
         margin-bottom: 15px;
     }
 
-    &>ul {
+    &>div:not(:first-of-type) {
         padding: 30px 0 18px;
         border-top: 1px solid var.$border-gray-light;
 
@@ -1653,7 +1661,7 @@ h3 {
             margin-top: 25px;
         }
 
-        &>li {
+        ul>li {
             font-size: 14px;
             color: var.$dark-gray;
             margin: 10px 0;
@@ -1683,6 +1691,7 @@ h3 {
 
     .purchase {
         padding: 20px 0 18px;
+        border-top: 1px solid var.$black;
     }
 
     .put__guide {
@@ -1744,9 +1753,10 @@ h3 {
         padding: 20px;
         margin: 30px 0 10px;
 
-        h6 {
+        .guide-title {
             font-size: 14px;
             margin: 6px 0;
+            color: var.$black;
         }
 
         .ePub-first {
@@ -2053,14 +2063,14 @@ h3 {
                 margin-top: 10px;
                 word-break: break-all;
             }
-
+            .notice-content-title {
+                margin-top: 16px;
+                margin-bottom: 10px;
+                font-size: 14px;
+                font-weight: 700;
+            }
             ul {
-                h6 {
-                    margin-top: 16px;
-                    margin-bottom: 10px;
-                    font-size: 14px;
-                    font-weight: 700;
-                }
+                
 
                 li {
                     font-size: 13px;
@@ -2153,6 +2163,12 @@ h3 {
                                     height: 0;
                                     content: "-";
                                 }
+                                &:first-child{
+                                    margin-left: 0px;
+                                    &::before{
+                                        content:"";
+                                    }
+                                }
                             }
                         }
 
@@ -2161,6 +2177,16 @@ h3 {
                             padding: 20px;
                             border-radius: 10px;
                             background-color: var.$light-gray;
+                                li{
+                                    margin-left: 5px;
+                                }
+                        }
+                        h6{
+                            font-size: 14px;
+                            font-weight: 700;
+                            margin-top: 16px;
+                            color: var.$black;
+                            margin-bottom: 10px;
                         }
                     }
                 }

@@ -33,7 +33,7 @@ let purchaseReview = eBookReview.filter(review=> review.purchase === true)
 let averageGrade = allReview.map(review=>{
    return review.grade;
 })
-console.log(averageGrade);
+// console.log(averageGrade);
 const sum = averageGrade.reduce((a, b)=> a + b, 0);
 const average = sum / averageGrade.length;
 
@@ -183,7 +183,6 @@ makeReviewGroup(groupLikePurchase, likeSort(purchaseReview));
 makeReviewGroup(groupLikeAll, likeSort(allReview));
 
 //그루핑함수
-//TODO
 function makeReviewGroup(emptyArr, makeGroupArr) {
     for (let i = 0; i < Math.ceil(makeGroupArr.length/5); i++) {
       if (makeGroupArr[5 * i + 1] === undefined) {
@@ -231,7 +230,7 @@ const putReviewNumber = document.querySelector('.review-number');
 const reviewTab = document.querySelectorAll('.review_tab li');
 const sortStand = document.querySelectorAll('.review_select ul li');
 const sortStandText = document.querySelector('.review_select button span:first-child');
-console.log(sortStandText);
+// console.log(sortStandText);
 
 //정렬기준 선택하기
 const sortStandBtn = document.querySelector('.review_select');
@@ -245,7 +244,7 @@ sortStand.forEach((stand, index)=>{
     sortStandText.textContent = event.target.innerText;
     const categoryTabIndex = Array.from(document.querySelectorAll('.review_tab li')).indexOf(document.querySelector('.review_tab .active'));
 
-    console.log(categoryTabIndex);
+    // console.log(categoryTabIndex);
 
       //review박스 비우기
       const putReview = document.querySelector('.put__review');

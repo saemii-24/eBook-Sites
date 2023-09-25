@@ -53,7 +53,7 @@ foldBtns.forEach((foldBtn)=>{
         const foldContent = thisBtn.previousElementSibling;       
         const foldText = thisBtn.querySelector('.fold-text');
         const foldIcon = thisBtn.querySelector('.fold-icon');
-        console.log(foldContent);
+        // console.log(foldContent);
         foldContent.classList.toggle('expand');
         if(foldContent.classList.contains('expand')){
             foldText.innerText = '접기';
@@ -107,7 +107,7 @@ const detailList = [
 ];
 
 const putDetailCategory = document.querySelectorAll('.this-category-detail');
-console.log(detailList[0].length);
+// console.log(detailList[0].length);
 
 for(let i =0; i<detailList.length; i++){
     for(let j=0; j<detailList[i].length; j++){
