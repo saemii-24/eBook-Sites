@@ -503,7 +503,7 @@ body {
             }
 
             .more-symbol {
-                font-size: 4px;
+                font-size: 12px;
                 color: #000;
                 transform: rotate(-180deg) scale(0.6);
                 transition: transform 0.3s;
@@ -685,7 +685,7 @@ header {
                 }
 
                 .selected-symbol {
-                    font-size: 4px;
+                    font-size: 12px;
                     color: #000;
                     transform: rotate(-180deg) scale(0.6);
                     transform-origin: 50% 55%;
