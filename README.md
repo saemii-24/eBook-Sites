@@ -1,8 +1,6 @@
 # 📚교보문고 eBook 클론코딩
 #### **<a href="https://saemii-24-australia.netlify.app/" target="_blank">:point_right:<u>배포페이지 바로가기</u></a>**
-지브리는 국내에서도 많은 사랑을 받는 애니메이션 제작사 입니다. 지브리는 애니메이션 뿐만 아니라 관련된 다양한 사업을 진행하고있으며, 실제 국내 포털 사이트에서도 지브리 애니메이션의 OST, 
-감독, 성우, 전시회 등 지브리에 관련된 다양한 것들이 함께 검색되는 양상을 보입니다.
-이러한 지브리의 다양한 정보를 한번에 모아 볼 수 있도록 Ghibli World 란 '스튜디오 지브리 사이트'를 기획하게 되었습니다.
+kakao Book API를 활용하기 위한 방법으로, 온라인 서점 클론코딩 프로젝트를 진행했습니다. 이때 교보문고를 선택한 이유는 eBook 시장에서도 소비자에게 높은 선호도와 인지도를 보이고 있다는 점과 함께 사용자 입장에서도 보기 좋고, 사용하기도 좋은 웹사이트라고 생각했기 때문입니다.
 
 
 ## 목차
@@ -30,7 +28,7 @@
     <th style="width:300px">가상 리뷰 정렬</th>
   </tr>
   <tr>
-    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/adea7b9d-8385-4a6f-844c-7f2b01afc7da" alt="Kakao Book API"></td>
+    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/dd08591a-fba2-4d14-a9d8-474905c54d66" alt="Kakao Book API"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/974b304b-750a-4d17-82db-a797d6b724b0" alt="Swiper 슬라이드"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/89271195-5c20-4e73-ae61-fffbdec6f5c9" alt="가상 리뷰 정렬"></td>
   </tr>
