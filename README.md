@@ -1,5 +1,5 @@
 # 📚교보문고 eBook 클론코딩
-#### **<a href="https://saemii-24-australia.netlify.app/" target="_blank">:point_right:<u>배포페이지 바로가기</u></a>**
+#### **<a href="https://saemii-24.github.io/project_4/index.html" target="_blank">:point_right:<u>배포페이지 바로가기</u></a>**
 kakao Book API를 활용하기 위한 방법으로, 온라인 서점 클론코딩 프로젝트를 진행했습니다. 이때 교보문고를 선택한 이유는 eBook 시장에서도 소비자에게 높은 선호도와 인지도를 보이고 있다는 점과 함께 사용자 입장에서도 보기 좋고, 사용하기도 좋은 웹사이트라고 생각했기 때문입니다.
 
 
