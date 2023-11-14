@@ -28,7 +28,7 @@ kakao Book API를 활용하기 위한 방법으로, 온라인 서점 클론코�
     <th style="width:300px">가상 리뷰 정렬</th>
   </tr>
   <tr>
-    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/dd08591a-fba2-4d14-a9d8-474905c54d66" alt="Kakao Book API"></td>
+    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/165c86ff-4eef-4c85-aeec-c42d03cec7b6" alt="Kakao Book API"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/974b304b-750a-4d17-82db-a797d6b724b0" alt="Swiper 슬라이드"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/89271195-5c20-4e73-ae61-fffbdec6f5c9" alt="가상 리뷰 정렬"></td>
   </tr>
@@ -41,7 +41,7 @@ kakao Book API를 활용하기 위한 방법으로, 온라인 서점 클론코�
     <th style="width:300px">미리보기 글자 크기 변경</th>
   </tr>
   <tr>
-    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/01b6e47c-0f9a-4505-af0c-97815d601bb5" alt="최근 본 책"></td>
+    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/dd08591a-fba2-4d14-a9d8-474905c54d66" alt="최근 본 책"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/74e0c4ef-9116-41cc-acd8-5bc8a16254e4" alt="접기, 펼치기"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/dcbc9855-814a-404e-900f-15ac85190846" alt="미리보기 글자 크기 변경"></td>
   </tr>
