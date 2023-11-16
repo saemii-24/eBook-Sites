@@ -55,7 +55,7 @@ Swiper
   </tr>
 </table>
 
-##기능별 설명
+## 기능별 설명
 1. **Kakao Book API**<br/>
   Kakao Book API와 Ajax를 이용해 eBook 서점 구성에 필요한 가격, 책 표지, 작가 정보를 받아오고 JavaScript의 ```createElement```, ```setAttribute```, ```append``` 등을 이용해 tag를 구성했습니다.
 2. **Swiper 슬라이드**<br/>
