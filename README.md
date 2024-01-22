@@ -21,12 +21,11 @@ kakao Book API를 활용하기 위한 방법으로, 온라인 서점 클론코�
 
 
 ## 사용된 기술
-##### 구현
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
-##### API / 통신
-Kakao Book API / AJAX
-##### 그 외 라이브러리
-Swiper
+##### 📌구현
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"> 
+##### 📌API / 통신
+<img src="https://img.shields.io/badge/KakaoBook API-FEE500?style=for-the-badge&logo=KakaoBook AP&logoColor=white"> <img src="https://img.shields.io/badge/ajax-258CCF?style=for-the-badge&logo=ajax&logoColor=white">
+
 
 ## 주요 기능
 <table>
